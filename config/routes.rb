@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'home#index'
+
+  devise_for :users, controllers: {
+    registrations: 'api/registrations',
+    session: 'api/sessions'
+  }
+
+  namespace :api do
+    get 'users/info'
+  end
+
+  get '*unmatched_route', to: 'home#index'
 end
