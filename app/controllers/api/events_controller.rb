@@ -52,7 +52,7 @@ class Api::EventsController < ApplicationController
     def set_sport
       @sport = Sport.find(params[:id])
     end
-# testing something here
+
     def set_event
       @event = @sport.events.find(params[:id])
     end
