@@ -9,17 +9,17 @@ class Api::RegistrationsController < Devise::RegistrationsController
 
   def sign_up_params
     params.require(:user).permit(
-      :first_name, :last_name, :dob, :role,
+      :first_name, :last_name, :dob, :role, :username,
       :phone_number, :picture, :reliability,
-      :favorites, :email, :verify_email, :password, :password_confirmation
+      :favorite, :email, :verify_email, :password, :password_confirmation
     )
   end
 
   def account_update_params
     params.require(:user).permit(
-    :first_name, :last_name, :dob, :role,
+    :first_name, :last_name, :dob, :role, :username, 
     :phone_number, :picture, :reliability,
-    :favorites, :email, :verify_email, :password,
+    :favorite, :email, :verify_email, :password,
     :password_confirmation, :current_password
     )
   end
