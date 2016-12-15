@@ -1,16 +1,16 @@
 class Api::EventsController < ApplicationController
   before_action :set_event, except: [:index, :new, :create]
-  before_action :set_sport
+
 
   def index
-    @events = @sport.events
+    @events = Events.all
   end
 
   def new
   end
 
   def create
-    @event = @sport.events.new(event_params)
+    @event = current_user.events.new(event_params)
 
     respond_to do |format|
       if @event.save
@@ -46,14 +46,10 @@ class Api::EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:name, :date, :time, :capacity, :venue,
                                     :stree, :city, :state, :zip, :skill_level,
-                                    :description, :attending, :active)
-    end
-
-    def set_sport
-      @sport = Sport.find(params[:id])
+                                    :description, :attending, :active, :sport)
     end
 
     def set_event
-      @event = @sport.events.find(params[:id])
+      @event = Events.find(params[:id])
     end
   end

@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :events
+  has_many :events, through: :user_events
+  has_many :user_events, dependent: :destroy 
   has_many :comments
 
   validates_presence_of :first_name, :last_name, :dob

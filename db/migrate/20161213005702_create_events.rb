@@ -2,6 +2,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
   def change
     create_table :events do |t|
       t.string :name, null: false
+      t.string :sport, null: false
       t.date :date, null: false
       t.time :time, null: false
       t.integer :capacity
@@ -14,6 +15,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.text :description
       t.boolean :attending, null: false
       t.boolean :active, null: false
+      t.belongs_to :user
 
       t.timestamps
     end
