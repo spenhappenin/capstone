@@ -6,9 +6,6 @@ class Api::EventsController < ApplicationController
     @events = @sport.events
   end
 
-  def show
-  end
-
   def new
   end
 
