@@ -1,6 +1,6 @@
 class Api::RegistrationsController < Devise::RegistrationsController
   skip_before_action :verify_authenticity_token
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
   skip_before_action :authenticate_user!
   clear_respond_to
   respond_to :json

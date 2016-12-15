@@ -27,7 +27,22 @@ class Api::SportsController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @sport.update(sport_params)
+        format.json { render :show, status: :ok }
+      else
+        format.json { render json: @sport.errors, status: :unprocessable_entity }
+      end
+    end
   end
+
+    def destroy
+      @sport.destroy
+      respond_to do |format|
+        format.json { head :no_content }
+      end
+    end
+
 
   private
     def sport_params
