@@ -3,10 +3,6 @@ class Api::UsersController < ApplicationController
   skip_before_action :authenticate_user!
 
   def info
-    if current_user
-      render json: current_user
-    else 
-      render json: {}
-    end
+    render json: current_user ? current_user : {}
   end
 end

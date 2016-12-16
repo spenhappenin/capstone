@@ -4,7 +4,8 @@ import { refreshLogin } from '../actions/auth';
 
 class AuthenticatedRoutes extends React.Component {
   componentDidMount() {
-    this.props.dispatch(refreshLogin());
+    if(!Object.keys(this.props.user).length)
+      this.props.dispatch(refreshLogin());
   }
 
   render() {
