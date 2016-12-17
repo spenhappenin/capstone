@@ -181,11 +181,8 @@ DEPENDENCIES
   coffee-rails
   coffee-script-source (= 1.11.1)
   devise
-<<<<<<< HEAD
   gmaps4rails
-=======
   dotenv-rails
->>>>>>> gem installed - .env file created
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
