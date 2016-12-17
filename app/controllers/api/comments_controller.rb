@@ -4,6 +4,7 @@ class Api::CommentsController < ApplicationController
 
   def index
     @comments = @event.comments
+    @comments = current_user.comments
   end
 
   def show
