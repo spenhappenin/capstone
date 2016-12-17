@@ -48,7 +48,7 @@ class Api::EventsController < ApplicationController
                                     :stree, :city, :state, :zip, :skill_level,
                                     :description, :attending, :active, :sport)
     end
-# testing something here
+
     def set_event
       @event = Events.find(params[:id])
     end

@@ -4,8 +4,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
   has_many :events, through: :user_events
   has_many :user_events, dependent: :destroy 
+
+  def self.from_third_party_auth(provider, auth)
+  	where(provider: provider, uid: auth[:userID]).first_or_create do |user|
+  		user.email = auth[:email]
+  		user.password = Devise.friendly_token
+  	end
+  end 
+
+  has_many :events
   has_many :comments
 
   validates_presence_of :first_name, :last_name, :dob
