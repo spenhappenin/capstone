@@ -5,7 +5,7 @@ import { clearFlash } from '../actions/flash.js';
 const fadeFlash = (dispatch) => {
   setTimeout( () => {
     dispatch(clearFlash())
-  }, 15000)
+  }, 6000)
 }
 
 const mapStateToProps = (state) => {
