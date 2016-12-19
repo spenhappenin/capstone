@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { refreshLogin } from '../actions/auth';
+import { refreshLogin, handleFacebookLogin } from '../actions/auth';
+import FacebookLogin from 'react-facebook-login';
+// import { handleFacebookLogin } from '../actions/handleFacebookLogin';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -31,6 +33,10 @@ class SignIn extends React.Component {
     });
   }
 
+  responseFacebook = (auth) => {
+    this.props.dispatch(handleFacebookLogin(auth, this.props.history))
+  }
+
   render() {
     return (
       <div className='container center'>
@@ -40,10 +46,26 @@ class SignIn extends React.Component {
           <input type="password" required={true} ref="password" placeholder="password" />
           <button className="btn">Login</button>
         </form>
+
+        <FacebookLogin  
+          appId = '1653601048266232'
+          autoLoad = { false }
+          fields = 'name, email'
+          cssClass='fa-facebook'
+          icon='fa-facebook'
+          callback={this.responseFacebook} />
       </div>
     )
   }
 
 }
 
+
 export default connect()(SignIn);
+
+
+
+
+
+
+

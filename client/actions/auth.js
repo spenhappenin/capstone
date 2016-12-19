@@ -16,13 +16,13 @@ export const refreshLogin = (user = null) => {
   }
 }
 
-export const logout = (router) => {
+export const logout = (history) => {
   return(dispatch) => {
     $.ajax({
       url: '/users/sign_out',
       type: 'DELETE'
     }).done( () => {
-      router.push('/signin');
+      history.push('/signin');
       dispatch(setUser());
     });
   }
@@ -30,4 +30,30 @@ export const logout = (router) => {
 
 const setUser = (user = {}) => {
   return { type: 'USER', ...user }
+}
+
+export const loggedIn = (id, apiKey) => {
+  return {
+    type: 'LOGIN',
+    id,
+    apiKey
+  }
+}
+
+export const handleFacebookLogin = (auth, history) => {
+  return(dispatch) => {
+    $.ajax({
+      url: '/facebook_login',
+      type: 'POST',
+      data: { auth },
+      dataType: 'JSON'
+    }).done( response => {
+      localStorage.setItem('apiKey', response.api_key);
+      localStorage.setItem('userId', response.user.id);
+      dispatch(loggedIn(response.user.id, response.api_key));
+      history.push('/');
+    }).fail( response => {  
+      dispatch(logout());
+    })
+  }
 }
