@@ -9,6 +9,8 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import NoMatch from './components/NoMatch';
 import GoogleMap from './components/GoogleMap';
+import Landing from './components/Landing';
+import About from './components/About';
 
 const AdminAccess = UserAuthWrapper({
   authSelector: state => state.user,
@@ -22,6 +24,7 @@ const AdminRoutes = AdminAccess( (props) => props.children )
 export default (
   <Route>
     <Route path="/" component={App}>
+      <IndexRoute component={Landing}/>
       <Route path='google_map' component={GoogleMap} />
       <Route path="signup" component={SignUp} />
       <Route path="signin" component={SignIn} />
