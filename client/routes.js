@@ -5,12 +5,17 @@ import App from './containers/App';
 import Admin from './components/Admin';
 import AuthenticatedRoutes from './components/AuthenticatedRoutes';
 import Dashboard from './components/Dashboard';
+import AdminSignin from './components/AdminSignin';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import NoMatch from './components/NoMatch';
 import GoogleMap from './components/GoogleMap';
+<<<<<<< HEAD
 import Landing from './components/Landing';
 import About from './components/About';
+=======
+import Contact from './components/Contact';
+>>>>>>> added admin login component and navbar option
 
 const AdminAccess = UserAuthWrapper({
   authSelector: state => state.user,
@@ -26,8 +31,10 @@ export default (
     <Route path="/" component={App}>
       <IndexRoute component={Landing}/>
       <Route path='google_map' component={GoogleMap} />
+      <Route path='contact' component={Contact} />
       <Route path="signup" component={SignUp} />
       <Route path="signin" component={SignIn} />
+      <Route path='adminsignin' component={AdminSignin} />
       <Route component={AuthenticatedRoutes}>
         <Route path="dashboard" component={Dashboard} />
         <Route component={AdminRoutes}>

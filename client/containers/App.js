@@ -13,6 +13,7 @@ class App extends React.Component {
 
   componentDidMount() {
     $('.button-collapse').sideNav();
+    $(".dropdown-button").dropdown();
   }
 
   logout(e) {
@@ -49,7 +50,7 @@ class App extends React.Component {
           <li> <Link to='/google_map'> Google Maps </Link> </li>
           <li> <Link to='/contact'> Contact </Link> </li>
           <li> <Link to='/signup'> Sign Up </Link> </li>
-          <li> <Link to='/signin'> Login </Link> </li>
+          <li><a className="dropdown-button" href="#!" data-activates="dropdown1">Login<i className="material-icons right">arrow_drop_down</i></a></li>
         </div>
       )
     }
@@ -58,6 +59,18 @@ class App extends React.Component {
   render() {
     return(
       <div>
+        <ul id="dropdown1" className="dropdown-content">
+          <li><Link to='adminsignin'>Admin</Link></li>
+          <li><Link to='signin'>User</Link></li>
+        </ul>
+
+        <ul id="dropdown1" className="dropdown-content">
+          <li><a href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li className="divider"></li>
+          <li><a href="#!">three</a></li>
+        </ul>
+
         <nav className='purple darken-4'>
           <div className='nav-wrapper'>
             <Link to='/' className='main-logo'>My Logo</Link>
