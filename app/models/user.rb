@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :events, through: :user_events
   has_many :user_events, dependent: :destroy 
 
+
   def self.from_third_party_auth(provider, auth)
   	where(provider: provider, uid: auth[:userID]).first_or_create do |user|
   		user.email = auth[:email]
