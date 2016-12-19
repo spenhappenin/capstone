@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { refreshLogin } from '../actions/auth';
+import { setFlash } from '../actions/flash';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -24,10 +25,9 @@ class SignIn extends React.Component {
     }).done( user => {
       this.props.dispatch(refreshLogin(user));
       this.props.history.push("/dashboard")
-    }).fail( data => {
-      console.log(data);
-      // let message = err.responseJSON.error;
-      // this.props.dispatch(setFlash(message, 'error'))
+    }).fail( err => {
+      let message = err.responseJSON.error;
+      this.props.dispatch(setFlash(message, 'error'))
     });
   }
 

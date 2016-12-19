@@ -10,7 +10,6 @@ export const refreshLogin = (user = null) => {
       }).done( user => {
         dispatch(setUser(user));
       }).fail (err => {
-        console.log(err);
       });
     }
   }

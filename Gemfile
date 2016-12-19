@@ -15,6 +15,7 @@ gem 'coffee-rails'
 gem 'coffee-script-source', '=1.11.1'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'pry'
