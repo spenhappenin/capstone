@@ -7,7 +7,6 @@ class Picture extends Component {
     return(
       <div className='main-image'>
 
-
       </div>
     );
   }

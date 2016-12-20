@@ -12,6 +12,7 @@ import GoogleMap from './components/GoogleMap';
 import Landing from './components/Landing';
 import About from './components/About';
 import Contact from './components/Contact';
+import UserEvents from './components/UserEvents';
 
 const AdminAccess = UserAuthWrapper({
   authSelector: state => state.user,
@@ -26,7 +27,7 @@ export default (
   <Route>
     <Route path="/" component={App}>
       <IndexRoute component={Landing}/>
-      <Route path='google_map' component={GoogleMap} />
+      <Route path='userEvents' component={UserEvents} />
       <Route path='contact' component={Contact} />
       <Route path="signup" component={SignUp} />
       <Route path="signin" component={SignIn} />

@@ -26,7 +26,7 @@ class App extends React.Component {
       return (
         <div>
           <li><Link to='/'>Home</Link></li>
-          <li><Link to='/google_map'>Google Maps</Link></li>
+          <li><Link to='/userEvents'>Events</Link></li>
           <li><Link to='/contact'>Contact</Link></li>
           <li><a style={{ cursor: 'pointer' }} onClick={this.logout}>Logout</a></li>
         </div>
@@ -35,7 +35,7 @@ class App extends React.Component {
       return (
         <div>
           <li> <Link to='/'> Home </Link> </li>
-          <li> <Link to='/google_map'> Google Maps </Link> </li>
+          <li><Link to='/userEvents'>Events</Link></li>
           <li> <Link to='/admin'> Admin </Link> </li>
           <li> <a style={{ cursor: 'pointer' }} onClick={this.logout}> Logout </a> </li>
         </div>
@@ -44,7 +44,7 @@ class App extends React.Component {
       return (
         <div>
           <li> <Link to='/'> Home </Link> </li>
-          <li> <Link to='/google_map'> Google Maps </Link> </li>
+          <li><Link to='/userEvents'>Events</Link></li>
           <li> <Link to='/contact'> Contact </Link> </li>
           <li> <Link to='/signup'> Sign Up </Link> </li>
           <li> <Link to='/signin'> Login </Link> </li>

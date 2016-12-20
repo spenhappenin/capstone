@@ -37,11 +37,11 @@ class GoogleMap extends Component {
 
 const styles = {
   mapContainer: {
-    width: '1000px'
+    width: '100%'
   },
   map: {
-    width: '1000px',
-    height: '700px'
+    width: '100%',
+    height: '400px'
   }
 }
 
