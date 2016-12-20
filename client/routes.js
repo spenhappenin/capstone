@@ -10,12 +10,9 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import NoMatch from './components/NoMatch';
 import GoogleMap from './components/GoogleMap';
-<<<<<<< HEAD
 import Landing from './components/Landing';
 import About from './components/About';
-=======
 import Contact from './components/Contact';
->>>>>>> added admin login component and navbar option
 
 const AdminAccess = UserAuthWrapper({
   authSelector: state => state.user,
