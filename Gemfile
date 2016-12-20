@@ -19,6 +19,7 @@ gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'pry'
+  gem 'faker'
 end
 
 group :development do
