@@ -5,7 +5,6 @@ import App from './containers/App';
 import Admin from './components/Admin';
 import AuthenticatedRoutes from './components/AuthenticatedRoutes';
 import Dashboard from './components/Dashboard';
-import AdminSignin from './components/AdminSignin';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import NoMatch from './components/NoMatch';
@@ -31,7 +30,6 @@ export default (
       <Route path='contact' component={Contact} />
       <Route path="signup" component={SignUp} />
       <Route path="signin" component={SignIn} />
-      <Route path='adminsignin' component={AdminSignin} />
       <Route component={AuthenticatedRoutes}>
         <Route path="dashboard" component={Dashboard} />
         <Route component={AdminRoutes}>
