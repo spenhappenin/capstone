@@ -93,8 +93,8 @@ class AddEvent extends Component {
             <div className='row'>
               <div className='col s6'>
                 <label className='left'> State </label>
-                <select ref='event_state'>
-                  <option defaultValue='' disabled> </option>
+                <select ref='event_state' value="">
+                  <option value="" disabled> </option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -158,8 +158,8 @@ class AddEvent extends Component {
             <div className='row'>
               <div className='col s6'>
                 <label className='left'> Skill Level </label>
-                <select ref='skill_level' required>
-                  <option disabled selected></option>
+                <select ref='skill_level' value="" required>
+                  <option value="" disabled> </option>
                   <option value='Open'> Open </option>
                   <option value='AA'> AA </option>
                   <option value='A'> A </option>
