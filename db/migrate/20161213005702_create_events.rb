@@ -13,8 +13,8 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.integer :zip, null: false
       t.string :skill_level, null: false
       t.text :description
-      t.boolean :attending, null: false
-      t.boolean :active, null: false
+      t.boolean :attending
+      t.boolean :active
       t.belongs_to :user
 
       t.timestamps

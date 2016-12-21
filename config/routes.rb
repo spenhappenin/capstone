@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :api do
     get 'users/info'
     resources :user_events
+    resources :events
   end
 
   get '*unmatched_route', to: 'home#index'

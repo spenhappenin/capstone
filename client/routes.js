@@ -13,6 +13,7 @@ import Landing from './components/Landing';
 import About from './components/About';
 import Contact from './components/Contact';
 import UserEvents from './components/UserEvents';
+import AddEvent from './components/AddEvent';
 
 const AdminAccess = UserAuthWrapper({
   authSelector: state => state.user,
@@ -27,11 +28,12 @@ export default (
   <Route>
     <Route path="/" component={App}>
       <IndexRoute component={Landing}/>
-      <Route path='userEvents' component={UserEvents} />
       <Route path='contact' component={Contact} />
       <Route path="signup" component={SignUp} />
       <Route path="signin" component={SignIn} />
       <Route component={AuthenticatedRoutes}>
+        <Route path='userEvents' component={UserEvents} />
+        <Route path='addEvent' component={AddEvent} />
         <Route path="dashboard" component={Dashboard} />
         <Route component={AdminRoutes}>
           <Route path="/admin" component={Admin} />

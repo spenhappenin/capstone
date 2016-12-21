@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20161215220857) do
     t.integer  "zip",         null: false
     t.string   "skill_level", null: false
     t.text     "description"
-    t.boolean  "attending",   null: false
-    t.boolean  "active",      null: false
+    t.boolean  "attending"
+    t.boolean  "active"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

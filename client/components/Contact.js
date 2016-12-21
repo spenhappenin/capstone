@@ -10,8 +10,11 @@ class Contact extends React.Component {
       <div className='container center'>
         <h2> Contact Us </h2>
         <form>
-          <input type='text' placeholder='Your Name' className='name-box' required />
+          <label className='left'> Name </label>
+          <input type='text' placeholder='John Doe' className='name-box' required />
+          <label className='left'> Email </label>
           <input type='email' placeholder='test@test.com' className='email-box' required />
+          <label className='left'> Message </label>
           <textarea className='message-box' placeholder='Write Message Here...'></textarea>
           <input type='submit' className='btn blue' value='Send' />
         </form>
