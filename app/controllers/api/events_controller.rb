@@ -1,5 +1,6 @@
 class Api::EventsController < ApplicationController
   before_action :set_events, except: [:index, :new, :create]
+  skip_before_action :verify_authenticity_token
 
 
   def index
