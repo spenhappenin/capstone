@@ -1,7 +1,7 @@
 export const fetchUserEvents = () => {
   return(dispatch) => {
     $.ajax({
-      url: '/api/userEvents',
+      url: '/api/events',
       type: 'GET',
       dataType: 'JSON'
     }).done( userEvents => {
