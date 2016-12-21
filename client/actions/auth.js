@@ -43,14 +43,12 @@ export const loggedIn = (id, apiKey) => {
 export const handleFacebookLogin = (auth, history) => {
   return(dispatch) => {
     $.ajax({
-      url: '/facebook_login',
+      url: '/api/facebook_login',
       type: 'POST',
       data: { auth },
       dataType: 'JSON'
     }).done( response => {
-      localStorage.setItem('apiKey', response.api_key);
-      localStorage.setItem('userId', response.user.id);
-      dispatch(loggedIn(response.user.id, response.api_key));
+      dispatch(refreshLogin(response.user));
       history.push('/');
     }).fail( response => {  
       dispatch(logout());

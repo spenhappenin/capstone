@@ -1,16 +1,7 @@
-class ThirdPartyAuthController < ApplicationController
+class Api::ThirdPartyAuthController < ApplicationController
 	skip_before_action :verify_authenticity_token
-<<<<<<< HEAD
   skip_before_action :authenticate_user!
-  def facebook
-    # need to implement this inside the users model
-    auth = params[:auth]
-    @user = User.from_third_party_auth('facebook', auth)
-    if @user.persisted?
-      sign_in(@user, event: :authentication)
-      render json: { user: @user, api_key: ENV['FACEBOOK_SECRET'] }
-    else
-
+  
   def facebook
   	# need to implement this inside the users model
   	auth = params[:auth]

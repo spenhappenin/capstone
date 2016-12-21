@@ -6,10 +6,11 @@ Rails.application.routes.draw do
     sessions: 'api/sessions'
   }
 
-  post 'facebook_login', to: 'third_party_auth#facebook'
+  
 
   namespace :api do
     get 'users/info'
+    post 'facebook_login', to: 'third_party_auth#facebook'
   end
 
   get '*unmatched_route', to: 'home#index'
