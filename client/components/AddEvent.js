@@ -34,9 +34,9 @@ class AddEvent extends Component {
       }
     }
     }).done( addEvent =>{
+      debugger;
       console.log(addEvent);
     }).fail( data => {
-      debugger
       console.log(data);
     });
   }
