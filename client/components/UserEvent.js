@@ -7,9 +7,9 @@ class UserEvent extends Component {
     return(
       <div className='container'>
         <div>
-          <div className="col s12 m12">
+          <div className="col s12 m12 event-card">
             <h5 className="header">{ sportEvent.name }</h5>
-            <div className="card event-card horizontal">
+            <div className="card horizontal">
               <div className="card-image">
                 <img src="http://lorempixel.com/100/190/nature/6" />
               </div>
