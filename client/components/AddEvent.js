@@ -11,9 +11,14 @@ class AddEvent extends Component {
     $('select').material_select();
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
-    let { event_name, sport, event_date, event_time, capacity, venue, street_address, event_city, event_state, event_zip, skill_level, event_description } = this.refs;
+    let { event_name, sport, event_date, event_time, capacity, 
+          venue, street_address, event_city, event_state, event_zip, 
+          skill_level, event_description, lat, lng } = this.refs;
+
+    // Ajax call that POSTs data to db
     $.ajax({
       url: '/api/events',
       type: 'POST',
@@ -30,22 +35,24 @@ class AddEvent extends Component {
         state: event_state.value,
         zip: event_zip.value,
         skill_level: skill_level.value,
-        description: event_description.value
+        description: event_description.value,
+        latitude: lat.value,
+        longitude: lng.value
       }
     }
     }).done( addEvent =>{
-      debugger;
       console.log(addEvent);
     }).fail( data => {
       console.log(data);
     });
+
   }
 
   render() {
     return(
       <div className='container center'>
         <h1> Create Event </h1>
-        <form onSubmit={this.handleSubmit}>
+        <form  ref='form' onSubmit={this.handleSubmit}>
 
           <div className='row'>
             <div className='col s6'>
