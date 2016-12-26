@@ -36,8 +36,6 @@ class AddEvent extends Component {
         zip: event_zip.value,
         skill_level: skill_level.value,
         description: event_description.value,
-        latitude: lat.value,
-        longitude: lng.value
       }
     }
     }).done( addEvent =>{
