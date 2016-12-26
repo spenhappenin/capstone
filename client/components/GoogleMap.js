@@ -21,7 +21,7 @@ class GoogleMap extends Component {
           ]);
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
-          handler.getMap().setZoom(18);
+          handler.getMap().setZoom(10);
         });
     }
 

@@ -15,7 +15,7 @@ puts 'Users Seeded!'
 														time: Time.now,
 														capacity: Faker::Number.between(2, 30),
 														venue: Faker::Book.title,
-														street: Faker::Address.street_name,
+														street: Faker::Address.street_address,
 														city: Faker::Address.city,
 														state: Faker::Address.state,
 														zip: Faker::Address.zip,

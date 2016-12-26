@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GoogleMap from './GoogleMap';
 import { connect } from 'react-redux';
 import UserEvent from './UserEvent';
+import UserEventCard from './UserEventCard';
 import { fetchUserEvents } from '../actions/userEvents';
 import { Link } from 'react-router';
 import SearchBar from './SearchBar'
@@ -19,7 +20,7 @@ class UserEvents extends Component {
     let userEvents = this.props.userEvents;
     if(userEvents.length) {
       return userEvents.map( userEvent => {
-        return (<UserEvent key={userEvent.id} userEvent={userEvent} />);
+        return (<UserEventCard key={userEvent.id} userEvent={userEvent} />);
       });
     } else {
       return (<h1> No Events! Go Make One! </h1>);
