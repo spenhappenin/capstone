@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import UserEvent from './UserEvent';
 import { fetchUserEvents } from '../actions/userEvents';
 import { Link } from 'react-router';
+import SearchBar from './SearchBar'
 
 class UserEvents extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class UserEvents extends Component {
       <div>
         <div>
           <GoogleMap />
+          <SearchBar />
         </div>
 
         <div className='row center'>
