@@ -16,6 +16,7 @@ gem 'coffee-script-source', '=1.11.1'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'font-awesome-rails'
+gem 'delayed_job_active_record'
 
 group :development, :test do
   gem 'pry'
@@ -23,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'

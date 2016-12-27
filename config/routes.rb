@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     sessions: 'api/sessions'
   }
 
+  post 'signup/create', to: 'signup#create', as: 'signup'
+  resources :newsletter, only: [:new, :create]
+
   namespace :api do
     get 'users/info'
     resources :user_events

@@ -1,0 +1,6 @@
+<h2> Sign up for a Newsletter! </h2>
+  <%= form_for :user, url: url_for(controller:'signup', action:'create') do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
