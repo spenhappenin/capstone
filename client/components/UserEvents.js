@@ -23,7 +23,7 @@ class UserEvents extends Component {
         return (<UserEventCard key={userEvent.id} userEvent={userEvent} />);
       });
     } else {
-      return (<h1> No Events! Go Make One! </h1>);
+      return (<h1> No Events! Create One! </h1>);
     }
   }
 

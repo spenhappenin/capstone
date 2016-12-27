@@ -61,7 +61,7 @@ class UserEvent extends Component {
                       <i>{ sportEvent.time }</i>
                     </div>
                     <div className='col m4'>
-                      <a href='#show-modal'>Show</a>
+                      <Link to={`userEvents/${sportEvent.id}`}>More Details</Link>
                       
                     </div>
                   </div>

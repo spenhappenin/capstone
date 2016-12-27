@@ -11,3 +11,17 @@ export const fetchUserEvents = () => {
     });
   }
 }
+
+export const singleUserEvent = (id) => {
+  return(dispatch) => {
+    $.ajax({
+      url: `api/events/${id}`,
+      type: 'GET',
+      dataType: 'JSON'
+    }).done( data => {
+      dispatch({ type: 'SHOW_USER_EVENT', data });
+    }).fail( data => {
+      console.log(data);
+    });
+  }
+}
