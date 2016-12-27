@@ -1,0 +1,4 @@
+MAIL_FROM: 'myemail@gmail.com'
+
+GMAIL_USERNAME: 'username'
+GMAIL_PASSWORD: 'password'
