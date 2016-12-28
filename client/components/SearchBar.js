@@ -3,9 +3,10 @@ import React, { Component } from 'react'
 class SearchBar extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      userEvent: ''
-    }
+    this.state = { userEvent: '' }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   handleSearch (e) {
@@ -24,12 +25,11 @@ class SearchBar extends Component {
         <form onSubmit={this.handleSubmit}>
           <input
             type='text'
+            ref='search'
             placeholder='Event Name'
             onChange={this.handleSearch.bind(this)}
             value={this.state.userEvent} />
-          <button className='btn blue' type='submit' onClick={this.handleSubmit}>
-            Search
-          </button>
+          <input type='submit' value='search' placeholder='Search Events' className='btn blue' />
         </form>
       </div>
     )
