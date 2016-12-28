@@ -3,13 +3,55 @@
 @import 'flash';
 @import 'contactUs';
 @import 'signUp';
+@import 'app';
+
+html { 
+  // background: url(http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg) no-repeat center center fixed; 
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+}
+
+.alert {
+  margin-bottom: 20px;
+	padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+}
 
 a.secondary-content {
   cursor: pointer;
 }
 
+nav {
+  background-color: transparent;
+  
+}
+
 .main-image {
-  background-image: url('sports.jpg');
+  background-image: url('http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg');
   background-size: cover;
   background-position: 100%;
   width: 100%;
