@@ -14,10 +14,10 @@ class SearchBar extends Component {
   }
 
   handleSubmit(e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  this.props.dispatch(fetchUserEvents);
-}
+    this.props.dispatch(fetchUserEvents);
+  }
 
   render () {
     return (
