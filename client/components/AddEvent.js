@@ -16,7 +16,7 @@ class AddEvent extends Component {
     e.preventDefault();
     let { event_name, sport, event_date, event_time, capacity, 
           venue, street_address, event_city, event_state, event_zip, 
-          skill_level, event_description, lat, lng } = this.refs;
+          skill_level, event_description } = this.refs;
 
     // Ajax call that POSTs data to db
     $.ajax({

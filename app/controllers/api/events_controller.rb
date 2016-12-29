@@ -13,6 +13,10 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = Event.new(events_params)
+    address = "#{@event.street}, #{@event.city}, #{@event.state}"
+    latlong = Event.getLatLong(address)
+    @event.latitude = latlong[:lat]
+    @event.longitude = latlong[:lng]
     @event.user_id = current_user.id
     if @event.save
       render json: @event

@@ -14,9 +14,9 @@ class GoogleMap extends Component {
               "picture": {
                 "url": "http://icons.iconarchive.com/icons/icons-land/sport/256/Basketball-Ball-icon.png",
                 "width":  32,
-                "height": 32
+                "height": 40
               },
-              "infowindow": "DevPoint Labs Is Awesome!"
+              "infowindow": "Sport Event Info..."
             }
           ]);
           handler.bounds.extendWith(markers);
