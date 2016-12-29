@@ -8,14 +8,17 @@ class AddEvent extends Component {
   }
 
   componentDidMount() {
-    $('select').material_select();
+    $('.datepicker').pickadate({
+      selectMonths: true,
+      selectYears: 200
+    });
   }
 
 
   handleSubmit(e) {
     e.preventDefault();
-    let { event_name, sport, event_date, event_time, capacity, 
-          venue, street_address, event_city, event_state, event_zip, 
+    let { event_name, sport, event_date, event_time, capacity,
+          venue, street_address, event_city, event_state, event_zip,
           skill_level, event_description } = this.refs;
 
     // Ajax call that POSTs data to db
@@ -65,7 +68,7 @@ class AddEvent extends Component {
           <div className='row'>
             <div className='col s6'>
               <label className='left'> Date </label>
-              <input type='date' ref='event_date' required />
+              <input type='date' className='datepicker' ref='event_date' required />
             </div>
             <div className='col s6'>
               <label className='left'> Time </label>

@@ -13,6 +13,7 @@ class SignUp extends React.Component {
       selectMonths: true,
       selectYears: 200
     });
+    $('select').material_select();
   }
 
   handleSubmit(e) {
