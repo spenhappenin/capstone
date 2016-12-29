@@ -9,9 +9,6 @@ class Landing extends Component {
   render() {
     return(
 			<div className="box">
-			  <div className="rows header">
-			  	<NavBar />
-			  </div>
 			  <div className="rows content">
 			    <Picture />
 			  </div>
@@ -23,8 +20,3 @@ class Landing extends Component {
 }
 
 export default Landing;
-
-
-
-
-       

@@ -4,7 +4,6 @@ import { UserAuthWrapper } from 'redux-auth-wrapper';
 import App from './containers/App';
 import Admin from './components/Admin';
 import AuthenticatedRoutes from './components/AuthenticatedRoutes';
-import Dashboard from './components/Dashboard';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import NoMatch from './components/NoMatch';
@@ -37,7 +36,6 @@ export default (
         <Route path='userEvents' component={UserEvents} />
         <Route path='userEvents/:id' component={UserEvent} />
         <Route path='addEvent' component={AddEvent} />
-        <Route path="dashboard" component={Dashboard} />
         <Route component={AdminRoutes}>
           <Route path="/admin" component={Admin} />
           {/* PROTECTED BY ADMIN ACCESS */}

@@ -24,7 +24,7 @@ class SignIn extends React.Component {
       data: user
     }).done( user => {
       this.props.dispatch(refreshLogin(user));
-      this.props.history.push("/dashboard")
+      this.props.history.push("/userEvents")
     }).fail( err => {
       let message = err.responseJSON.error;
       this.props.dispatch(setFlash(message, 'error'))
