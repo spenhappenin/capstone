@@ -23,14 +23,24 @@ nav {
 
 }
 
-.main-image {
-  background-image: url('http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg');
-  background-size: cover;
-  background-position: 100%;
-  width: 100%;
-  height: 500px;
+.parallax-container {
+  height: 570px;
 }
 
-.event-card {
+.sign-up {
+  background-color: #cceeff;
+  height: 400px;
+}
 
+.sign-up-title {
+  font-size: 90px;
+  font-style: italic;
+  color: #012422;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.sign-up-desc {
+  font-size: 30px;
+  color: #0a0045;
 }

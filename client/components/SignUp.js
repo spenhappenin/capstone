@@ -11,7 +11,7 @@ class SignUp extends React.Component {
   componentDidMount() {
     $('.datepicker').pickadate({
       selectMonths: true,
-      selectYears: 150
+      selectYears: 200
     });
   }
 
