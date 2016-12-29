@@ -10,6 +10,10 @@ class Landing extends Component {
     $('.parallax').parallax();
   }
 
+  handleClick() {
+    location.href='/signup';
+  }
+
   render() {
     return(
 			<div className="box">
@@ -39,7 +43,7 @@ class Landing extends Component {
             <div className='col s12'>
               <p className='sign-up-title'> Game On! </p>
               <p className='sign-up-desc'> Find the perfect group of friends for your favorite sport! </p>
-              <button type='button' className='btn green sign-up-btn right'> Sign Up </button>
+              <button type='button' onClick={this.handleClick} className='btn green sign-up-btn right'> Sign Up </button>
             </div>
           </div>
           <div className='parallax-container'>
