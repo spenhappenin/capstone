@@ -19,7 +19,7 @@ class Landing extends Component {
         <div className="parallax-container">
           <div className="parallax"> <img src="sports_lineup.jpg" /> </div>
         </div>
-        <div className='row what-is-go'>
+        <div className='what-is-go'>
             <div className='col s12'>
               <p className='sign-up-title'>What is GO?</p>
               <p className='sign-up-desc'>Find people to play sports with</p>
@@ -31,9 +31,9 @@ class Landing extends Component {
           <div className='parallax'> <img src='http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg' /> </div>
         </div>
 			  <About />
-        <div className='parallax-container'>
-          <div className='parallax'> <img src='http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg' /> </div>
-        </div>
+          <div className='parallax-container'>
+            <div className='parallax'> <img src='http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg' /> </div>
+          </div>
         <div className='sign-up'>
           <div className='row'>
             <div className='col s12'>

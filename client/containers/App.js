@@ -65,7 +65,7 @@ class App extends React.Component {
               {this.navs()}
             </ul>
             <ul className="side-nav" id="mobile">
-            <i class="material-icons">polymer</i>
+            <i className="material-icons">polymer</i>
               {this.navs()}
             </ul>
           </div>
