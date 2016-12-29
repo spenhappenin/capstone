@@ -15,8 +15,8 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.text :description
       t.boolean :attending
       t.boolean :active
-      t.string :latitude
-      t.string :longitude
+      t.float :latitude
+      t.float :longitude
       t.belongs_to :user
 
       t.timestamps
