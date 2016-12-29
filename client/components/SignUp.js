@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { refreshLogin } from '../actions/auth';
+import { setFlash } from '../actions/flash';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -40,6 +41,12 @@ class SignUp extends React.Component {
       this.props.dispatch(refreshLogin(user));
       this.props.history.push('/userEvents');
     }).fail( err => {
+      let message = JSON.parse(err.responseText);
+      let error = '';
+      Object.keys(message.errors).forEach(function(key) {
+        error += `${key} ${message.errors[key][0]}. `;
+      });
+      this.props.dispatch(setFlash(error, 'error'));
     });
   }
 
