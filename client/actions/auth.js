@@ -30,3 +30,28 @@ export const logout = (router) => {
 const setUser = (user = {}) => {
   return { type: 'USER', ...user }
 }
+
+export const loggedIn = (id, apiKey) => {
+  return {
+    type: 'LOGIN',
+    id,
+    apikey
+  }
+}
+
+export const handleFacebookLogin = (auth, history) => {
+  return(dispatch) => {
+    $.ajax({
+      url: '/api/facebook_login',
+      type: 'POST',
+      data: { auth },
+      dataType: 'JSON' 
+    }).done( response => {
+      dispatch(refreshLogin(response.user));
+      history.push('/');
+    }).fail( response => {
+      debugger;
+      dispatch(logout());
+    })
+  }
+}

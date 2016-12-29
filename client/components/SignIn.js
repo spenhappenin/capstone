@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { refreshLogin } from '../actions/auth';
+import { refreshLogin, handleFacebookLogin } from '../actions/auth';
 import { setFlash } from '../actions/flash';
+import FacebookLogin from 'react-facebook-login';
 
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.responseFacebook = this.responseFacebook.bind(this);
   }
 
   handleSubmit(e) {
@@ -31,6 +33,10 @@ class SignIn extends React.Component {
     });
   }
 
+  responseFacebook = (auth) => {
+    this.props.dispatch(handleFacebookLogin(auth, this.props.history))
+  }
+
   render() {
     return (
       <div className='container center'>
@@ -50,6 +56,14 @@ class SignIn extends React.Component {
           </div>
           <button className="btn blue">GameOn</button>
         </form>
+        <br />
+        <FacebookLogin 
+          appId = '1653601048266232'
+          autoLoad = { false }
+          fields = 'name, email' 
+          className = 'facebook-button'         
+          icon = 'fa-facebook'
+          callback = { this.responseFacebook } />
       </div>
     )
   }

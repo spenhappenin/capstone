@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'users/info'
+    post 'facebook_login', to: 'third_party_auth#facebook'
     resources :user_events
     resources :events
   end
