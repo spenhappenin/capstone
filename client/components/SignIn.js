@@ -34,7 +34,9 @@ class SignIn extends React.Component {
   }
 
   responseFacebook = (auth) => {
+    // debugger;
     this.props.dispatch(handleFacebookLogin(auth, this.props.history))
+    // debugger;
   }
 
   render() {

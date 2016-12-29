@@ -6,7 +6,8 @@ class Api::ThirdPartyAuthController < ApplicationController
   	auth = params[:auth]
   	@user = User.from_third_party_auth('facebook', auth)
 
-  	if @user.persisted?
+
+    if @user.persisted?
   		sign_in(@user, event: :authentication)
   		render json: @user
   	else
