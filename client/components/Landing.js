@@ -6,14 +6,35 @@ import NavBar from './NavBar';
 
 class Landing extends Component {
 
+  componentDidMount() {
+    $('.parallax').parallax();
+  }
+
   render() {
     return(
 			<div className="box">
 			  <div className="rows content">
 			    <Picture />
 			  </div>
+        <div className="parallax-container">
+          <div className="parallax"> <img src="sports_lineup.jpg" /> </div>
+        </div>
 			    <About />
-        	<Contact />
+        <div className='parallax-container'>
+          <div className='parallax'> <img src='http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg' /> </div>
+        </div>
+        <div className='sign-up'>
+          <div className='row'>
+            <div className='col s12'>
+              <p className='sign-up-title'> Game On! </p>
+              <p className='sign-up-desc'> Find the perfect group of friends for your favorite sport! </p>
+              <button type='button' className='btn green sign-up-btn right'> Sign Up </button>
+            </div>
+          </div>
+          <div className='parallax-container'>
+            <div className='parallax'> <img src='soccer_field.jpg' /> </div>
+          </div>
+        </div>
 			</div>
     );
   }
