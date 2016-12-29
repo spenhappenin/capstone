@@ -45,12 +45,11 @@ export const handleFacebookLogin = (auth, history) => {
       url: '/api/facebook_login',
       type: 'POST',
       data: { auth },
-      dataType: 'JSON' 
+      dataType: 'JSON'
     }).done( response => {
       dispatch(refreshLogin(response.user));
       history.push('/');
     }).fail( response => {
-      debugger;
       dispatch(logout());
     })
   }

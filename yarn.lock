@@ -3417,6 +3417,10 @@ react-dom@^15.1.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-facebook-login@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/react-facebook-login/-/react-facebook-login-3.4.2.tgz#52c026ea65c5b36d85536c916cd8d9f4d9978745"
+
 react-redux@^4.4.5:
   version "4.4.6"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-4.4.6.tgz#4b9d32985307a11096a2dd61561980044fcc6209"
