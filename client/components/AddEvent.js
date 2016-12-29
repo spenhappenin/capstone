@@ -10,8 +10,9 @@ class AddEvent extends Component {
   componentDidMount() {
     $('.datepicker').pickadate({
       selectMonths: true,
-      selectYears: 200
+      selectYears: 2
     });
+    $('select').material_select();
   }
 
 
@@ -164,9 +165,9 @@ class AddEvent extends Component {
             </div>
 
             <div className='row'>
-              <div className='col s6'>
-                <label className='left'> Skill Level </label>
-                <select ref='skill_level' value="" required>
+              <div className='col s8 offset-s2'>
+                <label className='center'> Skill Level </label>
+                <select ref='skill_level' className='placeholder' value="" required>
                   <option value="" disabled> </option>
                   <option value='Open'> Open </option>
                   <option value='AA'> AA </option>
@@ -180,7 +181,7 @@ class AddEvent extends Component {
               <div className='row'>
                 <div className='col s12'>
                   <label className='left'> Description </label>
-                  <textarea placeholder='Write Description Here' ref='event_description'></textarea>
+                  <textarea placeholder='Write Description Here...' ref='event_description'></textarea>
                 </div>
               </div>
 
