@@ -12,7 +12,7 @@ class GoogleMap extends Component {
               "lat": 40.7609915,
               "lng": -111.88287990000003,
               "picture": {
-                "url": "http://icons.iconarchive.com/icons/icons-land/sport/256/Basketball-Ball-icon.png",
+                "url": "http://static-cdn.jobisjob.com/img/maps/marker-icon.png",
                 "width":  32,
                 "height": 40
               },
