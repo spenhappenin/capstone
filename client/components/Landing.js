@@ -32,7 +32,7 @@ class Landing extends Component {
         </div>
 			  <About />
           <div className='parallax-container'>
-            <div className='parallax'> <img src='http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg' /> </div>
+            <div className='parallax'> <img src='hiking.jpg' /> </div>
           </div>
         <div className='sign-up'>
           <div className='row'>
