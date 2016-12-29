@@ -55,9 +55,9 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <nav className='purple darken-4'>
+        <nav className='nav-bar'>
           <div className='nav-wrapper'>
-            <Link to='/' className='main-logo'>My Logo</Link>
+          <Link to='/' className='main-logo'>Capstone</Link>
             <a href='#' data-activates='mobile' className='button-collapse'>
               <i className='fa fa-bars'></i>
             </a>
@@ -65,6 +65,7 @@ class App extends React.Component {
               {this.navs()}
             </ul>
             <ul className="side-nav" id="mobile">
+            <i class="material-icons">polymer</i>
               {this.navs()}
             </ul>
           </div>
