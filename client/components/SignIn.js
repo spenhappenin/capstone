@@ -8,7 +8,6 @@ class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.responseFacebook = this.responseFacebook.bind(this);
   }
 
   handleSubmit(e) {
@@ -34,9 +33,7 @@ class SignIn extends React.Component {
   }
 
   responseFacebook = (auth) => {
-    // debugger;
     this.props.dispatch(handleFacebookLogin(auth, this.props.history))
-    // debugger;
   }
 
   render() {
@@ -59,11 +56,11 @@ class SignIn extends React.Component {
           <button className="btn blue">GameOn</button>
         </form>
         <br />
-        <FacebookLogin 
+        <FacebookLogin
           appId = '1653601048266232'
           autoLoad = { false }
-          fields = 'name, email' 
-          className = 'facebook-button'         
+          fields = 'name, email'
+          className = 'facebook-button'
           icon = 'fa-facebook'
           callback = { this.responseFacebook } />
       </div>
