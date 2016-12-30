@@ -11,6 +11,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :reliability
       t.string :favorite
       t.string :availability
+      t.string :provider
+      t.string :uid 
 
       t.timestamps
     end
