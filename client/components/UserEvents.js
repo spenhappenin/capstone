@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMap from './GoogleMap';
 import { connect } from 'react-redux';
-import UserEvent from './UserEvent';
 import UserEventCard from './UserEventCard';
 import { fetchUserEvents } from '../actions/userEvents';
 import { Link } from 'react-router';

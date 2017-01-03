@@ -32,11 +32,11 @@ class Landing extends Component {
             </div>
         </div>
         <div className='parallax-container'>
-          <div className='parallax'> <img src='http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg' /> </div>
+          <div className='parallax'> <img src='basketball-background.jpg' /> </div>
         </div>
 			  <About />
           <div className='parallax-container'>
-            <div className='parallax'> <img src='hiking.jpg' /> </div>
+            <div className='parallax'> <img src='kickball-background.jpg' /> </div>
           </div>
         <div className='sign-up'>
           <div className='row'>
@@ -47,7 +47,7 @@ class Landing extends Component {
             </div>
           </div>
           <div className='parallax-container'>
-            <div className='parallax'> <img src='soccer_field.jpg' /> </div>
+            <div className='parallax'> <img src='volleyball-background.jpg' /> </div>
           </div>
         </div>
 			</div>

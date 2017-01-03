@@ -1,11 +1,9 @@
 @import 'materialize';
 @import 'font-awesome';
 @import 'flash';
-@import 'contactUs';
 @import 'signUp';
 @import 'app';
 @import 'about';
-
 
 html {
   // background: url(http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg) no-repeat center center fixed;
@@ -77,4 +75,14 @@ nav {
 
 .kep-login-facebook.metro {
   border-radius: 3px !important;
+}
+
+.sport-image {
+  padding-top: 15px;
+}
+
+.comment-btn {
+  height: 30px;
+  width: auto;
+  text-align: center;
 }
