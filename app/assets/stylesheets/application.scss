@@ -5,6 +5,10 @@
 @import 'app';
 @import 'about';
 
+* {
+  // border: 1px solid red;
+}
+
 html {
   // background: url(http://www.liquidnetworx.com/files/2014/10/outside-basketball.jpg) no-repeat center center fixed;
   // -webkit-background-size: cover;
@@ -96,6 +100,7 @@ nav {
 }
 
 .event-list {
+  // height: 100vp;
   height: 575px;
   overflow-y: scroll;
 }
