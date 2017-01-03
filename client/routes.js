@@ -33,6 +33,7 @@ export default (
       <Route path="signin" component={SignIn} />
       <Route component={AuthenticatedRoutes}>
         <Route path='userEvents' component={UserEvents} />
+        <Route path='userEventCard' component={UserEventCard} />
         <Route path='addEvent' component={AddEvent} />
         <Route component={AdminRoutes}>
           <Route path="/admin" component={Admin} />
