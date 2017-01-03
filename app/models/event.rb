@@ -16,10 +16,4 @@ class Event < ApplicationRecord
 		{lat: data.latitude, lng: data.longitude}
 	end
 
-	def self.time_format(time)
-
-	end
-
-	def self.date_format(date)
-
 end

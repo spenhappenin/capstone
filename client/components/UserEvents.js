@@ -27,12 +27,13 @@ class UserEvents extends Component {
   }
 
   render() {
+  
     return(
       <div>
 
         <div className='row something'>
           <div className='col s7'>
-            <GoogleMap />
+            <GoogleMap userEvents={ this.props.userEvents } />
           </div>
 
           <div className='col s5 event-list'>
