@@ -104,9 +104,14 @@ nav {
   height: 50px;
 }
 
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
-
-
-
-
-
+.social-icons {
+  margin-left: 10px;
+  margin-right: 10px;
+}

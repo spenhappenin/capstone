@@ -16,6 +16,11 @@ class About extends Component {
               <div className='alex z-depth-5'> </div>
               <hr />
               <p className='center'><em> Asian Samaurai </em> </p>
+              <div className='social-media'>
+                <a href='https://github.com/AlexRomney' target='_blank'><img className='social-icons' style={{height: '55px', width: '55px'}} src='http://res.cloudinary.com/omash612/image/upload/v1483476650/daftpunkcat2_wj6cy9.gif' /></a>
+                <a href='https://www.linkedin.com/in/alex-romney' target='_blank'><img className='social-icons' style={{height: '40px', width: '40px', marginTop: '6px'}} src='http://res.cloudinary.com/omash612/image/upload/v1483478100/linkedinlogo_sjckc6.png' /> </a>
+                <a href='mailto:alexromney1215@gmail.com'><img className='social-icons' src="http://res.cloudinary.com/omash612/image/upload/v1483478773/gmailLogo_as7oja.png" style={{ height: '40px', width: '40px', marginTop: '6px'}}></img></a>
+              </div>
             </div>
             <div className='col s3'>
               <div className='william z-depth-5'> </div>

@@ -18,7 +18,7 @@ class UserEventCard extends Component {
         <ul className="collapsible" data-collapsible="accordion" >
           <li>
             <div className='col s3 sport-image-container'>
-              <img className='responsive-img sport-image' src='basketball.jpg' alt='Basketball Icon' />
+              <img className='responsive-img sport-image' src='http://res.cloudinary.com/omash612/image/upload/v1483467364/basketball_wssdhp.jpg' alt='Basketball Icon' />
             </div>
             <div>
               <h5>{ sportEvent.name }</h5>
@@ -27,7 +27,7 @@ class UserEventCard extends Component {
               <em>{ sportEvent.street }</em>
             </div>
             <div>
-              <em>{ sportEvent.city }</em>
+              <em>{ sportEvent.city }, { sportEvent.state }</em>
             </div>
             <div>
               <em>{ sportEvent.zip }</em>
@@ -36,7 +36,7 @@ class UserEventCard extends Component {
               <a href='#' className='right' onClick={this.handleClick}> Show More </a>
             </div>
 
-            <div className="collapsible-body">
+            <div className="collapsible-body" style={{ padding: '10px' }}>
               <div>
                 Skill Level: <i>{ sportEvent.skill_level }</i>
               </div>
