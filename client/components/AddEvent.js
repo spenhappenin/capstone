@@ -41,8 +41,9 @@ class AddEvent extends Component {
         description: event_description.value,
       }
     }
-    }).done( addEvent =>{
-      console.log(addEvent);
+    }).done( addEvent => {
+      console.log("");
+      this.props.history.push("/userEvents");
     }).fail( data => {
       console.log(data);
     });

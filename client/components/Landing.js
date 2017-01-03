@@ -21,23 +21,19 @@ class Landing extends Component {
 			    <Picture />
 			  </div>
         <div className="parallax-container">
-          <div className="parallax"> <img src="sports_lineup.jpg" /> </div>
+          <div className="parallax"> <img src="http://res.cloudinary.com/omash612/image/upload/v1483467364/sports_lineup_votgbv.jpg" /> </div>
         </div>
         <div className='what-is-go'>
-            <div className='col s12'>
-              <p className='sign-up-title white-text'>What is GO?</p>
-              <p className='sign-up-desc white-text'>Find people to play sports with</p>
-              <p className='sign-up-desc white-text'>Create your own events and bring people together!</p>
-              <p className='sign-up-desc white-text'>Find people to play sports with</p>
-            </div>
+          <div className='col s12'>
+            <p className='sign-up-title white-text'>What is GO?</p>
+            <p className='sign-up-desc white-text'>Find people to play sports with</p>
+            <p className='sign-up-desc white-text'>Create your own events and bring people together!</p>
+            <p className='sign-up-desc white-text'>Find people to play sports with</p>
+          </div>
         </div>
         <div className='parallax-container'>
-          <div className='parallax'> <img src='basketball-background.jpg' /> </div>
+          <div className='parallax'> <img src='http://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483472712/hdBasketballCourt_b8cm4f.jpg' /> </div>
         </div>
-			  <About />
-          <div className='parallax-container'>
-            <div className='parallax'> <img src='kickball-background.jpg' /> </div>
-          </div>
         <div className='sign-up'>
           <div className='row'>
             <div className='col s12'>
@@ -47,8 +43,13 @@ class Landing extends Component {
             </div>
           </div>
           <div className='parallax-container'>
-            <div className='parallax'> <img src='volleyball-background.jpg' /> </div>
+            <div className='parallax'> <img src='http://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483475858/hdSoccerStadium_ipmprx.jpg' /> </div>
           </div>
+          <div className='sign-up'> </div>
+          <div className='parallax-container'>
+            <div className='parallax'> <img src='http://res.cloudinary.com/omash612/image/upload/v1483467364/volleyball-background_h5pwkx.jpg' /> </div>
+          </div>
+          <About />
         </div>
 			</div>
     );
