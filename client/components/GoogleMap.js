@@ -27,7 +27,7 @@ class GoogleMap extends Component {
 
     render() {
       return(
-        <div className='container'>
+        <div>
           <div style={styles.mapContainer}>
             <div id="map" style={styles.map}></div>
           </div>
@@ -42,7 +42,7 @@ const styles = {
   },
   map: {
     width: '100%',
-    height: '400px'
+    height: '800px'
   }
 }
 

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-// "http://lorempixel.com/100/190/nature/6"
-
 class UserEvent extends Component {
+
+  componentDidMount() {
+    $('.collapsible').collapsible();
+  }
 
   render() {
     let sportEvent = this.props.userEvent;
     return(
-      <div className='container'>
+      <div>
         <div>
           <div className="col s12 m12 event-card">
             <div className="card horizontal">
@@ -16,56 +18,52 @@ class UserEvent extends Component {
                 <img src="" />
               </div>
               <div className="card-stacked">
-            <h5 className="header">{ sportEvent.name }</h5>
+                <h5 className="header">{ sportEvent.name }</h5>
                 <div className="card-content">
 
                   <div className='row'>
                     <div className='col m4'>
                       <i>{ sportEvent.sport }</i>
-                    </div>  
+                    </div>
                     <div className='col m4'>
                       <i>{ sportEvent.skill_level }</i>
                     </div>
                     <div className='col m4'>
                       <i>0.2 miles </i>
-                    </div>  
-                      <div>
-                      </div> 
+                    </div>
+                      <div></div>
                   </div>
 
                   <div className='row'>
                     <div className='col m4'>
                       <i>{ sportEvent.street }</i>
-                    </div>  
+                    </div>
                     <div className='col m4'>
                       <i>{ sportEvent.city }</i>
                     </div>
                     <div className='col m4'>
                       <i>{ sportEvent.zip }</i>
-                    </div>  
-                      <div>
-                      </div> 
+                    </div>
+                      <div></div>
                   </div>
 
                   <div className='row'>
                     <div className='col <m12></m12>'>
                       <p>{ sportEvent.description }</p>
-                    </div>  
+                    </div>
                   </div>
 
                   <div className='row'>
                     <div className='col m4'>
                       <i>{ sportEvent.date }</i>
-                    </div>  
+                    </div>
                     <div className='col m4'>
                       <i>{ sportEvent.time }</i>
                     </div>
                     <div className='col m4'>
                       <Link to={`userEvents/${sportEvent.id}`}>More Details</Link>
-                      
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
