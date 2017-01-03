@@ -4,7 +4,12 @@ import { Link } from 'react-router';
 import { logout } from '../actions/auth';
 import Flash from '../components/Flash';
 
+let IntlMixin       = ReactIntl.IntlMixin;
+let FormattedRelative = ReactIntl.FormattedRelative;
+
 class App extends React.Component {
+  mixins: [IntlMixin]
+
   constructor(props) {
     super(props);
     this.navs = this.navs.bind(this);
