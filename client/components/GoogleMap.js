@@ -2,38 +2,96 @@ import React, { Component } from 'react';
 import AddEvent from './AddEvent';
 
 class GoogleMap extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.handler = Gmaps.build('Google');
+    this.clickDebugger = this.clickDebugger.bind(this);
+    this.panToMarker = this.panToMarker.bind(this);
+    this.attachMarkers = this.attachMarkers.bind(this);
+  }
+
+  clickDebugger() {
+    this.panToMarker(0);
+  }
+
+  panToMarker(idx) {
+    let marker = window.markers[idx];
+    marker.setMap(this.handler.getMap());
+    marker.panTo();
+    this.handler.getMap().setZoom(13);
+    google.maps.event.trigger(marker.getServiceObject(), 'click');
+  }
 
   componentDidMount() {
-        let handler = Gmaps.build('Google');
-        let markers;
-        handler.buildMap({ provider: { }, internal: {id: 'map'}}, () => {
-          markers = handler.addMarkers([
-            {
-              "lat": 40.7609915,
-              "lng": -111.88287990000003,
-              "picture": {
-                "url": "http://static-cdn.jobisjob.com/img/maps/marker-icon.png",
-                "width":  32,
-                "height": 40
-              },
-              "infowindow": "Sport Event Info..."
-            }
-          ]);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          handler.getMap().setZoom(10);
-        });
-    }
+    let handler = this.handler
+    let markers;
+    let markerData = this.buildMarkers(this.props.userEvents || []);
 
-    render() {
+    handler.buildMap({ provider: { }, internal: {id: 'map'}}, () => {
+      markers = handler.addMarkers(markerData);
+      this.attachMarkers(markers, markerData);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(10);
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    let handler = this.handler;
+    let markers;
+    let markerData = this.buildMarkers(nextProps.userEvents);
+    // debugger;
+
+    handler.buildMap({ provider: { }, internal: {id: 'map'}}, () => {
+      markers = handler.addMarkers(markerData);
+      this.attachMarkers(markers, markerData);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(10);
+    });
+  }
+
+  attachMarkers(markers, markerData) {
+    window.markerData = markerData;
+    window.markers = markers;
+    markers.map( (marker, i) => {
+      let cardId = `#userEvent-${window.markerData[i].id}`;
+      let card = $(cardId);
+      card.click(() => this.panToMarker(i));
+      // card.click(() => console.log('hit'));
+    })
+  }
+
+  buildMarkers(events) {
+    let m = events.map( e => {
       return(
-        <div>
-          <div style={styles.mapContainer}>
-            <div id="map" style={styles.map}></div>
-          </div>
+        {
+          id: e.id,
+          "lat": e.latitude,
+          "lng": e.longitude,
+          "picture": {
+            "url": "http://static-cdn.jobisjob.com/img/maps/marker-icon.png",
+            "width":  32,
+            "height": 40
+          },
+          "infowindow": e.description
+        }
+      )
+    }) 
+    return(m)
+  } 
+
+  render() {
+    return(
+      <div>
+      <p onClick={ this.clickDebugger }>Debug</p>
+        <div style={styles.mapContainer}>
+          <div id="map" style={styles.map}></div>
         </div>
-      );
-    }
+      </div>
+    );
+  }
 }
 
 const styles = {

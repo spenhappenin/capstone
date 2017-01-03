@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { editUserEventCard, deleteUserEventCard } from '../actions/userEvents';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+// import * as moment from 'moment';
+import moment from 'moment';
 
 class UserEventCard extends Component {
   constructor(props) {
@@ -29,15 +31,20 @@ class UserEventCard extends Component {
 
   render() {
     let sportEvent = this.props.userEvent;
+
+    let dateFormat = moment(sportEvent.date ).format('MMMM Do YYYY');
+    let timeFormat = moment(sportEvent.time, 'YYYY MM DD hh:mm:ss z' ).format('h:mm a');
+
+    let id = `userEvent-${this.props.userEvent.id}`
     return(
-      <div >
+      <div>
         <ul className="collapsible" data-collapsible="accordion" >
           <li>
             <div className='col s3 sport-image-container'>
               <img className='responsive-img sport-image' src='http://res.cloudinary.com/omash612/image/upload/v1483467364/basketball_wssdhp.jpg' alt='Basketball Icon' />
             </div>
             <div>
-              <h5>{ sportEvent.name }</h5>
+              <h5 id={id}>{ sportEvent.name }</h5>
             </div>
             <div>
               <em>{ sportEvent.street }</em>
@@ -62,10 +69,10 @@ class UserEventCard extends Component {
               </div>
               <br />
               <div>
-                Date: <i>{ sportEvent.date }</i>
+                Date: <i>{ dateFormat }</i>
               </div>
               <div>
-                Time: <i>{ sportEvent.time }</i>
+                Time: <i>{ timeFormat }</i>
               </div>
               <div>
                 <textarea placeholder="comment..."></textarea>
