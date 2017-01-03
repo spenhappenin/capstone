@@ -13,7 +13,6 @@ import About from './components/About';
 import Contact from './components/Contact';
 import UserEvents from './components/UserEvents';
 import UserEventCard from './components/UserEventCard';
-import UserEvent from './components/UserEvent';
 import AddEvent from './components/AddEvent';
 
 const AdminAccess = UserAuthWrapper({
@@ -34,7 +33,6 @@ export default (
       <Route path="signin" component={SignIn} />
       <Route component={AuthenticatedRoutes}>
         <Route path='userEvents' component={UserEvents} />
-        <Route path='userEvents/:id' component={UserEvent} />
         <Route path='addEvent' component={AddEvent} />
         <Route component={AdminRoutes}>
           <Route path="/admin" component={Admin} />

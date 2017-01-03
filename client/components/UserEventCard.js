@@ -1,76 +1,66 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-// "http://lorempixel.com/100/190/nature/6"
+class UserEventCard extends Component {
 
-class UserEvent extends Component {
+  componentDidMount() {
+    $('.collapsible').collapsible();
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+  }
 
   render() {
     let sportEvent = this.props.userEvent;
     return(
-      <div className='container'>
-        <div>
-          <div className="col s12 m12 event-card">
-            <div className="card horizontal">
-              <div className="card-image">
-                <img src="" />
-              </div>
-              <div className="card-stacked">
-            <h5 className="header">{ sportEvent.name }</h5>
-                <div className="card-content">
-
-                  <div className='row'>
-                    <div className='col m4'>
-                      <i>{ sportEvent.sport }</i>
-                    </div>  
-                    <div className='col m4'>
-                      <i>{ sportEvent.skill_level }</i>
-                    </div>
-                    <div className='col m4'>
-                      <i>0.2 miles </i>
-                    </div>  
-                      <div>
-                      </div> 
-                  </div>
-
-                  <div className='row'>
-                    <div className='col m4'>
-                      <i>{ sportEvent.street }</i>
-                    </div>  
-                    <div className='col m4'>
-                      <i>{ sportEvent.city }</i>
-                    </div>
-                    <div className='col m4'>
-                      <i>{ sportEvent.zip }</i>
-                    </div>  
-                      <div>
-                      </div> 
-                  </div>
-
-                  <div className='row'>
-                    <div className='col <m12></m12>'>
-                      <p>{ sportEvent.description }</p>
-                    </div>  
-                  </div>
-
-                  <div className='row'>
-                    <div className='col m4'>
-                      <i>{ sportEvent.date }</i>
-                    </div>  
-                    <div className='col m4'>
-                      <i>{ sportEvent.time }</i>
-                    </div>
-                    <div className='col m4'>
-                      <Link to={`userEvents/${sportEvent.id}`}>More Details</Link>
-                      
-                    </div>
-                  </div>
-
-                </div>
-              </div>
+      <div>
+        <ul className="collapsible" data-collapsible="accordion">
+          <li>
+            <div className='col s3'>
+              <img className='responsive-img sport-image' src='basketball.jpg' alt='Basketball Icon' />
             </div>
-          </div>
-        </div>
+            <div>
+              <h5>{ sportEvent.name }</h5>
+            </div>
+            <div>
+              <em>{ sportEvent.street }</em>
+            </div>
+            <div>
+              <em>{ sportEvent.city }</em>
+            </div>
+            <div>
+              <em>{ sportEvent.zip }</em>
+            </div>
+            <div className="collapsible-header">
+              <a href='#' className='right' onClick={this.handleClick}> Show More </a>
+            </div>
+
+            <div className="collapsible-body">
+              <div>
+                Skill Level: <i>{ sportEvent.skill_level }</i>
+              </div>
+              <br />
+              <div>
+                Description: { sportEvent.description }
+              </div>
+              <br />
+              <div>
+                Date: <i>{ sportEvent.date }</i>
+              </div>
+              <div>
+                Time: <i>{ sportEvent.time }</i>
+              </div>
+              <div>
+                <textarea placeholder="comment..."></textarea>
+              </div>
+              <div>
+                <button type='button' className='btn green comment-btn'>Submit</button>
+              </div>
+
+            </div>
+          </li>
+        </ul>
       </div>
     );
   }
@@ -78,4 +68,4 @@ class UserEvent extends Component {
 
 
 
-export default UserEvent;
+export default UserEventCard;

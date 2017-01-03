@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMap from './GoogleMap';
 import { connect } from 'react-redux';
-import UserEvent from './UserEvent';
 import UserEventCard from './UserEventCard';
 import { fetchUserEvents } from '../actions/userEvents';
 import { Link } from 'react-router';
@@ -30,18 +29,16 @@ class UserEvents extends Component {
   render() {
     return(
       <div>
-        <div>
-          <GoogleMap />
-          <SearchBar />
-        </div>
-
-        <div className='row center'>
-          <h1> Events </h1>
-          <Link to={'/addEvent'} className='btn blue'> Create Event </Link>
-        </div>
 
         <div className='row'>
-          <div className='col s12'>
+          <div className='col s7'>
+            <GoogleMap />
+            <SearchBar />
+          </div>
+
+          <div className='col s5'>
+            <h1 className='center'> Sports Events </h1>
+            <Link to={'/addEvent'} className='btn blue'> Create Event </Link>
             {this.displayEvents()}
           </div>
         </div>

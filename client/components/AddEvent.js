@@ -22,7 +22,6 @@ class AddEvent extends Component {
           venue, street_address, event_city, event_state, event_zip,
           skill_level, event_description } = this.refs;
 
-    // Ajax call that POSTs data to db
     $.ajax({
       url: '/api/events',
       type: 'POST',
