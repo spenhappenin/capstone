@@ -30,7 +30,7 @@ class UserEvents extends Component {
     return(
       <div>
 
-        <div className='row'>
+        <div className='row something'>
           <div className='col s7'>
             <GoogleMap />
           </div>

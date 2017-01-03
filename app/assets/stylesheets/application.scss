@@ -16,6 +16,10 @@ html {
   font-family: 'Arimo', sans-serif;
  }
 
+ html, body {
+  height: 100%;
+ }
+
 .main-logo {
   margin-left: 30px;
   font-size: 30px;
@@ -93,7 +97,7 @@ nav {
 
 .event-list {
   height: 575px;
-  overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 .icon-logo {
