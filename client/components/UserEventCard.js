@@ -74,11 +74,18 @@ class UserEventCard extends Component {
               <div>
                 Time: <i>{ timeFormat }</i>
               </div>
+              <br />
+              <div>
+                Location: <i>{ sportEvent.venue }</i>
+              </div>
+              <div>
+                Capacity: <i>{ sportEvent.capacity }</i>
+              </div>
               <div>
                 <textarea placeholder="comment..."></textarea>
               </div>
               <div>
-                <button type='button' className='btn green comment-btn'>Submit</button>    
+                <button type='button' className='btn green comment-btn'>Submit</button>
                 <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'>Delete</button>
                 <button type='button' onClick={this.toggleEdit} className='btn orange comment-btn right'>Edit</button>
               </div>
