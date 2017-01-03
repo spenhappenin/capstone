@@ -6,13 +6,8 @@ class GoogleMap extends Component {
     super(props);
     
     this.handler = Gmaps.build('Google');
-    this.clickDebugger = this.clickDebugger.bind(this);
     this.panToMarker = this.panToMarker.bind(this);
     this.attachMarkers = this.attachMarkers.bind(this);
-  }
-
-  clickDebugger() {
-    this.panToMarker(0);
   }
 
   panToMarker(idx) {
@@ -85,7 +80,6 @@ class GoogleMap extends Component {
   render() {
     return(
       <div>
-      <p onClick={ this.clickDebugger }>Debug</p>
         <div style={styles.mapContainer}>
           <div id="map" style={styles.map}></div>
         </div>
@@ -101,6 +95,7 @@ const styles = {
   map: {
     width: '100%',
     height: '575px'
+    // height: '100vp'
   }
 }
 

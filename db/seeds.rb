@@ -19,7 +19,7 @@
 										state: 'Utah',
 										zip: 84105,
 										latitude: 40.7455,
-										longitude: 111.8740,
+										longitude: -111.8740,
 										skill_level: 'Everyone',
 										description: 'Come play football at Liberty Park. Bring whoever you want, we are wanting at least 30 people though. It will be a blast!')
 
@@ -45,7 +45,7 @@
 										state: 'Utah',
 										zip: 84106,
 										latitude: 40.7209,
-										longitude: 111.8563,
+										longitude: -111.8563,
 										skill_level: 'Everyone',
 										description: 'Dont let the name fool you. Everyone is invited to come play some ball. If we can get enough people we will have a little tourny. Bring any equipment if you have any.')
 
