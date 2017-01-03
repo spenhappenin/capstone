@@ -33,10 +33,9 @@ class UserEvents extends Component {
         <div className='row'>
           <div className='col s7'>
             <GoogleMap />
-            <SearchBar />
           </div>
 
-          <div className='col s5'>
+          <div className='col s5 event-list'>
             <h1 className='center'> Sports Events </h1>
             <Link to={'/addEvent'} className='btn blue'> Create Event </Link>
             {this.displayEvents()}

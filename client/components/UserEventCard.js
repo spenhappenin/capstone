@@ -14,10 +14,10 @@ class UserEventCard extends Component {
   render() {
     let sportEvent = this.props.userEvent;
     return(
-      <div>
-        <ul className="collapsible" data-collapsible="accordion">
+      <div >
+        <ul className="collapsible" data-collapsible="accordion" >
           <li>
-            <div className='col s3'>
+            <div className='col s3 sport-image-container'>
               <img className='responsive-img sport-image' src='basketball.jpg' alt='Basketball Icon' />
             </div>
             <div>

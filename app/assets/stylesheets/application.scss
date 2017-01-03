@@ -81,8 +81,32 @@ nav {
   padding-top: 15px;
 }
 
+.sport-image-container {
+
+}
+
 .comment-btn {
   height: 30px;
   width: auto;
   text-align: center;
 }
+
+.event-list {
+  height: 575px;
+  overflow-x: scroll;
+}
+
+.icon-logo {
+  background-image: url('logo.jpg');
+  background-size: contain;
+  background-position: 100% 100%;
+  width: 50px;
+  height: 50px;
+}
+
+
+
+
+
+
+

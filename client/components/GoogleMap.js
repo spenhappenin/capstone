@@ -42,7 +42,7 @@ const styles = {
   },
   map: {
     width: '100%',
-    height: '800px'
+    height: '575px'
   }
 }
 
