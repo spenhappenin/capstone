@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
+import { editUserEventCard, deleteUserEventCard } from '../actions/userEvents';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 class UserEventCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { edit: false};
+    this.toggleEdit = this.toggleEdit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  toggleEdit() {
+    this.setState({ edit: !this.state.edit});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+  }
 
   componentDidMount() {
     $('.collapsible').collapsible();
@@ -55,7 +71,9 @@ class UserEventCard extends Component {
                 <textarea placeholder="comment..."></textarea>
               </div>
               <div>
-                <button type='button' className='btn green comment-btn'>Submit</button>
+                <button type='button' className='btn green comment-btn'>Submit</button>    
+                <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'>Delete</button>
+                <button type='button' onClick={this.toggleEdit} className='btn orange comment-btn right'>Edit</button>
               </div>
 
             </div>
@@ -68,4 +86,4 @@ class UserEventCard extends Component {
 
 
 
-export default UserEventCard;
+export default connect() (UserEventCard);

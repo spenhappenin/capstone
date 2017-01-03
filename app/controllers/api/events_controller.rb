@@ -5,7 +5,7 @@ class Api::EventsController < ApplicationController
 
   def index
     @events = Event.all
-    render json: @events 
+    render json: @events
   end
 
   def new
@@ -54,6 +54,6 @@ class Api::EventsController < ApplicationController
     end
 
     def set_events
-      @event = Events.find(params[:id])
+      @event = Event.find(params[:id])
     end
   end
