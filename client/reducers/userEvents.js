@@ -2,22 +2,15 @@ const userEvents = ( state = [], action) => {
   switch(action.type) {
     case 'ALL_USER_EVENTS':
       return action.userEvents;
-      break;
 
       case 'EDIT_USER_EVENT':
-        let alluserEvents = state;
-        index = alluserEvents.findIndex( u => u.id === action.userEvent.id)
-        alluserEvents[index] = action.userEventCard;
-          return [...allUserEvents];
-          break;
-
+        return state.map( userEvent => {
+          if (userEvent.id === action.userEvent.id)
+            return action.userEvent
+          return userEvent
+        })
       case 'DELETE_USER_EVENT':
-        let index = state.findIndex( u => u.id === action.id)
-          return [
-            ...state.slice(0, index),
-            ...state.slice(index + 1)
-       ]
-        break;
+        return state.filter( u => u.id !== action.id )
 
       default:
         return state;

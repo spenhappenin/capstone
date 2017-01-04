@@ -14,6 +14,7 @@ import Contact from './components/Contact';
 import UserEvents from './components/UserEvents';
 import UserEventCard from './components/UserEventCard';
 import AddEvent from './components/AddEvent';
+import KeepUserSignedIn from './components/KeepUserSignedIn'
 
 const AdminAccess = UserAuthWrapper({
   authSelector: state => state.user,
@@ -26,21 +27,23 @@ const AdminRoutes = AdminAccess( (props) => props.children )
 
 export default (
   <Route>
-    <Route path="/" component={App}>
-      <IndexRoute component={Landing}/>
-      <Route path='contact' component={Contact} />
-      <Route path="signup" component={SignUp} />
-      <Route path="signin" component={SignIn} />
-      <Route component={AuthenticatedRoutes}>
-        <Route path='userEvents' component={UserEvents} />
-        <Route path='userEventCard' component={UserEventCard} />
-        <Route path='addEvent' component={AddEvent} />
-        <Route component={AdminRoutes}>
-          <Route path="/admin" component={Admin} />
-          {/* PROTECTED BY ADMIN ACCESS */}
+    <Route component={KeepUserSignedIn}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Landing}/>
+        <Route path='contact' component={Contact} />
+        <Route path="signup" component={SignUp} />
+        <Route path="signin" component={SignIn} />
+        <Route component={AuthenticatedRoutes}>
+          <Route path='userEvents' component={UserEvents} />
+          <Route path='userEventCard' component={UserEventCard} />
+          <Route path='addEvent' component={AddEvent} />
+          <Route component={AdminRoutes}>
+            <Route path="/admin" component={Admin} />
+            {/* PROTECTED BY ADMIN ACCESS */}
+          </Route>
         </Route>
+        <Route path="*" status={404} component={NoMatch}/>
       </Route>
-      <Route path="*" status={404} component={NoMatch}/>
     </Route>
   </Route>
 )

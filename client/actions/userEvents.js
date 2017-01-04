@@ -13,18 +13,18 @@ export const fetchUserEvents = () => {
 }
 
 export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
-                            street, city, state, zip, skill_level, description ) => {
+                            street, city, state, zip, skill_level, description, active ) => {
  return(dispatch) => {
    $.ajax({
      url: `/api/events/${id}`,
      type: 'PUT',
      dataType: 'JSON',
-     data: { details: {id, name, sport, date, time, capacity, venue,
-     street, city, state, zip, skill_level, description} }
-   }).done(data => {
-     dispatch({ type: 'EDIT_USER_EVENT', id });
+     data: { events: {name, sport, date, time, capacity, venue,
+     street, city, state, zip, skill_level, description, active}}
+   }).done(userEvent => {
+     dispatch({ type: 'EDIT_USER_EVENT', userEvent });
    }).fail(data => {
-     console.log(data);
+     console.log(uesrEvent);
    });
  }
 }

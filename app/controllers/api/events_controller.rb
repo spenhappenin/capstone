@@ -29,7 +29,7 @@ class Api::EventsController < ApplicationController
   end
 
   def update
-    @event = Event.update(events_params)
+    @event.update(events_params)
     @event.user_id = current_user.id
     if @event.save
       render json: @event
@@ -38,19 +38,19 @@ class Api::EventsController < ApplicationController
     end
   end
 
-    def destroy
-      @event.destroy
-      respond_to do |format|
-        format.json { head :no_content }
-      end
+  def destroy
+    @event.destroy
+    respond_to do |format|
+      format.json { head :no_content }
     end
+  end
 
 
   private
     def events_params
       params.require(:events).permit(:name, :date, :time, :capacity, :venue,
                                     :street, :city, :state, :zip, :skill_level,
-                                    :description, :attending, :active, :sport)
+                                    :description, :active, :sport)
     end
 
     def set_events
