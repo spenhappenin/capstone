@@ -52,73 +52,81 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div className='container center'>
-        <h2 className="center">Sign Up</h2>
-        <form onSubmit={this.handleSubmit}>
+      <div>
+        <div className='row'>
+          <div className='col s3 signup-background1'> </div>
+          <div className='col s6'>
+            <div className='center'>
+              <h2>Sign Up</h2>
+              <form onSubmit={this.handleSubmit}>
 
-          <div className='row col s12'>
-            <label> Username </label>
-            <input className='placeholder' ref="username" />
+                <div className='row col s12'>
+                  <label> Username </label>
+                  <input className='placeholder' ref="username" />
+                </div>
+
+                <div className='row'>
+                  <div className='col s6'>
+                    <label> First Name </label>
+                    <input className='placeholder' ref="first_name" required={true} />
+                  </div>
+                  <div className='col s6'>
+                    <label> Last Name </label>
+                    <input className='placeholder' ref="last_name" required={true} />
+                  </div>
+                </div>
+
+                <div className='row'>
+                  <div className='col s6'>
+                    <label> DOB </label>
+                    <input type='date' className='datepicker placeholder' ref="dob" required={true} />
+                  </div>
+                  <div className='col s6'>
+                    <label> Phone Number </label>
+                    <input className='placeholder' type='tel' ref="phone_number" />
+                  </div>
+                </div>
+
+                <div className='row'>
+                  <div className='col s6'>
+                    <label> Favorite Sport </label>
+                    <input className='placeholder' ref="favorite" />
+                  </div>
+                  <div className='col s6'>
+                    <label> Email </label>
+                    <input className='placeholder' type="email" ref="email" required={true} />
+                  </div>
+                </div>
+
+                <div className='row'>
+                  <div className='col s6'>
+                    <label> Password </label>
+                    <input className='placeholder' type="password" ref="password" required={true} />
+                  </div>
+                  <div className='col s6'>
+                    <label> Confirm Password </label>
+                    <input className='placeholder' type="password" ref="password_confirmation" required={true} />
+                  </div>
+                </div>
+
+                <div className='row'>
+                  <p className='center'>Would you like to receive event notifications? </p>
+                  <div className='col s2 offset-s4'>
+                    <input type="checkbox" className="filled-in" id="filled-in-box" defaultChecked="checked" />
+                    <label htmlFor="filled-in-box">Email</label>
+                  </div>
+                  <div className='col s2'>
+                    <input type="checkbox" className="filled-in" id="filled-in-checkbox" defaultChecked="checked" />
+                    <label htmlFor="filled-in-checkbox">Text</label>
+                  </div>
+                </div>
+
+                <button className="btn blue">Sign Up</button>
+              </form>
+            </div>
           </div>
-
-          <div className='row'>
-            <div className='col s6'>
-              <label> First Name </label>
-              <input className='placeholder' ref="first_name" required={true} />
-            </div>
-            <div className='col s6'>
-              <label> Last Name </label>
-              <input className='placeholder' ref="last_name" required={true} />
-            </div>
-          </div>
-
-          <div className='row'>
-            <div className='col s6'>
-              <label> DOB </label>
-              <input type='date' className='datepicker placeholder' ref="dob" required={true} />
-            </div>
-            <div className='col s6'>
-              <label> Phone Number </label>
-              <input className='placeholder' type='tel' ref="phone_number" />
-            </div>
-          </div>
-
-          <div className='row'>
-            <div className='col s6'>
-              <label> Favorite Sport </label>
-              <input className='placeholder' ref="favorite" />
-            </div>
-            <div className='col s6'>
-              <label> Email </label>
-              <input className='placeholder' type="email" ref="email" required={true} />
-            </div>
-          </div>
-
-          <div className='row'>
-            <div className='col s6'>
-              <label> Password </label>
-              <input className='placeholder' type="password" ref="password" required={true} />
-            </div>
-            <div className='col s6'>
-              <label> Confirm Password </label>
-              <input className='placeholder' type="password" ref="password_confirmation" required={true} />
-            </div>
-          </div>
-
-          <div className='row'>
-            <p className='center'>Would you like to receive event notifications? </p>
-            <div className='col s2 offset-s4'>
-              <input type="checkbox" className="filled-in" id="filled-in-box" defaultChecked="checked" />
-              <label htmlFor="filled-in-box">Email</label>
-            </div>
-            <div className='col s2'>
-              <input type="checkbox" className="filled-in" id="filled-in-checkbox" defaultChecked="checked" />
-              <label htmlFor="filled-in-checkbox">Text</label>
-            </div>
-          </div>
-
-          <button className="btn blue">Sign Up</button>
-        </form>
+          <div className='col s3 signup-background2'> </div>
+        </div>
       </div>
     )
   }

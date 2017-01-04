@@ -19,7 +19,7 @@ class Login extends React.Component {
 		const email = this.refs.email.value;
 		const password = this.refs.password.value;
 		this.props.dispatch(handleLogin(
-													email, password, this.state.redirectRoute, 
+													email, password, this.state.redirectRoute,
 													this.props.history
 												));
 	}
@@ -36,7 +36,7 @@ class Login extends React.Component {
 
 				<hr />
 
-				<FacebookLogin  
+				<FacebookLogin
 					appId = 'FACEBOOK APP ID'
 					autoLoad = { false }
 					fields = 'name, email'
@@ -53,21 +53,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, null)(Login);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
