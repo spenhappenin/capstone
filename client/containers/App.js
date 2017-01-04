@@ -58,7 +58,7 @@ class App extends React.Component {
       <div>
         <nav className='nav-bar'>
           <div className='nav-wrapper'>
-          <Link to='/' className='main-logo'> <img className='responsive-img' src='logo1.png' height='60px' width='60px' />GO</Link>
+          <Link to='/' className='main-logo'> <img className='responsive-img' src='logo1.png' style={{height: '60px', width: '80px' }} />GO</Link>
 
             <a href='#' data-activates='mobile' className='button-collapse'>
               <i className='fa fa-bars'></i>

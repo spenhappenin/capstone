@@ -47,6 +47,7 @@ class UserEventCard extends Component {
   handleClick(e) {
     e.preventDefault();
   }
+
   edit() {
     let sportEvent = this.props.userEvent;
     if(this.state.edit) {
@@ -62,36 +63,49 @@ class UserEventCard extends Component {
       );
     }
     return(
-      <div >
+      <div>
         <ul className="collapsible" data-collapsible="accordion" >
           <li>
-            <div className='col s3 sport-image-container'>
-              <img className='responsive-img sport-image' src='basketball.jpg' alt='Basketball Icon' />
-            </div>
-            <form onSubmit={this.handleSubmit}>
-              <div>
-                <h5><input type='text' defaultValue= {sportEvent.name}  placeholder='Rec Basketball' ref='event_name' required /></h5>
+            <form className='container' onSubmit={this.handleSubmit}>
+              <div className='row'>
+                <div className='col s6'>
+                  <label> Name: </label>
+                  <input type='text' defaultValue= {sportEvent.name}  placeholder='Rec Basketball' ref='event_name' required />
+                </div>
+                <div className='col s6'>
+                  <label> Location: </label>
+                  <em><input type='text' defaultValue= {sportEvent.venue}  placeholder='Fun Arena' ref='venue' required /></em>
+                </div>
               </div>
-              <div>
-                <em><input type='text' defaultValue= {sportEvent.venue}  placeholder='Fun Arena' ref='venue' required /></em>
+              <div className='row'>
+                <div className='col s6'>
+                  <label> Capacity: </label>
+                  <em><input type='text' defaultValue= {sportEvent.capacity}  placeholder='number' ref='capacity' required /></em>
+                </div>
+                <div className='col s6'>
+                  <label> Address: </label>
+                  <em><input type='text' defaultValue={sportEvent.street}  placeholder='1234 USA Drive' ref='street_address' required /></em>
+                </div>
               </div>
-              <div>
-                <em><input type='text' defaultValue= {sportEvent.capacity}  placeholder='number' ref='capacity' required /></em>
+              <div className='row'>
+                <div className='col s12'>
+                  <label> City: </label>
+                  <em><input type='text' defaultValue= {sportEvent.city}  placeholder='Salt Lake City' ref='event_city' required /></em>
+                </div>
               </div>
-              <div>
-                <em><input type='text' defaultValue={sportEvent.street}  placeholder='1234 USA Drive' ref='street_address' required /></em>
-              </div>
-              <div>
-                <em><input type='text' defaultValue= {sportEvent.city}  placeholder='Salt Lake City' ref='event_city' required /></em>
-              </div>
-              <div>
-                <em><input type='text' defaultValue= {sportEvent.state}  placeholder='UT' ref='event_state' required /></em>
-              </div>
-              <div>
-                <em><input type='number' defaultValue= {sportEvent.zip}  placeholder='84011' ref='event_zip' required /></em>
+              <div className='row'>
+                <div className='col s6'>
+                  <label> State: </label>
+                  <em><input type='text' defaultValue= {sportEvent.state}  placeholder='UT' ref='event_state' required /></em>
+                </div>
+                <div className='col s6'>
+                  <label> Zip: </label>
+                  <em><input type='number' defaultValue= {sportEvent.zip}  placeholder='84011' ref='event_zip' required /></em>
+                </div>
               </div>
 
-                <div className='col s8 offset-s2'>
+              <div className='row'>
+                <div className='col s12'>
                   <label className='center'> Skill Level </label>
                   <select ref='skill_level' className='placeholder' defaultValue={sportEvent.skill_level} required>
                     <option value="" disabled> </option>
@@ -103,24 +117,34 @@ class UserEventCard extends Component {
                     <option value='Everyone'> Everyone </option>
                   </select>
                 </div>
+              </div>
 
                 <br />
-                <div>
-                  Description: <textarea defaultValue= {sportEvent.description}  placeholder='Write Description Here...' ref='event_description'></textarea>
+                <div className='row'>
+                  <div className='col s12'>
+                    <label> Description: </label>
+                    <textarea defaultValue= {sportEvent.description}  placeholder='Write Description Here...' ref='event_description'></textarea>
+                  </div>
                 </div>
                 <br />
-                <div>
-                  Date: <i><input type='date' defaultValue={sportEvent.date}  className='datepicker' ref='event_date' required /></i>
+                <div className='row'>
+                  <div className='col s6'>
+                    <label> Date: </label>
+                    <i><input type='date' defaultValue={sportEvent.date}  className='datepicker' ref='event_date' required /></i>
+                  </div>
+                  <div className='col s6'>
+                    <label> Time: </label>
+                    <i><input type='time' defaultValue={sportEvent.event_time}  ref='event_time' required /></i>
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='col s12'>
+                    <textarea placeholder="comment..."></textarea>
+                  </div>
                 </div>
                 <div>
-                  Time: <i><input type='time' defaultValue={sportEvent.event_time}  ref='event_time' required /></i>
-                </div>
-                <div>
-                  <textarea placeholder="comment..."></textarea>
-                </div>
-                <div>
-                  <button type='submit' className='btn green comment-btn'>Save</button>
-                  <button type='button' onClick={this.toggleEdit} className='btn orange comment-btn right'>Cancel</button>
+                  <button style={{ marginBottom: '22px'}} type='submit' className='btn green comment-btn'>Save</button>
+                  <button style={{ marginBottom: '22px'}} type='button' onClick={this.toggleEdit} className='btn orange comment-btn right'>Cancel</button>
                 </div>
               </form>
 

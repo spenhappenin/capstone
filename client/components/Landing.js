@@ -45,7 +45,13 @@ class Landing extends Component {
           <div className='parallax-container'>
             <div className='parallax'> <img src='http://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483475858/hdSoccerStadium_ipmprx.jpg' /> </div>
           </div>
-          <div className='sign-up'> </div>
+          <div className='sign-up'>
+            <div className='row'>
+              <div className='col s12'>
+                <h1 className='center white-text'> PUT SOMETHING ELSE HERE </h1>
+              </div>
+            </div>
+          </div>
           <div className='parallax-container'>
             <div className='parallax'> <img src='http://res.cloudinary.com/omash612/image/upload/v1483467364/volleyball-background_h5pwkx.jpg' /> </div>
           </div>
