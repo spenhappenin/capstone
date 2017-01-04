@@ -60,15 +60,53 @@ class GoogleMap extends Component {
 
   buildMarkers(events) {
     let m = events.map( e => {
+      let sportPic;
+      switch(e.sport) {
+        case 'basketball':
+          sportPic = 'basketball_pin.png';
+          break;
+        case 'baseball':
+          sportPic = 'baseball_pin.png';
+          break;
+        case 'football':
+          sportPic = 'football_pin.png';
+          break;
+        case 'soccer':
+          sportPic = 'soccer_pin.png';
+          break;
+        case 'kickball':
+          sportPic = 'kickball_pin.png';
+          break;
+        case 'badminton':
+          sportPic = 'badminton_pin.png';
+          break;
+        case 'volleyball':
+          sportPic = 'volleyball_pin.png';
+          break;  
+        case 'tennis':
+          sportPic = 'tennis_pin.png';
+          break;                              
+        case 'pingpong':
+          sportPic = 'pong_pin.png';
+          break;
+        case 'hockey':
+          sportPic = 'hockey_pin.png';
+          break;
+        case 'golf':
+          sportPic = 'golf_pin.png';
+          break;
+        default:
+          sportPic = "http://static-cdn.jobisjob.com/img/maps/marker-icon.png"                                                
+      }
       return(
         {
           id: e.id,
           "lat": e.latitude,
           "lng": e.longitude,
           "picture": {
-            "url": "http://static-cdn.jobisjob.com/img/maps/marker-icon.png",
-            "width":  32,
-            "height": 40
+            "url": sportPic,
+            "width":  50,
+            "height": 50
           },
           "infowindow": e.description
         }

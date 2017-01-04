@@ -167,6 +167,7 @@ class UserEventCard extends Component {
           <li>
             <div className='col s3 sport-image-container'>
               <img className='responsive-img sport-image' src='http://res.cloudinary.com/omash612/image/upload/v1483467364/basketball_wssdhp.jpg' alt='Basketball Icon' />
+              <img className='responsive-img sport-image' src='basketball.png' alt='Basketball Icon' />
             </div>
             <form onSubmit={this.handleSubmit}>
               <div>
@@ -242,7 +243,7 @@ class UserEventCard extends Component {
         <ul className="collapsible" data-collapsible="accordion" >
           <li>
             <div className='col s3 sport-image-container'>
-              <img className='responsive-img sport-image' src='http://res.cloudinary.com/omash612/image/upload/v1483467364/basketball_wssdhp.jpg' alt='Basketball Icon' />
+              <img className='responsive-img sport-image' src='bball.png' alt='Basketball Icon' />
             </div>
             <div>
               <h5 id={id}>{ sportEvent.name }</h5>
