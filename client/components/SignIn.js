@@ -38,31 +38,39 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className='container center'>
-        <h2 className="center">Login</h2>
-        <form  onSubmit={this.handleSubmit}>
-          <div className='row'>
-            <div className='col s6 offset-s3'>
-              <label className='left'> Email </label>
-              <input type="email" required={true} ref="email" />
+      <div>
+        <div className='row'>
+          <div className='col s3 login-background1'> </div>
+          <div className='col s6'>
+            <div className='center'>
+              <h2>Login</h2>
+              <form  onSubmit={this.handleSubmit}>
+                <div className='row'>
+                  <div className='col s6 offset-s3'>
+                    <label className='left'> Email </label>
+                    <input type="email" required={true} ref="email" />
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='col s6 offset-s3'>
+                    <label className='left'> Password </label>
+                    <input type="password" required={true} ref="password" />
+                  </div>
+                </div>
+                <button className="btn blue">GameOn</button>
+              </form>
+              <br />
+              <FacebookLogin
+                appId = '1653601048266232'
+                autoLoad = { false }
+                fields = 'name, email'
+                className = 'facebook-button'
+                icon = 'fa-facebook'
+                callback = { this.responseFacebook } />
             </div>
           </div>
-          <div className='row'>
-            <div className='col s6 offset-s3'>
-              <label className='left'> Password </label>
-              <input type="password" required={true} ref="password" />
-            </div>
-          </div>
-          <button className="btn blue">GameOn</button>
-        </form>
-        <br />
-        <FacebookLogin
-          appId = '1653601048266232'
-          autoLoad = { false }
-          fields = 'name, email'
-          className = 'facebook-button'
-          icon = 'fa-facebook'
-          callback = { this.responseFacebook } />
+          <div className='col s3 login-background2'> </div>
+        </div>
       </div>
     )
   }
