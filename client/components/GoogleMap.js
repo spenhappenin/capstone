@@ -61,37 +61,37 @@ class GoogleMap extends Component {
       let sportPic;
       switch(e.sport) {
         case 'basketball':
-          sportPic = 'basketball_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630389/basketball_pin_ioirxi.png';
           break;
         case 'baseball':
-          sportPic = 'baseball_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630387/baseball_pin_inl5v6.png';
           break;
         case 'football':
-          sportPic = 'football_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630392/football_pin_ghzsia.png';
           break;
         case 'soccer':
-          sportPic = 'soccer_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630845/soccer_pin_zeme2b.png';
           break;
         case 'kickball':
-          sportPic = 'kickball_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630404/kickball_pin_pulxzn.png';
           break;
         case 'badminton':
-          sportPic = 'badminton_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630863/badminton_pin_ymxsft.png';
           break;
         case 'volleyball':
-          sportPic = 'volleyball_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630414/volleyball_pin_t4gakn.png';
           break;
         case 'tennis':
-          sportPic = 'tennis_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630411/tennis_pin_zazlxl.png';
           break;
         case 'pingpong':
-          sportPic = 'pong_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630407/pong-pin_mzqmgs.png';
           break;
         case 'hockey':
-          sportPic = 'hockey_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630397/hockey_pin_q7kror.png';
           break;
         case 'golf':
-          sportPic = 'golf_pin.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630394/golf_pin_vhluyz.png';
           break;
         default:
           sportPic = "http://static-cdn.jobisjob.com/img/maps/marker-icon.png"

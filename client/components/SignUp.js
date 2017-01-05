@@ -56,7 +56,7 @@ class SignUp extends React.Component {
         <div className='right'>
           <div className='row'>
             <div className='col s12 center'>
-                <h3>Sign Up</h3>
+                <h3>Welcome To GameOn!</h3>
               </div>
             </div>
             <form onSubmit={this.handleSubmit}>

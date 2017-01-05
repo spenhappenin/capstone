@@ -34,7 +34,7 @@ class Contact extends React.Component {
               <div className='row'>
                 <div className='col s4'>
                   <label className='left white-text'> Message </label>
-                  <textarea className='message-box white-text' placeholder='Write Message Here...'></textarea>
+                  <textarea className='white-text' placeholder='Write Message Here...'></textarea>
                 </div>
               </div>
               <div className='row'>
