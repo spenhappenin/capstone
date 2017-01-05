@@ -163,14 +163,53 @@ class UserEventCard extends Component {
 
     let dateFormat = moment(sportEvent.date ).format('MMMM Do YYYY');
     let timeFormat = moment(sportEvent.time, 'YYYY MM DD hh:mm:ss z' ).format('h:mm a');
-
     let id = `userEvent-${this.props.userEvent.id}`
+    let sportPic;
+    
+      switch(sportEvent.sport) {
+        case 'basketball':
+          sportPic = 'basketball_pin.png';
+          break;
+        case 'baseball':
+          sportPic = 'baseball_pin.png';
+          break;
+        case 'football':
+          sportPic = 'football_pin.png';
+          break;
+        case 'soccer':
+          sportPic = 'soccer_pin.png';
+          break;
+        case 'kickball':
+          sportPic = 'kickball_pin.png';
+          break;
+        case 'badminton':
+          sportPic = 'badminton_pin.png';
+          break;
+        case 'volleyball':
+          sportPic = 'volleyball_pin.png';
+          break;  
+        case 'tennis':
+          sportPic = 'tennis_pin.png';
+          break;                              
+        case 'pingpong':
+          sportPic = 'pong_pin.png';
+          break;
+        case 'hockey':
+          sportPic = 'hockey_pin.png';
+          break;
+        case 'golf':
+          sportPic = 'golf_pin.png';
+          break;
+        default:
+          sportPic = "http://static-cdn.jobisjob.com/img/maps/marker-icon.png"                                                
+      }
+
     return(
       <div>
         <ul className="collapsible" data-collapsible="accordion" >
           <li>
             <div className='col s3 sport-image-container'>
-              <img className='responsive-img sport-image' src='http://res.cloudinary.com/omash612/image/upload/v1483467364/basketball_wssdhp.jpg' alt='Basketball Icon' />
+              <img className='responsive-img sport-image' src={ sportPic } alt='Basketball Icon' />
             </div>
             <div>
               <h5 id={id}>{ sportEvent.name }</h5>
