@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import About from './About';
-import Picture from './Picture';
 import Contact from './Contact';
-import NavBar from './NavBar';
 
 class Landing extends Component {
 
@@ -22,6 +20,8 @@ class Landing extends Component {
 			  </div>
         <div className="landing-image">
           <div className="parallax"> <img className='responsive-img' src="basketball_landing.jpg" alt='Picture of athletes lined up' /> </div>
+        <div className="parallax-container">
+          <div className="parallax"> <img className='responsive-img' src="http://res.cloudinary.com/omash612/image/upload/v1483467364/sports_lineup_votgbv.jpg" alt='Picture of athletes lined up' /> </div>
         </div>
         <div className='what-is-go'>
           <div className='col s12'>

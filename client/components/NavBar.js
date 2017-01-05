@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { logout } from '../actions/auth';
 import Flash from '../components/Flash';
 
-class App extends React.Component {
+class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.navs = this.navs.bind(this);
@@ -55,9 +55,9 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <nav className='purple darken-4'>
+        <nav className='nav-bar' style={{backgroundColor: 'transparent'}}>
           <div className='nav-wrapper'>
-            <Link to='/' className='main-logo'>My Logo</Link>
+          <Link to='/' className='main-logo'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/v1483656575/logo_h1y0pg.png' style={{height: '60px', width: '80px' }} />GO</Link>
             <a href='#' data-activates='mobile' className='button-collapse'>
               <i className='fa fa-bars'></i>
             </a>
@@ -65,6 +65,7 @@ class App extends React.Component {
               {this.navs()}
             </ul>
             <ul className="side-nav" id="mobile">
+            <i className="material-icons">polymer</i>
               {this.navs()}
             </ul>
           </div>
@@ -80,4 +81,4 @@ const mapStateToProps = (state) => {
   return { user: state.user }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(NavBar);

@@ -200,6 +200,12 @@ class UserEventCard extends Component {
         case 'golf':
           sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630394/golf_pin_vhluyz.png';
           break;
+        case 'frisbee':
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483656273/frisbee_pin_jrawjp.png';
+          break;
+        case 'lacrosse':
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483656252/lacrosse_pin_qlsw3t.png';
+          break;
         default:
           sportPic = "http://static-cdn.jobisjob.com/img/maps/marker-icon.png"
       }
