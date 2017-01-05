@@ -48,7 +48,7 @@ export const handleFacebookLogin = (auth, history) => {
       dataType: 'JSON'
     }).done( response => {
       dispatch(refreshLogin(response.user));
-      history.push('/');
+      history.push('/userEvents');
     }).fail( response => {
       dispatch(logout());
     })
