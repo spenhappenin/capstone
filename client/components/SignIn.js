@@ -38,28 +38,32 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='login-background'>
         <div className='row'>
-          <div className='col s3 login-background1'> </div>
-          <div className='col s6'>
-            <div className='center'>
-              <h2>Login</h2>
-              <form  onSubmit={this.handleSubmit}>
-                <div className='row'>
-                  <div className='col s6 offset-s3'>
-                    <label className='left'> Email </label>
-                    <input type="email" required={true} ref="email" />
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='col s6 offset-s3'>
-                    <label className='left'> Password </label>
-                    <input type="password" required={true} ref="password" />
-                  </div>
-                </div>
-                <button className="btn blue">GameOn</button>
-              </form>
-              <br />
+          <div className='col s4 offset-s8 center'>
+            <h2 className='white-text'>Login</h2>
+          </div>
+        </div>
+          <form  onSubmit={this.handleSubmit}>
+            <div className='row'>
+              <div className='col s4 offset-s8 right'>
+                <label className='left white-text'> Email </label>
+                <input className='login-caret white-text' type="email" required={true} ref="email" />
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col s4 offset-s8 right'>
+                <label className='left white-text'> Password </label>
+                <input className='login-caret white-text' type="password" required={true} ref="password" />
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col s4 offset-s8 center'>
+                <input type='submit' value='Game On' className="btn blue" />
+              </div>
+            </div>
+          <div className='row'>
+            <div className='col s4 offset-s8 center'>
               <FacebookLogin
                 appId = '1653601048266232'
                 autoLoad = { false }
@@ -69,8 +73,7 @@ class SignIn extends React.Component {
                 callback = { this.responseFacebook } />
             </div>
           </div>
-          <div className='col s3 login-background2'> </div>
-        </div>
+        </form>
       </div>
     )
   }

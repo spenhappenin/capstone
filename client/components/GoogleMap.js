@@ -4,7 +4,7 @@ import AddEvent from './AddEvent';
 class GoogleMap extends Component {
   constructor(props) {
     super(props);
-    
+
     this.handler = Gmaps.build('Google');
     this.panToMarker = this.panToMarker.bind(this);
     this.attachMarkers = this.attachMarkers.bind(this);
@@ -36,7 +36,6 @@ class GoogleMap extends Component {
     let handler = this.handler;
     let markers;
     let markerData = this.buildMarkers(nextProps.userEvents);
-    // debugger;
 
     handler.buildMap({ provider: { }, internal: {id: 'map'}}, () => {
       markers = handler.addMarkers(markerData);
@@ -54,7 +53,6 @@ class GoogleMap extends Component {
       let cardId = `#userEvent-${window.markerData[i].id}`;
       let card = $(cardId);
       card.click(() => this.panToMarker(i));
-      // card.click(() => console.log('hit'));
     })
   }
 
@@ -82,10 +80,10 @@ class GoogleMap extends Component {
           break;
         case 'volleyball':
           sportPic = 'volleyball_pin.png';
-          break;  
+          break;
         case 'tennis':
           sportPic = 'tennis_pin.png';
-          break;                              
+          break;
         case 'pingpong':
           sportPic = 'pong_pin.png';
           break;
@@ -96,7 +94,7 @@ class GoogleMap extends Component {
           sportPic = 'golf_pin.png';
           break;
         default:
-          sportPic = "http://static-cdn.jobisjob.com/img/maps/marker-icon.png"                                                
+          sportPic = "http://static-cdn.jobisjob.com/img/maps/marker-icon.png"
       }
       return(
         {
@@ -111,9 +109,9 @@ class GoogleMap extends Component {
           "infowindow": e.description
         }
       )
-    }) 
+    })
     return(m)
-  } 
+  }
 
   render() {
     return(
@@ -132,7 +130,7 @@ const styles = {
   },
   map: {
     width: '100%',
-    height: '575px'
+    height: '91vh'
   }
 }
 

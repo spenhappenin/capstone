@@ -11,42 +11,40 @@ class Contact extends React.Component {
 
   render() {
     return(
-      <div>
-        <div className='row'>
-          <div className='col s3 contact-background1'> </div>
-          <div className='col s6'>
-            <div className='center'>
-              <h2> Contact Us </h2>
-              <form onSubmit={this.handleSubmit}>
-                <div className='row'>
-                  <div className='col s6 offset-s3'>
-                    <label className='left'> Name </label>
-                    <input type='text' placeholder='John Doe' className='name-box' required />
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='col s6 offset-s3'>
-                    <label className='left'> Email </label>
-                    <input type='email' placeholder='test@test.com' className='email-box' required />
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='col s6 offset-s3'>
-                    <label className='left'> Message </label>
-                    <textarea className='message-box' placeholder='Write Message Here...'></textarea>
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='col s6 offset-s3'>
-                    <input type='submit' className='btn blue right' value='Send' />
-                  </div>
-                </div>
-              </form>
+        <div>
+        <div className='contact-background'>
+          <div className='row'>
+            <div className='col s4'>
+              <h2 className='white-text'> Contact Us </h2>
             </div>
           </div>
-          <div className='col s3 contact-background2'> </div>
+            <form onSubmit={this.handleSubmit}>
+              <div className='row'>
+                <div className='col s4'>
+                  <label className='left white-text'> Name </label>
+                  <input type='text' placeholder='John Doe' className='name-box white-text' required />
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col s4'>
+                  <label className='left white-text'> Email </label>
+                  <input type='email' placeholder='test@test.com' className='email-box white-text' required />
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col s4'>
+                  <label className='left white-text'> Message </label>
+                  <textarea className='message-box white-text' placeholder='Write Message Here...'></textarea>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col s4'>
+                  <input type='submit' className='btn blue right' value='Send' />
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
     );
   }
 }

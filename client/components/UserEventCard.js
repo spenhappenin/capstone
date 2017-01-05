@@ -70,41 +70,41 @@ class UserEventCard extends Component {
               <div className='row'>
                 <div className='col s6'>
                   <label> Name: </label>
-                  <input type='text' defaultValue= {name}  placeholder='Rec Basketball' ref='event_name' required />
+                  <input type='text' defaultValue= {name} ref='event_name' required />
                 </div>
                 <div className='col s6'>
                   <label> Sport: </label>
-                  <em><input type='text' defaultValue= {sport}  placeholder='Bball' ref='event_sport' required /></em>
+                  <em><input type='text' defaultValue= {sport} ref='event_sport' required /></em>
                 </div>
               </div>
               <div className='row'>
                 <div className='col s6'>
                   <label> Capacity: </label>
-                  <em><input type='text' defaultValue= {capacity}  placeholder='number' ref='capacity' required /></em>
+                  <em><input type='text' defaultValue= {capacity} ref='capacity' required /></em>
                 </div>
                 <div className='col s6'>
                   <label> Location: </label>
-                  <em><input type='text' defaultValue= {venue}  placeholder='Fun Arena' ref='venue' required /></em>
+                  <em><input type='text' defaultValue= {venue} ref='venue' required /></em>
                 </div>
               </div>
               <div className='row'>
                 <div className='col s6'>
                   <label> Address: </label>
-                  <em><input type='text' defaultValue= {street}  placeholder='1234 USA Drive' ref='event_street' required /></em>
+                  <em><input type='text' defaultValue= {street} ref='event_street' required /></em>
                 </div>
                 <div className='col s6'>
                   <label> City: </label>
-                  <em><input type='text' defaultValue= {city}  placeholder='Salt Lake City' ref='event_city' required /></em>
+                  <em><input type='text' defaultValue= {city} ref='event_city' required /></em>
                 </div>
               </div>
               <div className='row'>
                 <div className='col s6'>
                   <label> State: </label>
-                  <em><input type='text' defaultValue= {state}  placeholder='UT' ref='event_state' required /></em>
+                  <em><input type='text' defaultValue= {state} ref='event_state' required /></em>
                 </div>
                 <div className='col s6'>
                   <label> Zip: </label>
-                  <em><input type='number' defaultValue= {zip}  placeholder='84011' ref='event_zip' required /></em>
+                  <em><input type='number' defaultValue= {zip} ref='event_zip' required /></em>
                 </div>
               </div>
 
@@ -127,7 +127,7 @@ class UserEventCard extends Component {
                 <div className='row'>
                   <div className='col s12'>
                     <label> Description: </label>
-                    <textarea defaultValue= {description}  placeholder='Write Description Here...' ref='description'></textarea>
+                    <textarea defaultValue= {description} ref='description'></textarea>
                   </div>
                 </div>
                 <br />
@@ -143,7 +143,7 @@ class UserEventCard extends Component {
                 </div>
                 <div className='row'>
                   <div className='col s12'>
-                    <textarea placeholder="comment..."></textarea>
+                    <textarea placeholder="Leave A Comment..."></textarea>
                   </div>
                 </div>
                 <div>
@@ -228,34 +228,37 @@ class UserEventCard extends Component {
             </div>
 
             <div className="collapsible-body" style={{ padding: '10px' }}>
+                <div className='row center'>
+                  <div className='col s4'>
+                    Skill Level: <i>{ sportEvent.skill_level }</i>
+                  </div>
+                  <div className='col s4'>
+                    Capacity: <i>{ sportEvent.capacity }</i>
+                  </div>
+                  <div className='col s4'>
+                    Time: <i>{ timeFormat }</i>
+                  </div>
+                </div>
+                <div className='row center'>
+                  <div className='col s6'>
+                    Date: <i>{ dateFormat }</i>
+                  </div>
+                  <div className='col s6'>
+                    Location: <i>{ sportEvent.venue }</i>
+                  </div>
+                </div>
+                <div className='row center'>
+                  <div className='col s12'>
+                    Description: { sportEvent.description }
+                  </div>
+                </div>
               <div>
-                Skill Level: <i>{ sportEvent.skill_level }</i>
+                <textarea placeholder="Leave A Comment..."></textarea>
               </div>
-              <br />
               <div>
-                Description: { sportEvent.description }
-              </div>
-              <br />
-              <div>
-                Date: <i>{ dateFormat }</i>
-              </div>
-              <div>
-                Time: <i>{ timeFormat }</i>
-              </div>
-              <br />
-              <div>
-                Location: <i>{ sportEvent.venue }</i>
-              </div>
-              <div>
-                Capacity: <i>{ sportEvent.capacity }</i>
-              </div>
-              <div>
-                <textarea placeholder="comment..."></textarea>
-              </div>
-              <div>
-                <button type='button' className='btn green comment-btn'>Submit</button>
-                <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'>Delete</button>
-                <button type='button' onClick={this.toggleEdit} className='btn orange comment-btn right'>Edit</button>
+                <button type='button' className='btn green'>Submit</button>
+                <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'><i className='material-icons'>delete</i></button>
+                <button type='button' onClick={this.toggleEdit} className='btn orange comment-btn right' style={{marginRight: '5px'}}><i className="material-icons">mode_edit</i></button>
               </div>
 
             </div>

@@ -43,7 +43,7 @@ class Landing extends Component {
             </div>
           </div>
           <div className='parallax-container'>
-            <div className='parallax'> <img src='http://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483475858/hdSoccerStadium_ipmprx.jpg' /> </div>
+            <div className='parallax'> <img src='http://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483594313/soccerTeam_a8jcvz.jpg' /> </div>
           </div>
           <div className='sign-up'>
             <div className='row'>
