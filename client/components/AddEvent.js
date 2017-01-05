@@ -61,16 +61,33 @@ class AddEvent extends Component {
               <label className='left'> Event Name </label>
               <input type='text' placeholder='Rec Basketball' ref='event_name' required />
             </div>
+
             <div className='col s6'>
               <label className='left'> Sport </label>
-              <input type='text' placeholder='basketball' ref='sport' required />
+              <select ref='skill_level' className='placeholder' value="" required>
+                <option value="" disabled> </option>
+                <option value='baseball'> Baseball </option>
+                <option value='basketball'> Basketball </option>
+                <option value='football'> Football </option>
+                <option value='frisbee'> Frisbee </option>
+                <option value='golf'> Golf </option>
+                <option value='hockey'> Hockey </option>
+                <option value='kickball'> Kickball </option>
+                <option value='lacrosse'> Lacrosse </option>
+                <option value='ping pong'> Ping Pong </option>
+                <option value='soccer'> Soccer </option>
+                <option value='tennis'> Tennis </option>
+                <option value='volleyball'> Volleyball </option>
+              </select>
             </div>
+          </div>
 
           <div className='row'>
             <div className='col s6'>
               <label className='left'> Date </label>
               <input type='date' className='datepicker' ref='event_date' required />
             </div>
+
             <div className='col s6'>
               <label className='left'> Time </label>
               <input type='time' ref='event_time' required />
@@ -81,6 +98,7 @@ class AddEvent extends Component {
                 <label className='left'> Capacity </label>
                 <input type='number' placeholder='10' ref='capacity' />
               </div>
+
               <div className='col s6'>
                 <label className='left'> Venue </label>
                 <input type='text' placeholder='Dimple Dell Recreation' ref='venue' required />
@@ -184,12 +202,10 @@ class AddEvent extends Component {
                   <textarea placeholder='Write Description Here...' ref='event_description'></textarea>
                 </div>
               </div>
-
               <input type='submit' value='Create Event' className='center btn blue' />
             </div>
           </div>
 
-          </div>
         </form>
       </div>
     );
