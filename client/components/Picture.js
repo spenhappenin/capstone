@@ -5,7 +5,7 @@ class Picture extends Component {
 
   render() {
     return(
-      <div className='main-image'>
+      <div className='basketball-landing.jpg'>
 
       </div>
     );
