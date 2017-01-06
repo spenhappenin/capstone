@@ -14,7 +14,7 @@ class About extends Component {
               <div className='social-media'>
                 <a href='https://github.com/spenhappenin' target='_blank' rel='noopener'><img className='social-icons responsive-img' style={{height: '55px', width: '55px'}} src='spencer_github.png' /></a>
                 <a href='https://www.linkedin.com/in/spencer-richards' target='_blank' rel='noopener'><img className='social-icons responsive-img' style={{height: '40px', width: '40px', marginTop: '6px'}} src='http://res.cloudinary.com/omash612/image/upload/v1483478100/linkedinlogo_sjckc6.png' /> </a>
-                <a href='spencer.richards7@gmail.com'><img className='social-icons responsive-img' src="http://res.cloudinary.com/omash612/image/upload/v1483478773/gmailLogo_as7oja.png" style={{ height: '40px', width: '40px', marginTop: '6px'}}></img></a>
+                <a href='mailto:spencer.richards7@gmail.com'><img className='social-icons responsive-img' src="http://res.cloudinary.com/omash612/image/upload/v1483478773/gmailLogo_as7oja.png" style={{ height: '40px', width: '40px', marginTop: '6px'}}></img></a>
               </div>
             </div>
             <div className='col s3'>
@@ -31,6 +31,11 @@ class About extends Component {
               <div className='william z-depth-5'> </div>
               <hr />
               <p className='center'><em> Huge Beard, Tatted Dog Lover </em></p>
+              <div className='social-media'>
+               <a href='https://github.com/WilliamW101' target='_blank'><img className='social-icons' style={{height: '55px', width: '55px'}} src='spencer_github.png' /></a>
+               <a href='https://www.linkedin.com/in/william-winger' target='_blank'><img className='social-icons' style={{height: '40px', width: '40px', marginTop: '6px'}} src='http://res.cloudinary.com/omash612/image/upload/v1483478100/linkedinlogo_sjckc6.png' /> </a>
+               <a href='mailto:billy_thekid55@hotmail.com'><img className='social-icons' src="http://res.cloudinary.com/omash612/image/upload/v1483478773/gmailLogo_as7oja.png" style={{ height: '40px', width: '40px', marginTop: '6px'}}></img></a>
+             </div>
             </div>
             <div className='col s3'>
               <div className='rebecca z-depth-5'> </div>
