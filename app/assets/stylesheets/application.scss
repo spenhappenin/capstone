@@ -1,3 +1,6 @@
+@import "materialize/components/color";
+$primary-color: color("red", "lighten-2") !default;
+$secondary-color: color("blue", "base") !default;
 @import 'materialize';
 @import 'font-awesome';
 @import 'flash';
@@ -25,6 +28,10 @@ html {
   height: 100%;
  }
 
+ .nav-tabs {
+   color: #bbbbbb;
+ }
+
 .main-logo {
   margin-left: 30px;
   font-size: 30px;
@@ -50,7 +57,7 @@ a.secondary-content {
 }
 
 .parallax-container {
-  // height: 570px;
+  height: 480px;
 }
 
 .sign-up {
@@ -79,10 +86,6 @@ a.secondary-content {
 
 .kep-login-facebook.metro {
   border-radius: 3px !important;
-}
-
-.sport-image {
-  padding-top: 15px;
 }
 
 .event-list {

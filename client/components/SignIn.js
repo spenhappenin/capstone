@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { refreshLogin, handleFacebookLogin } from '../actions/auth';
 import { setFlash } from '../actions/flash';
 import FacebookLogin from 'react-facebook-login';
+import NavBar from './Navbar';
+import store, { history } from '../store';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -39,6 +41,7 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className='login-background'>
+        <NavBar history={history}/>
         <div className='row'>
           <div className='col s4 offset-s8 center'>
             <h2 className='white-text'>Login</h2>

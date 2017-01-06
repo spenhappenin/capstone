@@ -1,4 +1,6 @@
 import React from 'react';
+import NavBar from './Navbar';
+import store, { history } from '../store';
 
 class Contact extends React.Component {
   constructor(props) {
@@ -12,12 +14,13 @@ class Contact extends React.Component {
   render() {
     return(
         <div>
-        <div className='contact-background'>
-          <div className='row'>
-            <div className='col s4'>
-              <h2 className='white-text'> Contact Us </h2>
+          <div className='contact-background'>
+            <NavBar history={history}/>
+            <div className='row'>
+              <div className='col s4'>
+                <h2 className='white-text'> Contact Us </h2>
+              </div>
             </div>
-          </div>
             <form onSubmit={this.handleSubmit}>
               <div className='row'>
                 <div className='col s4'>

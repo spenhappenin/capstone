@@ -5,6 +5,7 @@ import { logout } from '../actions/auth';
 import Flash from '../components/Flash';
 
 class NavBar extends React.Component {
+
   constructor(props) {
     super(props);
     this.navs = this.navs.bind(this);
@@ -25,28 +26,28 @@ class NavBar extends React.Component {
       case 'user':
       return (
         <div>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/userEvents'>Events</Link></li>
-          <li><Link to='/contact'>Contact</Link></li>
-          <li><a style={{ cursor: 'pointer' }} onClick={this.logout}>Logout</a></li>
+          <li><Link className='nav-tabs' to='/'>Home</Link></li>
+          <li><Link className='nav-tabs' to='/userEvents'>Events</Link></li>
+          <li><Link className='nav-tabs' to='/contact'>Contact</Link></li>
+          <li><a className='nav-tabs' style={{ cursor: 'pointer' }} onClick={this.logout}>Logout</a></li>
         </div>
       )
     case 'admin':
       return (
         <div>
-          <li> <Link to='/'> Home </Link> </li>
-          <li><Link to='/userEvents'>Events</Link></li>
-          <li> <Link to='/admin'> Admin </Link> </li>
-          <li> <a style={{ cursor: 'pointer' }} onClick={this.logout}> Logout </a> </li>
+          <li> <Link className='nav-tabs' to='/'> Home </Link> </li>
+          <li><Link className='nav-tabs' to='/userEvents'>Events</Link></li>
+          <li> <Link className='nav-tabs' to='/admin'> Admin </Link> </li>
+          <li> <a className='nav-tabs' style={{ cursor: 'pointer' }} onClick={this.logout}> Logout </a> </li>
         </div>
       )
     default:
       return (
         <div>
-          <li> <Link to='/'> Home </Link> </li>
-          <li> <Link to='/contact'> Contact </Link> </li>
-          <li> <Link to='/signup'> Sign Up </Link> </li>
-          <li> <Link to='/signin'> Login </Link> </li>
+          <li> <Link className='nav-tabs' to='/'> Home </Link> </li>
+          <li> <Link className='nav-tabs' to='/contact'> Contact </Link> </li>
+          <li> <Link className='nav-tabs' to='/signup'> Sign Up </Link> </li>
+          <li> <Link className='nav-tabs' to='/signin'> Login </Link> </li>
         </div>
       )
     }
@@ -55,9 +56,9 @@ class NavBar extends React.Component {
   render() {
     return(
       <div>
-        <nav className='nav-bar' style={{backgroundColor: 'transparent'}}>
+        <nav className='nav-bar' style={{backgroundColor: 'transparent', boxShadow: 'none'}}>
           <div className='nav-wrapper'>
-          <Link to='/' className='main-logo'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/v1483656575/logo_h1y0pg.png' style={{height: '60px', width: '80px' }} />GO</Link>
+          <Link to='/' className='main-logo nav-tabs'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/v1483656575/logo_h1y0pg.png' style={{height: '60px', width: '80px' }} />GO</Link>
             <a href='#' data-activates='mobile' className='button-collapse'>
               <i className='fa fa-bars'></i>
             </a>

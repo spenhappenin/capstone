@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { refreshLogin } from '../actions/auth';
 import { setFlash } from '../actions/flash';
+import NavBar from './Navbar';
+import store, { history } from '../store';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -53,6 +55,7 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className='signup-background'>
+        <NavBar history={history}/>
         <div className='right'>
           <div className='row'>
             <div className='col s12 center'>
@@ -62,7 +65,7 @@ class SignUp extends React.Component {
             <form onSubmit={this.handleSubmit}>
 
             <div className='row'>
-              <div className='col s12'>
+              <div className='col s12 center'>
                 <label> Username </label>
                 <input className='placeholder' ref="username" />
               </div>

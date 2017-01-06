@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import About from './About';
 import Contact from './Contact';
+import NavBar from './Navbar';
+import store, { history } from '../store';
 
 class Landing extends Component {
 
@@ -16,6 +18,7 @@ class Landing extends Component {
     return(
 			<div className="box">
         <div className="landing-image">
+          <NavBar history={history}/>
           <div className="parallax"> <img className='responsive-img' src="http://res.cloudinary.com/omash612/image/upload/c_scale,w_2060/v1483657677/basketball_landing_iglcrw.jpg" alt='Picture of athletes lined up' /> </div>
         </div>
         <div className='what-is-go'>

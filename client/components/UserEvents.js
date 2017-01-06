@@ -5,6 +5,8 @@ import UserEventCard from './UserEventCard';
 import { fetchUserEvents } from '../actions/userEvents';
 import { Link } from 'react-router';
 import SearchBar from './SearchBar'
+import NavBar from './Navbar';
+import store, { history } from '../store';
 
 class UserEvents extends Component {
   constructor(props) {
@@ -27,17 +29,17 @@ class UserEvents extends Component {
   }
 
   render() {
-  
+
     return(
       <div>
-
-        <div className='row something'>
+        <NavBar history={history}/>
+        <div className='row'>
           <div className='col s7'>
             <GoogleMap userEvents={ this.props.userEvents } />
           </div>
 
           <div className='col s5 event-list'>
-            <h1 className='center'> Sports Events </h1>
+            <h1 className='center'> GameOn! </h1>
             <Link to={'/addEvent'} className='btn blue'> Create Event </Link>
             {this.displayEvents()}
           </div>

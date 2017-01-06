@@ -177,7 +177,7 @@ class UserEventCard extends Component {
           sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630392/football_pin_ghzsia.png';
           break;
         case 'soccer':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630845/soccer_pin_zeme2b.png';
+          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483669635/soccer_square_hml3vq.jpg';
           break;
         case 'kickball':
           sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630404/kickball_pin_pulxzn.png';
@@ -214,23 +214,22 @@ class UserEventCard extends Component {
       <div>
         <ul className="collapsible" data-collapsible="accordion" >
           <li>
-            <div className='col s3 sport-image-container'>
-              <img className='responsive-img sport-image' src={ sportPic } alt='Basketball Icon' />
-            </div>
-            <div>
-              <h5 id={id}>{ sportEvent.name }</h5>
-            </div>
-            <div>
-              <em>{ sportEvent.street }</em>
-            </div>
-            <div>
-              <em>{ sportEvent.city }, { sportEvent.state }</em>
-            </div>
-            <div>
-              <em>{ sportEvent.zip }</em>
-            </div>
             <div className="collapsible-header">
-              <a href='#' className='right' onClick={this.handleClick}> Show More </a>
+              <div className='col s3'>
+                <img className='responsive-img' src={ sportPic } alt='Basketball Icon' />
+              </div>
+              <div>
+                <h5 id={id}>{ sportEvent.name }</h5>
+              </div>
+              <div>
+                <em>{ sportEvent.street }</em>
+              </div>
+              <div>
+                <em>{ sportEvent.city }, { sportEvent.state }</em>
+              </div>
+              <div>
+                <em>{ sportEvent.zip }</em>
+              </div>
             </div>
 
             <div className="collapsible-body" style={{ padding: '10px' }}>
