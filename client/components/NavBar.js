@@ -14,6 +14,7 @@ class NavBar extends React.Component {
 
   componentDidMount() {
     $('.button-collapse').sideNav();
+    $(".dropdown-button").dropdown();
   }
 
   logout(e) {
@@ -26,10 +27,16 @@ class NavBar extends React.Component {
       case 'user':
       return (
         <div>
+          <ul id="dropDown1" className="dropdown-content">
+            <li><a className='nav-tabs' href="#!"><i className='material-icons'>perm_identity</i>View Profile</a></li>
+            <li><a className='nav-tabs' href="#!"><i className='material-icons'>settings</i>Settings</a></li>
+            <li className="divider"></li>
+          </ul>
+          <li><a className='nav-tabs' onClick={this.logout}>Logout</a></li>
           <li><Link className='nav-tabs' to='/'>Home</Link></li>
           <li><Link className='nav-tabs' to='/userEvents'>Events</Link></li>
           <li><Link className='nav-tabs' to='/contact'>Contact</Link></li>
-          <li><a className='nav-tabs' style={{ cursor: 'pointer' }} onClick={this.logout}>Logout</a></li>
+          <li><a className='dropdown-button nav-tabs' href='#' data-activates='dropDown1'>Username<i className='material-icons right'>arrow_drop_down</i></a></li>
         </div>
       )
     case 'admin':
@@ -58,7 +65,7 @@ class NavBar extends React.Component {
       <div>
         <nav className='nav-bar' style={{backgroundColor: 'transparent', boxShadow: 'none'}}>
           <div className='nav-wrapper'>
-          <Link to='/' className='main-logo nav-tabs'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/v1483656575/logo_h1y0pg.png' style={{height: '60px', width: '80px' }} />GO</Link>
+          <Link to='/' className='main-logo nav-tabs'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/v1483656575/logo_h1y0pg.png' style={{height: '60px', width: '80px' }} />PUG</Link>
             <a href='#' data-activates='mobile' className='button-collapse'>
               <i className='fa fa-bars'></i>
             </a>

@@ -31,7 +31,7 @@ class UserEvents extends Component {
   render() {
 
     return(
-      <div>
+      <div className='event-background'>
         <NavBar history={history}/>
         <div className='row'>
           <div className='col s7'>

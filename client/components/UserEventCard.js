@@ -65,7 +65,7 @@ class UserEventCard extends Component {
     let timeFormat = moment(time, 'YYYY MM DD hh:mm:ss z' ).format('hh:mm');
     return(
       <div>
-        <ul className="collapsible" data-collapsible="accordion" >
+        <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
           <li>
             <form className='container' onSubmit={this.handleSubmit}>
               <div className='row'>
@@ -75,37 +75,37 @@ class UserEventCard extends Component {
                 </div>
                 <div className='col s6'>
                   <label> Sport: </label>
-                  <em><input type='text' defaultValue= {sport} ref='event_sport' required /></em>
+                  <input type='text' defaultValue= {sport} ref='event_sport' required />
                 </div>
               </div>
               <div className='row'>
                 <div className='col s6'>
                   <label> Capacity: </label>
-                  <em><input type='text' defaultValue= {capacity} ref='capacity' required /></em>
+                  <input type='text' defaultValue= {capacity} ref='capacity' required />
                 </div>
                 <div className='col s6'>
                   <label> Location: </label>
-                  <em><input type='text' defaultValue= {venue} ref='venue' required /></em>
+                  <input type='text' defaultValue= {venue} ref='venue' required />
                 </div>
               </div>
               <div className='row'>
                 <div className='col s6'>
                   <label> Address: </label>
-                  <em><input type='text' defaultValue= {street} ref='event_street' required /></em>
+                  <input type='text' defaultValue= {street} ref='event_street' required />
                 </div>
                 <div className='col s6'>
                   <label> City: </label>
-                  <em><input type='text' defaultValue= {city} ref='event_city' required /></em>
+                  <input type='text' defaultValue= {city} ref='event_city' required />
                 </div>
               </div>
               <div className='row'>
                 <div className='col s6'>
                   <label> State: </label>
-                  <em><input type='text' defaultValue= {state} ref='event_state' required /></em>
+                  <input type='text' defaultValue= {state} ref='event_state' required />
                 </div>
                 <div className='col s6'>
                   <label> Zip: </label>
-                  <em><input type='number' defaultValue= {zip} ref='event_zip' required /></em>
+                  <input type='number' defaultValue= {zip} ref='event_zip' required />
                 </div>
               </div>
 
@@ -134,11 +134,11 @@ class UserEventCard extends Component {
                 <div className='row'>
                   <div className='col s6'>
                     <label> Date: </label>
-                    <i><input type='date' defaultValue= {date}  className='datepicker' ref='event_date' required /></i>
+                    <input type='date' defaultValue= {date}  className='datepicker' ref='event_date' required />
                   </div>
                   <div className='col s6'>
                     <label> Time: </label>
-                    <i><input type='time' defaultValue= {timeFormat}  ref='event_time' required /></i>
+                    <input type='time' defaultValue= {timeFormat}  ref='event_time' required />
                   </div>
                 </div>
                 <div className='row'>
@@ -151,12 +151,11 @@ class UserEventCard extends Component {
                   <button style={{ marginBottom: '22px'}} type='button' onClick={this.toggleEdit} className='btn orange comment-btn right'>Cancel</button>
                 </div>
               </form>
-
-          </li>
-        </ul>
-      </div>
-    );
-  }
+            </li>
+          </ul>
+        </div>
+      );
+    }
 
   display() {
     let sportEvent = this.props.userEvent;
@@ -212,9 +211,9 @@ class UserEventCard extends Component {
 
     return(
       <div>
-        <ul className="collapsible" data-collapsible="accordion" >
+        <ul className="collapsible card-color" data-collapsible="accordion" style={{borderRadius: '5px'}} >
           <li>
-            <div className="collapsible-header">
+            <div className="collapsible-header card-color">
               <div className='col s3'>
                 <img className='responsive-img' src={ sportPic } alt='Basketball Icon' />
               </div>
@@ -222,46 +221,46 @@ class UserEventCard extends Component {
                 <h5 id={id}>{ sportEvent.name }</h5>
               </div>
               <div>
-                <em>{ sportEvent.street }</em>
+                { sportEvent.street }
               </div>
               <div>
-                <em>{ sportEvent.city }, { sportEvent.state }</em>
+                { sportEvent.city }, { sportEvent.state }
               </div>
               <div>
-                <em>{ sportEvent.zip }</em>
+                { sportEvent.zip }
               </div>
             </div>
 
             <div className="collapsible-body" style={{ padding: '10px' }}>
                 <div className='row center'>
                   <div className='col s4'>
-                    Skill Level: <i>{ sportEvent.skill_level }</i>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span style={{fontSize: '14px'}}>{ sportEvent.skill_level }</span>
                   </div>
                   <div className='col s4'>
-                    Capacity: <i>{ sportEvent.capacity }</i>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{ sportEvent.capacity }</span>
                   </div>
                   <div className='col s4'>
-                    Time: <i>{ timeFormat }</i>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{ timeFormat }</span>
                   </div>
                 </div>
                 <div className='row center'>
                   <div className='col s6'>
-                    Date: <i>{ dateFormat }</i>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}>{ dateFormat }</span>
                   </div>
                   <div className='col s6'>
-                    Location: <i>{ sportEvent.venue }</i>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span style={{fontSize: '14px'}}>{ sportEvent.venue }</span>
                   </div>
                 </div>
                 <div className='row center'>
                   <div className='col s12'>
-                    Description: { sportEvent.description }
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span style={{fontSize: '14px'}}>{ sportEvent.description }</span>
                   </div>
                 </div>
               <div>
                 <textarea placeholder="Leave A Comment..."></textarea>
               </div>
 
-              <ul className="collapsible" data-collapsible="accordion" >
+              <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
                 <li>
                   <div className="collapsible-header">
                     <a href='#' onClick={this.handleClick}> Comments </a>
