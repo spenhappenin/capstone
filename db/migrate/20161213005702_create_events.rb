@@ -10,10 +10,10 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :street, null: false
       t.string :city, null: false
       t.string :state, null: false
-      t.integer :zip, null: false
+      t.string :zip, null: false
       t.string :skill_level, null: false
       t.text :description
-      t.boolean :attending
+      t.integer :attending
       t.boolean :active
       t.float :latitude
       t.float :longitude
