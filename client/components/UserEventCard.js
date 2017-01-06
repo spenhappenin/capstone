@@ -162,72 +162,69 @@ class UserEventCard extends Component {
 
   display() {
     let sportEvent = this.props.userEvent;
-
     let dateFormat = moment(sportEvent.date ).format('MMMM Do YYYY');
     let timeFormat = moment(sportEvent.time, 'YYYY MM DD hh:mm:ss z' ).format('h:mm a');
     let id = `userEvent-${this.props.userEvent.id}`
     let sportPic;
 
-
-
-      switch(sportEvent.sport) {
-        case 'basketball':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630389/basketball_pin_ioirxi.png';
-          break;
-        case 'baseball':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630387/baseball_pin_inl5v6.png';
-          break;
-        case 'football':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630392/football_pin_ghzsia.png';
-          break;
-        case 'soccer':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483669635/soccer_square_hml3vq.jpg';
-          break;
-        case 'kickball':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630404/kickball_pin_pulxzn.png';
-          break;
-        case 'badminton':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630863/badminton_pin_ymxsft.png';
-          break;
-        case 'volleyball':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630414/volleyball_pin_t4gakn.png';
-          break;
-        case 'tennis':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630411/tennis_pin_zazlxl.png';
-          break;
-        case 'pingpong':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630407/pong-pin_mzqmgs.png';
-          break;
-        case 'hockey':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630397/hockey_pin_q7kror.png';
-          break;
-        case 'golf':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630394/golf_pin_vhluyz.png';
-          break;
-        case 'frisbee':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483656273/frisbee_pin_jrawjp.png';
-          break;
-        case 'lacrosse':
-          sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483656252/lacrosse_pin_qlsw3t.png';
-          break;
-        default:
-          sportPic = "http://static-cdn.jobisjob.com/img/maps/marker-icon.png"
-      }
+    switch(sportEvent.sport) {
+      case 'basketball':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630389/basketball_pin_ioirxi.png';
+        break;
+      case 'baseball':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630387/baseball_pin_inl5v6.png';
+        break;
+      case 'football':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630392/football_pin_ghzsia.png';
+        break;
+      case 'soccer':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630845/soccer_pin_zeme2b.png';
+        break;
+      case 'kickball':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630404/kickball_pin_pulxzn.png';
+        break;
+      case 'badminton':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630863/badminton_pin_ymxsft.png';
+        break;
+      case 'volleyball':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630414/volleyball_pin_t4gakn.png';
+        break;
+      case 'tennis':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630411/tennis_pin_zazlxl.png';
+        break;
+      case 'pingpong':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630407/pong-pin_mzqmgs.png';
+        break;
+      case 'hockey':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630397/hockey_pin_q7kror.png';
+        break;
+      case 'golf':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630394/golf_pin_vhluyz.png';
+        break;
+      case 'frisbee':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483656273/frisbee_pin_jrawjp.png';
+        break;
+      case 'lacrosse':
+        sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483656252/lacrosse_pin_qlsw3t.png';
+        break;
+      default:
+        sportPic = "http://static-cdn.jobisjob.com/img/maps/marker-icon.png"
+    }
 
       let userEvent = this.props.userEvent;
       let user = this.props.user.id;
       if(userEvent.user_id === user ) {
 
         return(
-      <div>
+      <div id={id}>
         <ul className="collapsible card-color" data-collapsible="accordion" style={{borderRadius: '5px'}} >
           <li>
-            <div className="collapsible-header card-color">
+            <div className="collapsible-header card-color flex" >
               <div className='col s3'>
-                <img className='responsive-img' src={ sportPic } alt='Basketball Icon' />
+                <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
               </div>
               <div>
-                <h5 id={id}>{ sportEvent.name }</h5>
+                <h5>{ sportEvent.name }</h5>
               </div>
               <div>
                 { sportEvent.street }
@@ -293,7 +290,7 @@ class UserEventCard extends Component {
         );
        } else {
         return(
-      <div>
+      <div id={id}>
         <ul className="collapsible card-color" data-collapsible="accordion" style={{borderRadius: '5px'}} >
           <li>
             <div className="collapsible-header card-color">
@@ -301,16 +298,16 @@ class UserEventCard extends Component {
                 <img className='responsive-img' src={ sportPic } alt='Basketball Icon' />
               </div>
               <div>
-                <h5 id={id}>{ sportEvent.name }</h5>
+                <h5>{ sportEvent.name }</h5>
               </div>
               <div>
                 { sportEvent.street }
               </div>
               <div>
-                { sportEvent.city }, { sportEvent.state }
+                
               </div>
               <div>
-                { sportEvent.zip }
+                
               </div>
             </div>
 

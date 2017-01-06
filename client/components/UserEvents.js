@@ -39,7 +39,7 @@ class UserEvents extends Component {
           </div>
 
           <div className='col s5 event-list'>
-            <h1 className='center'> GameOn! </h1>
+            <h1 className='center'> PUG Events </h1>
             <div className='row'>
               <div className='col s4'>
                 <Link to={'/addEvent'} className='btn blue'> Create Event </Link>
