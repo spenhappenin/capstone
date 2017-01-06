@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 // import * as moment from 'moment';
 import moment from 'moment';
+import Counter from './Counter';
 
 class UserEventCard extends Component {
   constructor(props) {
@@ -122,7 +123,6 @@ class UserEventCard extends Component {
                   </select>
                 </div>
               </div>
-
                 <br />
                 <div className='row'>
                   <div className='col s12'>
@@ -271,7 +271,7 @@ class UserEventCard extends Component {
                   </div>
                 </li>
               </ul>
-
+              <Counter />
               <div>
                 <button type='button' className='btn green'>Submit</button>
                 <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'><i className='material-icons'>delete</i></button>
