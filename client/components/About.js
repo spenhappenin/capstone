@@ -32,7 +32,7 @@ class About extends Component {
               <hr />
               <p className='center'><em> Huge Beard, Tatted Dog Lover </em></p>
               <div className='social-media'>
-               <a href='https://github.com/WilliamW101' target='_blank'><img className='social-icons' style={{height: '55px', width: '55px'}} src='spencer_github.png' /></a>
+               <a href='https://github.com/WilliamW101' target='_blank'><img className='social-icons' style={{height: '55px', width: '55px'}} src='william_github.png' /></a>
                <a href='https://www.linkedin.com/in/william-winger' target='_blank'><img className='social-icons' style={{height: '40px', width: '40px', marginTop: '6px'}} src='http://res.cloudinary.com/omash612/image/upload/v1483478100/linkedinlogo_sjckc6.png' /> </a>
                <a href='mailto:billy_thekid55@hotmail.com'><img className='social-icons' src="http://res.cloudinary.com/omash612/image/upload/v1483478773/gmailLogo_as7oja.png" style={{ height: '40px', width: '40px', marginTop: '6px'}}></img></a>
              </div>
