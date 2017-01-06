@@ -40,7 +40,14 @@ class UserEvents extends Component {
 
           <div className='col s5 event-list'>
             <h1 className='center'> GameOn! </h1>
-            <Link to={'/addEvent'} className='btn blue'> Create Event </Link>
+            <div className='row'>
+              <div className='col s4'>
+                <Link to={'/addEvent'} className='btn blue'> Create Event </Link>
+              </div>
+              <div className='col s8'>
+                <SearchBar />
+              </div>
+            </div>
             {this.displayEvents()}
           </div>
         </div>

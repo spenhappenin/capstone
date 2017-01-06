@@ -12,6 +12,20 @@ export const fetchUserEvents = () => {
   }
 }
 
+export const searchQuery = (query) => {
+  return(dispatch) => {
+    $.ajax({
+      url: '/api/search_events',
+      type: 'GET',
+      data: { query }
+    }).done( events => {
+      dispatch({ type: 'SEARCH_RESULTS', events});
+    }).fail( data => {
+      console.log(data);
+    })
+  }
+}
+
 export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
                             street, city, state, zip, skill_level, description, active ) => {
  return(dispatch) => {

@@ -1,5 +1,5 @@
 class Api::EventsController < ApplicationController
-  before_action :set_events, except: [:index, :new, :create]
+  before_action :set_events, except: [:index, :new, :create, :search]
   skip_before_action :verify_authenticity_token
 
 
@@ -45,6 +45,12 @@ class Api::EventsController < ApplicationController
     end
   end
 
+
+  def search
+    like_condition = "%#{params[:query].downcase}%"
+    results = Event.where('lower(name) like ? OR lower(venue) like ? OR lower(description) like ?', like_condition, like_condition, like_condition)
+    render json: results
+  end
 
   private
     def events_params
