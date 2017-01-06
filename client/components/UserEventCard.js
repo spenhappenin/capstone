@@ -60,6 +60,9 @@ class UserEventCard extends Component {
   handleClick(e) {
     e.preventDefault();
   }
+
+
+
   edit() {
     let { name, description, sport, venue, capacity, street, city, state, zip, skill_level, date, time } = this.props.userEvent;
     let timeFormat = moment(time, 'YYYY MM DD hh:mm:ss z' ).format('hh:mm');
@@ -165,6 +168,8 @@ class UserEventCard extends Component {
     let id = `userEvent-${this.props.userEvent.id}`
     let sportPic;
 
+
+
       switch(sportEvent.sport) {
         case 'basketball':
           sportPic = 'http://res.cloudinary.com/omash612/image/upload/v1483630389/basketball_pin_ioirxi.png';
@@ -209,7 +214,11 @@ class UserEventCard extends Component {
           sportPic = "http://static-cdn.jobisjob.com/img/maps/marker-icon.png"
       }
 
-    return(
+      let userEvent = this.props.userEvent;
+      let user = this.props.user.id;
+      if(userEvent.user_id === user ) {  
+
+        return(
       <div>
         <ul className="collapsible card-color" data-collapsible="accordion" style={{borderRadius: '5px'}} >
           <li>
@@ -281,7 +290,77 @@ class UserEventCard extends Component {
           </li>
         </ul>
       </div>
-    );
+        );
+       } else {
+        return(
+      <div>
+        <ul className="collapsible card-color" data-collapsible="accordion" style={{borderRadius: '5px'}} >
+          <li>
+            <div className="collapsible-header card-color">
+              <div className='col s3'>
+                <img className='responsive-img' src={ sportPic } alt='Basketball Icon' />
+              </div>
+              <div>
+                <h5 id={id}>{ sportEvent.name }</h5>
+              </div>
+              <div>
+                { sportEvent.street }
+              </div>
+              <div>
+                { sportEvent.city }, { sportEvent.state }
+              </div>
+              <div>
+                { sportEvent.zip }
+              </div>
+            </div>
+
+            <div className="collapsible-body" style={{ padding: '10px' }}>
+                <div className='row center'>
+                  <div className='col s4'>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span style={{fontSize: '14px'}}>{ sportEvent.skill_level }</span>
+                  </div>
+                  <div className='col s4'>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{ sportEvent.capacity }</span>
+                  </div>
+                  <div className='col s4'>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{ timeFormat }</span>
+                  </div>
+                </div>
+                <div className='row center'>
+                  <div className='col s6'>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}>{ dateFormat }</span>
+                  </div>
+                  <div className='col s6'>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span style={{fontSize: '14px'}}>{ sportEvent.venue }</span>
+                  </div>
+                </div>
+                <div className='row center'>
+                  <div className='col s12'>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span style={{fontSize: '14px'}}>{ sportEvent.description }</span>
+                  </div>
+                </div>
+              <div>
+                <textarea placeholder="Leave A Comment..."></textarea>
+              </div>
+
+              <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
+                <li>
+                  <div className="collapsible-header">
+                    <a href='#' onClick={this.handleClick}> Comments </a>
+                  </div>
+                  <div className='collapsible-body'>
+                    <p> this is cool </p>
+                  </div>
+                </li>
+              </ul>
+              <Counter />
+            </div>
+          </li>
+        </ul>
+      </div>
+        );
+      }
+
   }
 
   render() {
@@ -293,4 +372,8 @@ class UserEventCard extends Component {
   }
 }
 
-export default connect() (UserEventCard);
+const mapStateToProps = (state) => {
+  return { user: state.user }
+}
+
+export default connect(mapStateToProps)(UserEventCard);

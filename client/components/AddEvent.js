@@ -68,7 +68,7 @@ class AddEvent extends Component {
 
               <div className='col s6'>
                 <label className='left'> Sport </label>
-                <select ref='skill_level' className='placeholder' value="" required>
+                <select ref='sport' className='placeholder' value="" required>
                   <option value="" disabled> </option>
                   <option value='baseball'> Baseball </option>
                   <option value='basketball'> Basketball </option>
