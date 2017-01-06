@@ -216,7 +216,7 @@ class UserEventCard extends Component {
 
       let userEvent = this.props.userEvent;
       let user = this.props.user.id;
-      if(userEvent.user_id === user ) {  
+      if(userEvent.user_id === user ) {
 
         return(
       <div>
@@ -353,7 +353,7 @@ class UserEventCard extends Component {
                   </div>
                 </li>
               </ul>
-              <Counter />
+              <Counter capacity={sportEvent.capacity}/>
             </div>
           </li>
         </ul>
