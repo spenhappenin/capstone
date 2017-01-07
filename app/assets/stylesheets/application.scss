@@ -12,6 +12,14 @@ $secondary-color: color("blue", "base") !default;
   // border: 1px solid red;
 }
 
+.pug {
+  border: 1px solid black;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  background-image: url(http://res.cloudinary.com/omash612/image/upload/v1483751437/pug_htzxwv.png);
+}
+
 .cool {
   margin-top: 10px;
 }
