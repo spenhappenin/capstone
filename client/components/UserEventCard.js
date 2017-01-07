@@ -229,12 +229,6 @@ class UserEventCard extends Component {
               <div>
                 { sportEvent.street }
               </div>
-              <div>
-                { sportEvent.city }, { sportEvent.state }
-              </div>
-              <div>
-                { sportEvent.zip }
-              </div>
             </div>
 
             <div className="collapsible-body" style={{ padding: '10px' }}>
@@ -304,10 +298,10 @@ class UserEventCard extends Component {
                 { sportEvent.street }
               </div>
               <div>
-                
+
               </div>
               <div>
-                
+
               </div>
             </div>
 
