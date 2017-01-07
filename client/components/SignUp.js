@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { refreshLogin } from '../actions/auth';
 import { setFlash } from '../actions/flash';
-import NavBar from './Navbar';
-import store, { history } from '../store';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -17,6 +15,10 @@ class SignUp extends React.Component {
       selectYears: 200
     });
     $('select').material_select();
+    $('body').css('background-image', "url(http://res.cloudinary.com/omash612/image/upload/c_scale,w_2131/v1483683226/artsyBasketball_ysrsox.jpg)");
+    $('body').css('background-position', '100% 100%');
+    $('body').css('background-size', 'cover');
+    $('body').css('background-repeat', 'no-repeat');
   }
 
   handleSubmit(e) {
@@ -54,12 +56,11 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div className='signup-background'>
-        <NavBar history={history}/>
+      <div>
         <div className='right'>
           <div className='row'>
             <div className='col s12 center'>
-                <h3>Welcome To GameOn!</h3>
+                <h3 className='black-text'>Welcome To PUG!</h3>
               </div>
             </div>
             <form onSubmit={this.handleSubmit}>
@@ -67,51 +68,51 @@ class SignUp extends React.Component {
             <div className='row'>
               <div className='col s12 center'>
                 <label> Username </label>
-                <input className='placeholder' ref="username" />
+                <input className='placeholder black-text' ref="username" />
               </div>
             </div>
 
             <div className='row'>
               <div className='col s6'>
                 <label> First Name </label>
-                <input className='placeholder' ref="first_name" required={true} />
+                <input className='placeholder black-text' ref="first_name" required={true} />
               </div>
               <div className='col s6'>
                 <label> Last Name </label>
-                <input className='placeholder' ref="last_name" required={true} />
+                <input className='placeholder black-text' ref="last_name" required={true} />
               </div>
             </div>
 
             <div className='row'>
               <div className='col s6'>
                 <label> DOB </label>
-                <input type='date' className='datepicker placeholder' ref="dob" required={true} />
+                <input type='date' className='datepicker placeholder black-text' ref="dob" required={true} />
               </div>
               <div className='col s6'>
                 <label> Phone Number </label>
-                <input className='placeholder' type='tel' ref="phone_number" />
+                <input className='placeholder black-text' type='tel' ref="phone_number" />
               </div>
             </div>
 
             <div className='row'>
               <div className='col s6'>
                 <label> Favorite Sport </label>
-                <input className='placeholder' ref="favorite" />
+                <input className='placeholder black-text' ref="favorite" />
               </div>
               <div className='col s6'>
                 <label> Email </label>
-                <input className='placeholder' type="email" ref="email" required={true} />
+                <input className='placeholder black-text' type="email" ref="email" required={true} />
               </div>
             </div>
 
             <div className='row'>
               <div className='col s6'>
                 <label> Password </label>
-                <input className='placeholder' type="password" ref="password" required={true} />
+                <input className='placeholder black-text' type="password" ref="password" required={true} />
               </div>
               <div className='col s6'>
                 <label> Confirm Password </label>
-                <input className='placeholder' type="password" ref="password_confirmation" required={true} />
+                <input className='placeholder black-text' type="password" ref="password_confirmation" required={true} />
               </div>
             </div>
 

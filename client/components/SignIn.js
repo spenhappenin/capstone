@@ -3,13 +3,18 @@ import { connect } from 'react-redux';
 import { refreshLogin, handleFacebookLogin } from '../actions/auth';
 import { setFlash } from '../actions/flash';
 import FacebookLogin from 'react-facebook-login';
-import NavBar from './Navbar';
-import store, { history } from '../store';
 
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    $('body').css('background-image', "url(http://res.cloudinary.com/omash612/image/upload/c_scale,w_2216/v1483592932/baseballMit_vlwj1y.jpg)");
+    $('body').css('background-position', '100% 70%');
+    $('body').css('background-size', 'cover');
+    $('body').css('background-repeat', 'no-repeat');
   }
 
   handleSubmit(e) {
@@ -40,8 +45,7 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className='login-background'>
-        <NavBar history={history}/>
+      <div>
         <div className='row'>
           <div className='col s4 offset-s8 center'>
             <h2 className='white-text'>Login</h2>

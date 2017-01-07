@@ -5,8 +5,6 @@ import UserEventCard from './UserEventCard';
 import { fetchUserEvents } from '../actions/userEvents';
 import { Link } from 'react-router';
 import SearchBar from './SearchBar'
-import NavBar from './Navbar';
-import store, { history } from '../store';
 
 class UserEvents extends Component {
   constructor(props) {
@@ -15,6 +13,10 @@ class UserEvents extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchUserEvents());
+    $('body').css('background-image', '');
+    $('body').css('background-color', 'white');
+    $('body').css('height', '100vh');
+    $('body').css('width', '100%');
   }
 
   displayEvents() {
@@ -31,8 +33,7 @@ class UserEvents extends Component {
   render() {
 
     return(
-      <div className='event-background'>
-        <NavBar history={history}/>
+      <div>
         <div className='row'>
           <div className='col s7'>
             <GoogleMap userEvents={ this.props.userEvents } />

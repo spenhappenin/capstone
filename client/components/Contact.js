@@ -1,10 +1,15 @@
 import React from 'react';
-import NavBar from './Navbar';
-import store, { history } from '../store';
 
 class Contact extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    $('body').css('background-image', "url(http://res.cloudinary.com/omash612/image/upload/c_scale,w_1978/v1483472712/hdSoccerGame_jwonev.jpg)");
+    $('body').css('background-position', '80% 80%');
+    $('body').css('background-size', 'cover');
+    $('body').css('background-repeat', 'no-repeat');
   }
 
   handleSubmit(e) {
@@ -14,8 +19,7 @@ class Contact extends React.Component {
   render() {
     return(
       <div>
-        <div className='contact-background'>
-          <NavBar history={history}/>
+        <div>
             <div className='row'>
               <div className='col s4'>
                 <h2 className='white-text'> Contact Us </h2>

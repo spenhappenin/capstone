@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from './Navbar';
-import store, { history } from '../store';
 
 class AddEvent extends Component {
   constructor(props) {
@@ -55,7 +53,6 @@ class AddEvent extends Component {
   render() {
     return(
       <div>
-        <NavBar history={history} />
         <div className='container center'>
           <h1> Create Event </h1>
           <form  ref='form' onSubmit={this.handleSubmit}>
