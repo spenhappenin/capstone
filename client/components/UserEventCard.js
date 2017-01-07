@@ -270,7 +270,7 @@ class UserEventCard extends Component {
                   </div>
                 </li>
               </ul>
-              <Counter capacity={sportEvent.capacity} />
+              <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
               <div>
                 <button type='button' className='btn green'>Submit</button>
                 <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'><i className='material-icons'>delete</i></button>
@@ -344,7 +344,7 @@ class UserEventCard extends Component {
                   </div>
                 </li>
               </ul>
-              <Counter capacity={sportEvent.capacity}/>
+              <Counter userEvent={sportEvent} capacity={sportEvent.capacity}/>
             </div>
           </li>
         </ul>

@@ -12,6 +12,21 @@ export const fetchUserEvents = () => {
   }
 }
 
+export const peopleAttending = (eventId, attending) => {
+  return(dispatch) => {
+    $.ajax({
+      url: `/api/events/${eventId}`,
+      type: 'PUT',
+      dataType: 'JSON',
+      data: { events: { attending } }
+    }).done( userEvent => {
+      dispatch({ type: 'PEOPLE_ATTENDING', userEvent })
+    }).fail( data => {
+      console.log(data)
+    });
+  }
+}
+
 export const searchQuery = (query) => {
   return(dispatch) => {
     $.ajax({

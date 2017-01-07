@@ -30,11 +30,10 @@ class Api::EventsController < ApplicationController
 
   def update
     @event.update(events_params)
-    @event.user_id = current_user.id
     if @event.save
       render json: @event
     else
-      render json: {}
+      render json: {errors: @event.errors}, status: 401
     end
   end
 
@@ -60,7 +59,7 @@ class Api::EventsController < ApplicationController
     def events_params
       params.require(:events).permit(:name, :date, :time, :capacity, :venue,
                                     :street, :city, :state, :zip, :skill_level,
-                                    :description, :active, :sport)
+                                    :description, :active, :sport, attending: [])
     end
 
     def set_events
