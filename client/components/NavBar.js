@@ -71,7 +71,8 @@ class NavBar extends React.Component {
       <div style={{ backgroundColor: 'transparent'}}>
         <nav className='nav-bar' style={{backgroundColor: 'transparent', boxShadow: 'none'}}>
           <div className="nav-wrapper">
-            <Link to='/' className='main-logo nav-tabs'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/v1483656575/logo_h1y0pg.png' style={{height: '60px', width: '80px' }} />PUG</Link>
+          <div id='pug-logo'></div>
+            
             <a href='#' data-activates='mobile' className='button-collapse'>
               <i className='fa fa-bars'></i>
             </a>
