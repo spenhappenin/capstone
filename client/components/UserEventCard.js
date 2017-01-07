@@ -295,7 +295,7 @@ class UserEventCard extends Component {
           <li>
             <div className="collapsible-header card-color">
               <div className='col s3'>
-                <img className='responsive-img' src={ sportPic } alt='Basketball Icon' />
+                <img className='responsive-img cool' src={ sportPic } alt='Basketball Icon' />
               </div>
               <div>
                 <h5>{ sportEvent.name }</h5>

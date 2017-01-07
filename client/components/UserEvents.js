@@ -37,15 +37,16 @@ class UserEvents extends Component {
           <div className='col s7'>
             <GoogleMap userEvents={ this.props.userEvents } />
           </div>
-
           <div className='col s5 event-list'>
+
+                <div className=''>
+                <SearchBar />
+                </div>
+
             <h1 className='center'> PUG Events </h1>
             <div className='row'>
               <div className='col s4'>
-                <Link to={'/addEvent'} className='btn blue'> Create Event </Link>
-              </div>
-              <div className='col s8'>
-                <SearchBar />
+                <Link to={'/addEvent'} className='btn blue fixedbutton btn-floating btn-large waves-effect waves-light'><i className="material-icons">add</i></Link>
               </div>
             </div>
             {this.displayEvents()}

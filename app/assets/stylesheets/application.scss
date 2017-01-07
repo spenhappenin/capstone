@@ -13,12 +13,20 @@ $secondary-color: color("blue", "base") !default;
   // border: 1px solid red;
 }
 
-.flex {
-  
+.cool {
+  margin-top: 10px;
 }
 
 .flex-stuff {
  height: 100vp;
+}
+
+.fixedbutton {
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+    margin-right: 20px;
+    margin-bottom: 15px;
 }
 
 html {

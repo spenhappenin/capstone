@@ -23,15 +23,18 @@ class SearchBar extends Component {
   render () {
     return (
       <div className='row'>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type='text'
-            ref='search'
-            required={true}
-            placeholder='Search Term' />
-          <input type='submit' value='Search' className='btn blue' />
+        <div className='col s8'>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type='text'
+              ref='search'
+              required={true}
+              placeholder='Search Term' />
+          </form>
+        </div>
+        <div className='col s2'>
           <button type='button' className='btn grey' onClick={this.clearSearch}>Clear Search</button>
-        </form>
+        </div>
       </div>
     )
   }
