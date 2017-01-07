@@ -28,7 +28,7 @@ class Counter extends Component {
         return(
           <div>
             <label htmlFor='capacity'>Full</label>
-            <h1>{userEvent.attending.length}</h1>
+            <h5>{userEvent.attending.length}</h5>
             <button className="btn-flat disabled">Full</button>
           </div>
         )
@@ -36,7 +36,7 @@ class Counter extends Component {
         return(
           <div>
             <label htmlFor='capacity'>Attending</label>
-            <h1>{this.props.userEvent.attending.length}</h1>
+            <h5>{this.props.userEvent.attending.length}</h5>
             <button className="btn-flat disabled">Attending</button>
           </div>
         )
@@ -44,7 +44,7 @@ class Counter extends Component {
         return(
           <div>
             <label htmlFor='capacity'>Attending</label>
-            <h1>{userEvent.attending.length}</h1>
+            <h5>{userEvent.attending.length}</h5>
             <button className="btn" onClick={this.incrementCount}>Join</button>
           </div>
         )
