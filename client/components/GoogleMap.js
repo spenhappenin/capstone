@@ -8,6 +8,24 @@ class GoogleMap extends Component {
     this.handler = Gmaps.build('Google');
     this.panToMarker = this.panToMarker.bind(this);
     this.attachMarkers = this.attachMarkers.bind(this);
+    this.state = ({ latitude: 0.00, longitude: 0.00 });
+  }
+
+  componentWillMount() {
+    this.userLocation();
+  }
+
+  userLocation = () => {
+    if(navigator.geolocation) {
+      navigator.geolocation.watchPosition(this.showPosition);
+    } else {
+      alert('No maps for you');
+    }
+  }
+
+  showPosition = (position) => {
+    this.setState({ latitude: position.coords.latitude, longitude: position.coords.longitude });
+    
   }
 
   panToMarker(idx) {
@@ -23,7 +41,7 @@ class GoogleMap extends Component {
     let markers;
     let markerData = this.buildMarkers(this.props.userEvents || []);
 
-    handler.buildMap({ provider: { }, internal: {id: 'map'}}, () => {
+    handler.buildMap({ provider: {center: {lat: this.state.latitude, lng: this.state.longitude}}, internal: {id: 'map'}}, () => {
       markers = handler.addMarkers(markerData);
       this.attachMarkers(markers, markerData);
       handler.bounds.extendWith(markers);
@@ -37,13 +55,15 @@ class GoogleMap extends Component {
     let markers;
     let markerData = this.buildMarkers(nextProps.userEvents);
 
-    handler.buildMap({ provider: { }, internal: {id: 'map'}}, () => {
-      markers = handler.addMarkers(markerData);
-      this.attachMarkers(markers, markerData);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      handler.getMap().setZoom(10);
-    });
+    handler.buildMap
+      ({ provider: {center: {lat: this.state.latitude, lng: this.state.longitude}}, internal: {id: 'map'}}, () => {
+        markers = handler.addMarkers(markerData);
+        this.attachMarkers(markers, markerData);
+        handler.map.centerOn(markers[0]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(10);
+      });
   }
 
   attachMarkers(markers, markerData) {

@@ -9,6 +9,24 @@ import SearchBar from './SearchBar'
 class UserEvents extends Component {
   constructor(props) {
     super(props);
+    this.state = ({ latitude: 0.00, longitude: 0.00 })
+  }
+
+  componentWillMount() {
+    this.userLocation();
+  }
+
+  userLocation = () => {
+    if(navigator.geolocation) {
+      navigator.geolocation.watchPosition(this.showPosition);
+    } else {
+      alert('No maps for you');
+    }
+  }
+
+  showPosition = (position) => {
+    this.setState({ latitude: position.coords.latitude, longitude: position.coords.longitude });
+    
   }
 
   componentDidMount() {
@@ -17,6 +35,24 @@ class UserEvents extends Component {
     $('body').css('background-color', 'white');
     $('body').css('height', '100vh');
     $('body').css('width', '100%');
+    // getLocation();
+    // var lat, long
+    // function getLocation() {
+    //   console.log('getLocation')
+    //   navigator.geolocation.getCurrentPosition(success, fail)
+    // }
+    // getLocation()
+
+    // function success(position) {
+    //   console.log(position)
+    //   lat = position.coords.latitude
+    //   long = position.coords.longitude
+    // }
+    // debugger;
+    // function fail(position) {
+    //   console.log('narp')
+    // }
+
   }
 
   displayEvents() {
@@ -31,7 +67,6 @@ class UserEvents extends Component {
   }
 
   render() {
-
     return(
       <div>
         <div className='row'>

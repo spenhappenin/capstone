@@ -21,20 +21,19 @@ $(document).ready(function() {
 
 	var lat, long
 
-	function success(position) {
-		lat = position.coords.latitude
-		long = position.coords.longitude 
-		console.log("Lat", lat, "Long", long)
-		window.setTimeout(getLocation, 500)
-	}
-	function fail(position) {
-		console.log('narp')
-	}
+	// function success(position) {
+	// 	lat = position.coords.latitude
+	// 	long = position.coords.longitude 
+	// 	console.log("Lat", lat, "Long", long)
+	// }
+	// function fail(position) {
+	// 	console.log('narp')
+	// }
 
-	function getLocation() {
-		console.log('getLocation')
-		navigator.geolocation.getCurrentPosition(success, fail)
-	}
-	getLocation()
+	// function getLocation() {
+	// 	console.log('getLocation')
+	// 	navigator.geolocation.getCurrentPosition(success, fail)
+	// }
+	// getLocation()
 
 })
