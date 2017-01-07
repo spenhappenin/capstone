@@ -46,10 +46,10 @@ var config = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-            'file?hash=sha512&digest=hex&name=[hash].[ext]',
-            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]
+        loaders: 'url-loader',
+        options: {
+          limit: 25000
+        }
       }
     ]
   },
@@ -68,7 +68,6 @@ var config = {
 
 if (production) {
   config.plugins.push(
-    new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify('production') }
     }),
