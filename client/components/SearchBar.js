@@ -30,12 +30,12 @@ class SearchBar extends Component {
           <i className="material-icons prefix">search</i>
             <input
               className="validate"
-              id="icon_prefix" 
+              id="icon_prefix"
               type='text'
               ref='search'
               required={true}
               placeholder='Search Term' />
-          <label for="icon_prefix"></label>
+          <label htmlFor="icon_prefix"></label>
         </div>
 
 
