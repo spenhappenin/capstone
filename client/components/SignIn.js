@@ -47,30 +47,30 @@ class SignIn extends React.Component {
     return (
       <div>
         <div className='row'>
-          <div className='col s4 offset-s8 center'>
+          <div className='col s3 offset-s9 center'>
             <h2 className='white-text'>Login</h2>
           </div>
         </div>
           <form  onSubmit={this.handleSubmit}>
             <div className='row'>
-              <div className='col s4 offset-s8 right'>
+              <div className='col s3 offset-s9 right'>
                 <label className='left white-text'> Email </label>
                 <input className='login-caret white-text' type="email" required={true} ref="email" />
               </div>
             </div>
             <div className='row'>
-              <div className='col s4 offset-s8 right'>
+              <div className='col s3 offset-s9 right'>
                 <label className='left white-text'> Password </label>
                 <input className='login-caret white-text' type="password" required={true} ref="password" />
               </div>
             </div>
             <div className='row'>
-              <div className='col s4 offset-s8 center'>
+              <div className='col s3 offset-s9 center'>
                 <input type='submit' value='Game On' className="btn blue" />
               </div>
             </div>
           <div className='row'>
-            <div className='col s4 offset-s8 center'>
+            <div className='col s3 offset-s9 center'>
               <FacebookLogin
                 appId = '1653601048266232'
                 autoLoad = { false }
