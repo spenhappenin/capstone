@@ -23,7 +23,7 @@ class Counter extends Component {
 
   counterContent() {
     let userEvent = this.props.userEvent;
-    if(userEvent.attending) {
+    if(userEvent) {
       if(userEvent.attending.length === this.props.capacity) {
         return(
           <div>
