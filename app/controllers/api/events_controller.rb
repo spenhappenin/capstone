@@ -1,12 +1,19 @@
 class Api::EventsController < ApplicationController
-  before_action :set_events, except: [:index, :new, :create, :search]
+  before_action :set_events, except: [:index, :new, :create, :search, :all]
   skip_before_action :verify_authenticity_token
 
 
   def index
     @events = Event.all
-    render json: @events
+
   end
+
+  def all 
+    @position = params[:position][:lat]
+    @position += ' '
+    @position += params[:position][:long]
+    @events = Event.all
+  end 
 
   def new
   end

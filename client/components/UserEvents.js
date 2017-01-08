@@ -35,24 +35,6 @@ class UserEvents extends Component {
     $('body').css('background-color', 'white');
     $('body').css('height', '100vh');
     $('body').css('width', '100%');
-    // getLocation();
-    // var lat, long
-    // function getLocation() {
-    //   console.log('getLocation')
-    //   navigator.geolocation.getCurrentPosition(success, fail)
-    // }
-    // getLocation()
-
-    // function success(position) {
-    //   console.log(position)
-    //   lat = position.coords.latitude
-    //   long = position.coords.longitude
-    // }
-    // debugger;
-    // function fail(position) {
-    //   console.log('narp')
-    // }
-
   }
 
   displayEvents() {
@@ -70,7 +52,7 @@ class UserEvents extends Component {
     return(
       <div>
         <div className='row'>
-          <div className='col s7'>
+          <div className='col s12 m7'>
             <GoogleMap userEvents={ this.props.userEvents } />
           </div>
           <div className='col s5 event-list'>
@@ -81,7 +63,7 @@ class UserEvents extends Component {
 
             <h1 className='center'> PUG Time! </h1>
             <div className='row'>
-              <div className='col s4'>
+              <div className='col s12 m5'>
                 <Link to={'/addEvent'} className='btn blue fixedbutton btn-floating btn-large waves-effect waves-light'><i className="material-icons">add</i></Link>
               </div>
             </div>

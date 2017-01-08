@@ -17,7 +17,7 @@ class GoogleMap extends Component {
 
   userLocation = () => {
     if(navigator.geolocation) {
-      navigator.geolocation.watchPosition(this.showPosition);
+      navigator.geolocation.getCurrentPosition(this.showPosition);
     } else {
       alert('No maps for you');
     }

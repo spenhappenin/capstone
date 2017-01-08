@@ -1,10 +1,15 @@
 export const fetchUserEvents = () => {
   return(dispatch) => {
+    let lat = sessionStorage.getItem("userLat")
+    let long = sessionStorage.getItem("userLong")
     $.ajax({
-      url: '/api/events',
+      url: '/api/all_events',
       type: 'GET',
-      dataType: 'JSON'
-    }).done( userEvents => {
+      dataType: 'JSON',
+      data: {position: {lat, long}}
+    }).done( userEvents => {  
+      userEvents.sort(function(a,b) {return (a.distance_from_user > b.distance_from_user) ? 1 : ((b.distance_from_user > a.distance_from_user) ? -1 : 0);} ); 
+
       dispatch({ type: 'ALL_USER_EVENTS', userEvents });
     }).fail( data => {
       console.log(data);
@@ -67,7 +72,6 @@ export const deleteUserEventCard = (id) => {
    }).done(data => {
      dispatch({ type: 'DELETE_USER_EVENT', id });
    }).fail(data => {
-     debugger;
      console.log(data);
    });
  }

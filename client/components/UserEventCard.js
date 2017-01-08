@@ -214,6 +214,7 @@ class UserEventCard extends Component {
               </div>
               <div>
                 <h5>{ sportEvent.name }</h5>
+                { sportEvent.distance_from_user } Mi. Away
               </div>
               <div>
                 { sportEvent.street }
@@ -280,6 +281,7 @@ class UserEventCard extends Component {
               </div>
               <div>
                 <h5>{ sportEvent.name }</h5>
+                { sportEvent.distance_from_user } Mi. Away
               </div>
               <div>
                 { sportEvent.street }

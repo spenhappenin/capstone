@@ -17,23 +17,19 @@
 //= require gmaps/google
 //= require_tree .
 
-$(document).ready(function() {
+	function gotPostion(position) {
+		console.log('gotPosition')
+		var userLat = position.coords.latitude
+		var userLong = position.coords.longitude 
+		sessionStorage.setItem("userLat",userLat);
+		sessionStorage.setItem("userLong",userLong);
+	}
 
-	var lat, long
+	function getLocation() {
+		console.log('getLocation')
+		navigator.geolocation.getCurrentPosition(gotPostion)
+	}
 
-	// function success(position) {
-	// 	lat = position.coords.latitude
-	// 	long = position.coords.longitude 
-	// 	console.log("Lat", lat, "Long", long)
-	// }
-	// function fail(position) {
-	// 	console.log('narp')
-	// }
-
-	// function getLocation() {
-	// 	console.log('getLocation')
-	// 	navigator.geolocation.getCurrentPosition(success, fail)
-	// }
-	// getLocation()
-
-})
+	if(sessionStorage.getItem("userLat") === null && sessionStorage.getItem("userLong") === null) {
+		getLocation()	
+	}

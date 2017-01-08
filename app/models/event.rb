@@ -15,6 +15,14 @@ class Event < ApplicationRecord
 	acts_as_mappable
 	include Geokit::Geocoders
 
+	def lat 
+		self.latitude 
+	end 
+
+	def lng 
+		self.longitude
+	end
+
 	def self.getLatLong(address)
 		data = MultiGeocoder.geocode(address)
 		{lat: data.latitude, lng: data.longitude}
