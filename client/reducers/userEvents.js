@@ -2,7 +2,7 @@ const userEvents = ( state = [], action) => {
   switch(action.type) {
 
     case 'ALL_USER_EVENTS':
-      return action.userEvents;
+      return action.userEvents.reverse();
 
     case 'PEOPLE_ATTENDING':
       return state.map( e => {
