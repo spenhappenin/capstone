@@ -57,12 +57,6 @@ class UserEventCard extends Component {
    $('select').material_select();
   }
 
-  handleClick(e) {
-    e.preventDefault();
-  }
-
-
-
   edit() {
     let { name, description, sport, venue, capacity, street, city, state, zip, skill_level, date, time } = this.props.userEvent;
     let timeFormat = moment(time, 'YYYY MM DD hh:mm:ss z' ).format('hh:mm');
@@ -144,11 +138,6 @@ class UserEventCard extends Component {
                     <input type='time' defaultValue= {timeFormat}  ref='event_time' required />
                   </div>
                 </div>
-                <div className='row'>
-                  <div className='col s12'>
-                    <textarea placeholder="Leave A Comment..."></textarea>
-                  </div>
-                </div>
                 <div>
                   <button style={{ marginBottom: '22px'}} type='submit' className='btn green comment-btn'>Save</button>
                   <button style={{ marginBottom: '22px'}} type='button' onClick={this.toggleEdit} className='btn orange comment-btn right'>Cancel</button>
@@ -217,7 +206,7 @@ class UserEventCard extends Component {
 
         return(
       <div id={id}>
-        <ul className="collapsible card-color" data-collapsible="accordion" style={{borderRadius: '5px'}} >
+        <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
           <li>
             <div className="collapsible-header card-color flex" >
               <div className='col s3'>
@@ -256,9 +245,6 @@ class UserEventCard extends Component {
                     <span style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span style={{fontSize: '14px'}}>{ sportEvent.description }</span>
                   </div>
                 </div>
-              <div>
-                <textarea placeholder="Leave A Comment..."></textarea>
-              </div>
 
               <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
                 <li>
@@ -271,6 +257,7 @@ class UserEventCard extends Component {
                 </li>
               </ul>
               <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
+              <Counter capacity={sportEvent.capacity} />
               <div>
                 <button type='button' className='btn green'>Submit</button>
                 <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'><i className='material-icons'>delete</i></button>
@@ -285,9 +272,9 @@ class UserEventCard extends Component {
        } else {
         return(
       <div id={id}>
-        <ul className="collapsible card-color" data-collapsible="accordion" style={{borderRadius: '5px'}} >
+        <ul className="collapsible card-ul" data-collapsible="accordion" style={{borderRadius: '5px'}} >
           <li>
-            <div className="collapsible-header card-color">
+            <div className="collapsible-header card-div">
               <div className='col s3'>
                 <img className='responsive-img cool' src={ sportPic } alt='Basketball Icon' />
               </div>
@@ -330,9 +317,6 @@ class UserEventCard extends Component {
                     <span style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span style={{fontSize: '14px'}}>{ sportEvent.description }</span>
                   </div>
                 </div>
-              <div>
-                <textarea placeholder="Leave A Comment..."></textarea>
-              </div>
 
               <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
                 <li>
@@ -345,6 +329,7 @@ class UserEventCard extends Component {
                 </li>
               </ul>
               <Counter userEvent={sportEvent} capacity={sportEvent.capacity}/>
+              <Counter capacity={sportEvent.capacity}/>
             </div>
           </li>
         </ul>

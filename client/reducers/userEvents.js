@@ -2,6 +2,7 @@ const userEvents = ( state = [], action) => {
   switch(action.type) {
 
     case 'ALL_USER_EVENTS':
+<<<<<<< HEAD
       return action.userEvents;
 
     case 'PEOPLE_ATTENDING':
@@ -11,6 +12,9 @@ const userEvents = ( state = [], action) => {
         return e
       })
 
+=======
+      return action.userEvents.reverse();
+>>>>>>> changed order of events being made
     case 'SEARCH_RESULTS':
       return action.events
 

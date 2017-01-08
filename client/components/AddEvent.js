@@ -42,7 +42,6 @@ class AddEvent extends Component {
       }
     }
     }).done( addEvent => {
-      console.log("");
       this.props.history.push("/userEvents");
     }).fail( data => {
       console.log(data);

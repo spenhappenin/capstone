@@ -25,20 +25,17 @@ class SearchBar extends Component {
       <div className='row'>
         <div className='col s8'>
           <form onSubmit={this.handleSubmit}>
-
-        <div className="input-field">
-          <i className="material-icons prefix">search</i>
-            <input
-              className="validate"
-              id="icon_prefix"
-              type='text'
-              ref='search'
-              required={true}
-              placeholder='Search Term' />
-          <label htmlFor="icon_prefix"></label>
-        </div>
-
-
+            <div className="input-field">
+              <i className="material-icons prefix">search</i>
+                <input
+                  className="validate"
+                  id="icon_prefix"
+                  type='text'
+                  ref='search'
+                  required={true}
+                  placeholder='Search Term' />
+              <label htmlFor="icon_prefix"></label>
+            </div>
           </form>
         </div>
         <div className='col s2'>
