@@ -28,39 +28,34 @@ class Counter extends Component {
         return(
           <div>
             <label htmlFor='capacity'>Full</label>
-            <h5>{userEvent.attending.length}</h5>
-            <button className="btn-flat disabled">Full</button>
+            <button className="btn-flat disabled center">Full</button>
           </div>
         )
       } else if(userEvent.attending.find(id => id === this.props.user.id.toString())) {
         return(
           <div>
-            <label htmlFor='capacity'>Attending</label>
-            <h5>{this.props.userEvent.attending.length}</h5>
-            <button className="btn-flat disabled">Attending</button>
+            <button className="btn-flat disabled center">Attending</button>
           </div>
         )
       } else {
         return(
           <div>
-            <label htmlFor='capacity'>Attending</label>
-            <h5>{userEvent.attending.length}</h5>
-            <button className="btn" onClick={this.incrementCount}>Join</button>
+            <button className="btn center" onClick={this.incrementCount}>Join</button>
           </div>
         )
       }
-    } 
   }
+}
 
   display() {
    return (
-     <div className='row'>
-        <div className='box'>
-          <div className='col s12'>
-            { this.counterContent() }
-          </div>
+     <div>
+      <div>
+        <div>
+          { this.counterContent() }
         </div>
-      </div>)
+      </div>
+    </div> )
   }
 
    render() {

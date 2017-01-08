@@ -215,12 +215,12 @@ class UserEventCard extends Component {
               <div>
                 <h5>{ sportEvent.name }</h5>
               </div>
-              <div className='row'>
-                <div className='col s4 m4'>
+              <div className='row event-street'>
+                <div className='col s4 m4 '>
                   { sportEvent.street }
                 </div>
                 <div className='col s4 m4'>
-                 { sportEvent.distance_from_user } Mi. Away
+                 { sportEvent.distance_from_user } Miles
                 </div>
               </div>
             </div>
@@ -231,7 +231,7 @@ class UserEventCard extends Component {
                     <span style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span style={{fontSize: '14px'}}>{ sportEvent.skill_level }</span>
                   </div>
                   <div className='col s4'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{ sportEvent.capacity }</span>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
                   </div>
                   <div className='col s4'>
                     <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{ timeFormat }</span>
@@ -250,15 +250,13 @@ class UserEventCard extends Component {
                     <span style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span style={{fontSize: '14px'}}>{ sportEvent.description }</span>
                   </div>
                 </div>
-
-              <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
-              <Counter capacity={sportEvent.capacity} />
+                 <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
+                 <Counter capacity={sportEvent.capacity} />
               <div>
                 <button type='button' className='btn green'>Submit</button>
                 <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'><i className='material-icons'>delete</i></button>
                 <button type='button' onClick={this.toggleEdit} className='btn orange comment-btn right' style={{marginRight: '5px'}}><i className="material-icons">mode_edit</i></button>
               </div>
-
             </div>
           </li>
         </ul>
@@ -281,7 +279,7 @@ class UserEventCard extends Component {
                   { sportEvent.street }
                 </div>
                 <div className='col s4 m4'>
-                 { sportEvent.distance_from_user } Mi. Away
+                 { sportEvent.distance_from_user } Miles
                 </div>
               </div>
             </div>
@@ -292,7 +290,7 @@ class UserEventCard extends Component {
                     <span style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span style={{fontSize: '14px'}}>{ sportEvent.skill_level }</span>
                   </div>
                   <div className='col s4'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{ sportEvent.capacity }</span>
+                    <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
                   </div>
                   <div className='col s4'>
                     <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{ timeFormat }</span>
@@ -311,16 +309,16 @@ class UserEventCard extends Component {
                     <span style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span style={{fontSize: '14px'}}>{ sportEvent.description }</span>
                   </div>
                 </div>
-
-              <Counter userEvent={sportEvent} capacity={sportEvent.capacity}/>
-              <Counter capacity={sportEvent.capacity}/>
+                <div className='center'>
+                  <Counter userEvent={sportEvent} capacity={sportEvent.capacity}/>
+                  <Counter capacity={sportEvent.capacity}/>
+              </div>
             </div>
           </li>
         </ul>
       </div>
         );
       }
-
   }
 
   render() {
