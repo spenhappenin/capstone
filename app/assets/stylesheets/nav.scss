@@ -1,0 +1,14 @@
+#pug-logo {
+  display: inline-block;
+  background-image: url(asset_path("pug_logo2.svg"));
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  margin-left: 30px;
+}
+
+.nav-tabs {
+	color: #bbbbbb;
+}

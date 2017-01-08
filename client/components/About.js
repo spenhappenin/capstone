@@ -6,6 +6,11 @@ class About extends Component {
     return(
       <div>
         <div className='about-background'>
+        <div className='row'>
+          <div className='col s12 m12 center'>
+            <h3> The pug Team </h3>
+          </div>
+        </div>
           <div className='row'>
             <div className='col s3'>
               <div className='spencer z-depth-5 responsive-img'> </div>

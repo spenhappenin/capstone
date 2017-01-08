@@ -208,16 +208,20 @@ class UserEventCard extends Component {
       <div id={id}>
         <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
           <li>
-            <div className="collapsible-header card-color flex" >
+            <div className="collapsible-header card-color flex " >
               <div className='col s3'>
                 <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
               </div>
               <div>
                 <h5>{ sportEvent.name }</h5>
-                { sportEvent.distance_from_user } Mi. Away
               </div>
-              <div>
-                { sportEvent.street }
+              <div className='row'>
+                <div className='col s4 m4'>
+                  { sportEvent.street }
+                </div>
+                <div className='col s4 m4'>
+                 { sportEvent.distance_from_user } Mi. Away
+                </div>
               </div>
             </div>
 
@@ -275,22 +279,20 @@ class UserEventCard extends Component {
       <div id={id}>
         <ul className="collapsible card-ul" data-collapsible="accordion" style={{borderRadius: '5px'}} >
           <li>
-            <div className="collapsible-header card-div">
+            <div className="collapsible-header card-color flex " >
               <div className='col s3'>
-                <img className='responsive-img cool' src={ sportPic } alt='Basketball Icon' />
+                <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
               </div>
               <div>
                 <h5>{ sportEvent.name }</h5>
-                { sportEvent.distance_from_user } Mi. Away
               </div>
-              <div>
-                { sportEvent.street }
-              </div>
-              <div>
-
-              </div>
-              <div>
-
+              <div className='row event-street'>
+                <div className='col s4 m4'>
+                  { sportEvent.street }
+                </div>
+                <div className='col s4 m4'>
+                 { sportEvent.distance_from_user } Mi. Away
+                </div>
               </div>
             </div>
 
