@@ -60,8 +60,7 @@ class UserEvents extends Component {
                 <div className=''>
                 <SearchBar />
                 </div>
-
-            <h1 className='center'> PUG Time! </h1>
+            <h1 className='center'> pug Events </h1>
             <div className='row'>
               <div className='col s12 m5'>
                 <Link to={'/addEvent'} className='btn blue fixedbutton btn-floating btn-large waves-effect waves-light'><i className="material-icons">add</i></Link>
