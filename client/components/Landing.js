@@ -8,6 +8,7 @@ class Landing extends Component {
 
   componentDidMount() {
     $('.parallax').parallax();
+    $('.slider').slider({full_width: true, indicators: false});
   }
 
   handleClick() {

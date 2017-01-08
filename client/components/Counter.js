@@ -49,9 +49,7 @@ class Counter extends Component {
           </div>
         )
       }
-    } else {
-      return(<div>Loading Counter...</div>);
-    }
+    } 
   }
 
   display() {

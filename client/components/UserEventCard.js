@@ -251,16 +251,6 @@ class UserEventCard extends Component {
                   </div>
                 </div>
 
-              <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
-                <li>
-                  <div className="collapsible-header">
-                    <a href='#' onClick={this.handleClick}> Comments </a>
-                  </div>
-                  <div className='collapsible-body'>
-                    <p> this is cool </p>
-                  </div>
-                </li>
-              </ul>
               <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
               <Counter capacity={sportEvent.capacity} />
               <div>
@@ -322,16 +312,6 @@ class UserEventCard extends Component {
                   </div>
                 </div>
 
-              <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
-                <li>
-                  <div className="collapsible-header">
-                    <a href='#' onClick={this.handleClick}> Comments </a>
-                  </div>
-                  <div className='collapsible-body'>
-                    <p> this is cool </p>
-                  </div>
-                </li>
-              </ul>
               <Counter userEvent={sportEvent} capacity={sportEvent.capacity}/>
               <Counter capacity={sportEvent.capacity}/>
             </div>
