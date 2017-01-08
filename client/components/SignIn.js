@@ -12,7 +12,7 @@ class SignIn extends React.Component {
 
   componentDidMount() {
     $('body').css('background-image', "url(http://res.cloudinary.com/omash612/image/upload/c_scale,w_2216/v1483592932/baseballMit_vlwj1y.jpg)");
-    $('body').css('background-position', '200% 30%');
+    $('body').css('background-position', '200% 25%');
     $('body').css('background-size', 'cover');
     $('body').css('background-repeat', 'no-repeat');
   }
@@ -46,41 +46,45 @@ class SignIn extends React.Component {
   render() {
     return (
       <div>
-        <div className='row'>
-          <div className='col s3 offset-s9 center'>
-            <h2 className='white-text'>Login</h2>
+        <div className='row' style={{marginTop: '20px', marginRight: '15px'}}>
+          <div className='col s3 offset-s9' style={{backgroundColor: 'rgba(237, 237, 237, 0.2)', borderRadius: '10px'}}>
+            <form  onSubmit={this.handleSubmit}>
+              <div className='row'>
+                <div className='col s12 center'>
+                  <h2 className='white-text'>Login</h2>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col s12 right'>
+                  <label className='left white-text'> Email </label>
+                  <input className='login-caret white-text foo' id='bar' type="email" required={true} ref="email" />
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col s12 right'>
+                  <label className='left white-text'> Password </label>
+                  <input className='login-caret white-text foo' type="password" required={true} ref="password" />
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col s12 center'>
+                  <input type='submit' value='Game On' className="btn blue" />
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col s12 center'>
+                  <FacebookLogin
+                    appId = '1653601048266232'
+                    autoLoad = { false }
+                    fields = 'name, email'
+                    className = 'facebook-button'
+                    icon = 'fa-facebook'
+                    callback = { this.responseFacebook } />
+                </div>
+              </div>
+            </form>
           </div>
         </div>
-          <form  onSubmit={this.handleSubmit}>
-            <div className='row'>
-              <div className='col s3 offset-s9 right'>
-                <label className='left white-text'> Email </label>
-                <input className='login-caret white-text foo' id='bar' type="email" required={true} ref="email" />
-              </div>
-            </div>
-            <div className='row'>
-              <div className='col s3 offset-s9 right'>
-                <label className='left white-text'> Password </label>
-                <input className='login-caret white-text foo' type="password" required={true} ref="password" />
-              </div>
-            </div>
-            <div className='row'>
-              <div className='col s3 offset-s9 center'>
-                <input type='submit' value='Game On' className="btn blue" />
-              </div>
-            </div>
-          <div className='row'>
-            <div className='col s3 offset-s9 center'>
-              <FacebookLogin
-                appId = '1653601048266232'
-                autoLoad = { false }
-                fields = 'name, email'
-                className = 'facebook-button'
-                icon = 'fa-facebook'
-                callback = { this.responseFacebook } />
-            </div>
-          </div>
-        </form>
       </div>
     )
   }

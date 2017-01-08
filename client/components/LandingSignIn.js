@@ -13,13 +13,6 @@ class LandingSignIn extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    $('body').css('background-image', "url(http://res.cloudinary.com/omash612/image/upload/c_scale,w_2216/v1483592932/baseballMit_vlwj1y.jpg)");
-    $('body').css('background-position', '100% 70%');
-    $('body').css('background-size', 'cover');
-    $('body').css('background-repeat', 'no-repeat');
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     let { email, password } = this.refs;
@@ -67,7 +60,7 @@ class LandingSignIn extends React.Component {
             </div>
             <div className='row'>
               <div className='col s8 center'>
-                <input type='submit' value='Sign in' className="btn blue" />
+                <input type='submit' value='Login' className="btn blue" />
               </div>
             </div>
           <div className='row'>
