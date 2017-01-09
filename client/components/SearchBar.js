@@ -30,7 +30,20 @@ class SearchBar extends Component {
 
   render () {
     return (
-      <div>        <span id='searching'>          <i className="material-icons trigger">search</i>          <div className='nav-wrapper'>            <form  className='search-bar' id='search-form' onSubmit={this.handleSubmit} >              <div className="input-field">                <input id="search" type='search' ref='search' placeholder='Search Game' required={true} />                <i className="material-icons red-text" onClick={this.clearSearch}>close</i>              </div>            </form>          </div>        </span>      </div>    )
+      <div>
+        <span id='searching'>
+          <i className="material-icons trigger">search</i>
+          <div className='nav-wrapper'>
+            <form  className='search-bar' id='search-form' onSubmit={this.handleSubmit} >
+              <div className="input-field">
+                <input id="search" type='search' ref='search' placeholder='Search Game' required={true} />
+                <i className="material-icons red-text" onClick={this.clearSearch}>close</i>
+              </div>
+            </form>
+          </div>
+        </span>
+      </div>
+    )
   }
 }
 
