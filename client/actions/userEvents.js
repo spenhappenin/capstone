@@ -9,7 +9,6 @@ export const fetchUserEvents = () => {
       data: {position: {lat, long}}
     }).done( userEvents => {
       userEvents.sort(function(a,b) {return (a.distance_from_user > b.distance_from_user) ? 1 : ((b.distance_from_user > a.distance_from_user) ? -1 : 0);} );
-
       dispatch({ type: 'ALL_USER_EVENTS', userEvents });
     }).fail( data => {
       console.log(data);
@@ -34,11 +33,15 @@ export const peopleAttending = (eventId, attending) => {
 
 export const searchQuery = (query) => {
   return(dispatch) => {
+    let lat = sessionStorage.getItem("userLat")
+    let long = sessionStorage.getItem("userLong")
     $.ajax({
       url: '/api/search_events',
       type: 'GET',
-      data: { query }
+      data: { query }, position: {lat, long}
     }).done( events => {
+      events.sort(function(a,b) {return (a.distance_from_user > b.distance_from_user) ? 1 : ((b.distance_from_user > a.distance_from_user) ? -1 : 0);} );
+      debugger;
       dispatch({ type: 'SEARCH_RESULTS', events});
     }).fail( data => {
       console.log(data);
