@@ -1,4 +1,4 @@
-#pug-logo {
+.pug-logo {
   display: inline-block;
   background-image: url(asset_path("pug_logo2.svg"));
   background-repeat: no-repeat;
@@ -11,4 +11,14 @@
 
 .nav-tabs {
 	color: #bbbbbb;
+}
+
+.none {
+	display: none;
+	// background-image: url(asset_path("pug_logo1.svg"));
+	// background-image: url(asset_path("pug_logo1.svg"));
+}
+
+.show {
+	display: inline-block;
 }

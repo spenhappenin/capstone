@@ -71,7 +71,7 @@ class NavBar extends React.Component {
       <div style={{ backgroundColor: 'transparent'}}>
         <nav className='nav-bar' style={{backgroundColor: 'transparent', boxShadow: 'none'}}>
           <div className="nav-wrapper">
-          <Link className='nav-tabs' to='/'><div id='pug-logo'>
+          <Link className='nav-tabs pug-logo' to='/'><div id="map-logo">
             <br />
             <p className='black-text'> Get in the Game </p>
           </div></Link>
