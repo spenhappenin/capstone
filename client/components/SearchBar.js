@@ -43,6 +43,7 @@ class SearchBar extends Component {
                 required={true}
                 placeholder='Search Game' />
             </span>
+              <button className='btn red' onClick={this.clearSearch}> x </button>
           </form>
         </span>
       </div>
