@@ -64,7 +64,8 @@ export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
      data: { events: {name, sport, date, time, capacity, venue,
      street, city, state, zip, skill_level, description, active},
      position: {lat, long}}
-   }).done(userEvent => {
+   }).done( data => {
+     let userEvent = data.event
      dispatch({ type: 'EDIT_USER_EVENT', userEvent });
    }).fail(data => {
      console.log(userEvent);
