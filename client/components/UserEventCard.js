@@ -71,8 +71,21 @@ class UserEventCard extends Component {
                   <input type='text' defaultValue= {name} ref='event_name' required />
                 </div>
                 <div className='col s6'>
-                  <label> Sport: </label>
-                  <input type='text' defaultValue= {sport} ref='event_sport' required />
+                  <label className='left'> Sport </label>
+                  <select ref='sport' className='placeholder' defaultValue={sport} ref='event_sport' required>
+                    <option value='baseball'> Baseball </option>
+                    <option value='basketball'> Basketball </option>
+                    <option value='football'> Football </option>
+                    <option value='frisbee'> Frisbee </option>
+                    <option value='golf'> Golf </option>
+                    <option value='hockey'> Hockey </option>
+                    <option value='kickball'> Kickball </option>
+                    <option value='lacrosse'> Lacrosse </option>
+                    <option value='ping pong'> Ping Pong </option>
+                    <option value='soccer'> Soccer </option>
+                    <option value='tennis'> Tennis </option>
+                    <option value='volleyball'> Volleyball </option>
+                  </select>
                 </div>
               </div>
               <div className='row'>
@@ -149,6 +162,18 @@ class UserEventCard extends Component {
       );
     }
 
+  showDescription(sportEvent) {
+    if(sportEvent.description.length) {
+      return(
+        <div className='row center'>
+          <div className='col s12'>
+            <span style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span style={{fontSize: '14px'}}>{ sportEvent.description }</span>
+          </div>
+        </div>
+      )
+    }
+  }
+
   display() {
     let sportEvent = this.props.userEvent;
     let dateFormat = moment(sportEvent.date ).format('MMMM Do YYYY');
@@ -203,123 +228,119 @@ class UserEventCard extends Component {
       let userEvent = this.props.userEvent;
       let user = this.props.user.id;
       if(userEvent.user_id === user ) {
-
         return(
-      <div id={id}>
-        <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
-          <li>
-            <div className="collapsible-header card-color flex " >
-              <div className='col s3'>
-                <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
-              </div>
-              <div>
-                <h5>{ sportEvent.name }</h5>
-              </div>
-              <div className='row event-street'>
-                <div className='col s4 m4 '>
-                  { sportEvent.street }
+          <div id={id}>
+            <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
+              <li>
+                <div className="collapsible-header card-color flex " >
+                  <div className='col s3'>
+                    <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
+                  </div>
+                  <div>
+                    <h5>{ sportEvent.name }</h5>
+                  </div>
+                  <div className='row event-street'>
+                    <div className='col s4 m4 '>
+                      { sportEvent.street }
+                    </div>
+                    <div className='col s4 m4'>
+                     { sportEvent.distance_from_user } Miles
+                    </div>
+                  </div>
                 </div>
-                <div className='col s4 m4'>
-                 { sportEvent.distance_from_user } Miles
-                </div>
-              </div>
-            </div>
 
-            <div className="collapsible-body" style={{ padding: '10px' }}>
-                <div className='row center'>
-                  <div className='col s4'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span style={{fontSize: '14px'}}>{ sportEvent.skill_level }</span>
-                  </div>
-                  <div className='col s4'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
-                  </div>
-                  <div className='col s4'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{ timeFormat }</span>
+                <div className="collapsible-body" style={{ padding: '10px' }}>
+                    <div className='row center'>
+                      <div className='col s4'>
+                        <span style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span style={{fontSize: '14px'}}>{ sportEvent.skill_level }</span>
+                      </div>
+                      <div className='col s4'>
+                        <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
+                      </div>
+                      <div className='col s4'>
+                        <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{ timeFormat }</span>
+                      </div>
+                    </div>
+                    <div className='row center'>
+                      <div className='col s6'>
+                        <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}>{ dateFormat }</span>
+                      </div>
+                      <div className='col s6'>
+                        <span style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span style={{fontSize: '14px'}}>{ sportEvent.venue }</span>
+                      </div>
+                    </div>
+                    { this.showDescription(sportEvent) }
+                    <div className='row center'>
+                    <div className='col s12'>
+                       <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
+                       <Counter capacity={sportEvent.capacity} />
+                      </div>
+                    </div>
+                  <div>
+                    <button type='button' className='btn green'>Submit</button>
+                    <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'><i className='material-icons'>delete</i></button>
+                    <button type='button' onClick={this.toggleEdit} className='btn orange comment-btn right' style={{marginRight: '5px'}}><i className="material-icons">mode_edit</i></button>
                   </div>
                 </div>
-                <div className='row center'>
-                  <div className='col s6'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}>{ dateFormat }</span>
-                  </div>
-                  <div className='col s6'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span style={{fontSize: '14px'}}>{ sportEvent.venue }</span>
-                  </div>
-                </div>
-                <div className='row center'>
-                  <div className='col s12'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span style={{fontSize: '14px'}}>{ sportEvent.description }</span>
-                  </div>
-                </div>
-                 <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
-                 <Counter capacity={sportEvent.capacity} />
-              <div>
-                <button type='button' className='btn green'>Submit</button>
-                <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'><i className='material-icons'>delete</i></button>
-                <button type='button' onClick={this.toggleEdit} className='btn orange comment-btn right' style={{marginRight: '5px'}}><i className="material-icons">mode_edit</i></button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-        );
-       } else {
-        return(
-      <div id={id}>
-        <ul className="collapsible card-ul" data-collapsible="accordion" style={{borderRadius: '5px'}} >
-          <li>
-            <div className="collapsible-header card-color flex " >
-              <div className='col s3'>
-                <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
-              </div>
-              <div>
-                <h5>{ sportEvent.name }</h5>
-              </div>
-              <div className='row event-street'>
-                <div className='col s4 m4'>
-                  { sportEvent.street }
-                </div>
-                <div className='col s4 m4'>
-                 { sportEvent.distance_from_user } Miles
-                </div>
-              </div>
-            </div>
+              </li>
+            </ul>
+          </div>
+          );
 
-            <div className="collapsible-body" style={{ padding: '10px' }}>
-                <div className='row center'>
-                  <div className='col s4'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span style={{fontSize: '14px'}}>{ sportEvent.skill_level }</span>
-                  </div>
-                  <div className='col s4'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
-                  </div>
-                  <div className='col s4'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{ timeFormat }</span>
-                  </div>
-                </div>
-                <div className='row center'>
-                  <div className='col s6'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}>{ dateFormat }</span>
-                  </div>
-                  <div className='col s6'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span style={{fontSize: '14px'}}>{ sportEvent.venue }</span>
-                  </div>
-                </div>
-                <div className='row center'>
-                  <div className='col s12'>
-                    <span style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span style={{fontSize: '14px'}}>{ sportEvent.description }</span>
-                  </div>
-                </div>
-                <div className='center'>
-                  <Counter userEvent={sportEvent} capacity={sportEvent.capacity}/>
-                  <Counter capacity={sportEvent.capacity}/>
+           } else {
+            return(
+              <div id={id}>
+                <ul className="collapsible card-ul" data-collapsible="accordion" style={{borderRadius: '5px'}} >
+                  <li>
+                    <div className="collapsible-header card-color flex " >
+                      <div className='col s3'>
+                        <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
+                      </div>
+                      <div>
+                        <h5>{ sportEvent.name }</h5>
+                      </div>
+                      <div className='row event-street'>
+                        <div className='col s4 m4'>
+                          { sportEvent.street }
+                        </div>
+                        <div className='col s4 m4'>
+                         { sportEvent.distance_from_user } Miles
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="collapsible-body" style={{ padding: '10px' }}>
+                        <div className='row center'>
+                          <div className='col s4'>
+                            <span style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span style={{fontSize: '14px'}}>{ sportEvent.skill_level }</span>
+                          </div>
+                          <div className='col s4'>
+                            <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
+                          </div>
+                          <div className='col s4'>
+                            <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{ timeFormat }</span>
+                          </div>
+                        </div>
+                        <div className='row center'>
+                          <div className='col s6'>
+                            <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}>{ dateFormat }</span>
+                          </div>
+                          <div className='col s6'>
+                            <span style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span style={{fontSize: '14px'}}>{ sportEvent.venue }</span>
+                          </div>
+                        </div>
+                        { this.showDescription(sportEvent) }
+                        <div className='center'>
+                          <Counter userEvent={sportEvent} capacity={sportEvent.capacity}/>
+                          <Counter capacity={sportEvent.capacity}/>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-        );
-      }
-  }
+              );
+            }
+          }
 
   render() {
     if(this.state.edit) {

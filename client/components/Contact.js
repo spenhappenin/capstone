@@ -3,6 +3,8 @@ import React from 'react';
 class Contact extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -15,6 +17,8 @@ class Contact extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.refs.contactForm.reset();
+    Materialize.toast('Thank you for reaching out to us! We will get back to you shortly!', 6000, 'toasted');
   }
 
   render() {
@@ -22,7 +26,7 @@ class Contact extends React.Component {
       <div>
         <div className='row' style={{marginTop: '60px', marginLeft: '15px'}}>
           <div className='col s4' style={{backgroundColor: 'rgba(186, 186, 186, 0.2)', borderRadius: '10px'}}>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} ref='contactForm'>
               <h2 className='white-text'> Contact Us </h2>
               <div className='row'>
                 <div className='col s12'>

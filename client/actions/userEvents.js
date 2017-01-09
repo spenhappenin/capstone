@@ -70,6 +70,7 @@ export const deleteUserEventCard = (id) => {
      type: 'DELETE',
      dataType: 'JSON'
    }).done(data => {
+     confirm('Really Delete?');
      dispatch({ type: 'DELETE_USER_EVENT', id });
    }).fail(data => {
      console.log(data);
