@@ -35,6 +35,41 @@ class LandingSignIn extends React.Component {
     });
   }
 
+  displayLogin() {
+    if(!this.props.noLogin) {
+      return(
+        <form onSubmit={this.handleSubmit}>
+          <div className='row'>
+            <div className='col s4'>
+              <label> Email </label>
+              <input className='input foo' id='bar' type="email" required={true} ref="email" />
+            </div>
+            <div className='col s4'>
+              <label> Password </label>
+              <input className=' input' type="password" required={true} ref="password" />
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col s8 center'>
+              <input type='submit' value='Login' className="btn blue" />
+            </div>
+          </div>
+        <div className='row'>
+          <div className='col s8 center'>
+            <FacebookLogin
+              appId = '1653601048266232'
+              autoLoad = { false }
+              fields = 'name, email'
+              className = 'facebook-button'
+              icon = 'fa-facebook'
+              callback = { this.responseFacebook } />
+          </div>
+        </div>
+      </form>
+      )
+    }
+  }
+
   responseFacebook = (auth) => {
     this.props.dispatch(handleFacebookLogin(auth, this.props.history))
   }
@@ -48,34 +83,7 @@ class LandingSignIn extends React.Component {
             <h5> The world's largest network for amateur pick-up games.</h5>
           </div>
         </div>
-          <form onSubmit={this.handleSubmit}>
-            <div className='row'>
-              <div className='col s4'>
-                <label> Email </label>
-                <input className='input foo' id='bar' type="email" required={true} ref="email" />
-              </div>
-              <div className='col s4'>
-                <label> Password </label>
-                <input className=' input' type="password" required={true} ref="password" />
-              </div>
-            </div>
-            <div className='row'>
-              <div className='col s8 center'>
-                <input type='submit' value='Login' className="btn blue" />
-              </div>
-            </div>
-          <div className='row'>
-            <div className='col s8 center'>
-              <FacebookLogin
-                appId = '1653601048266232'
-                autoLoad = { false }
-                fields = 'name, email'
-                className = 'facebook-button'
-                icon = 'fa-facebook'
-                callback = { this.responseFacebook } />
-            </div>
-          </div>
-        </form>
+        { this.displayLogin() }
       </div>
     )
   }
