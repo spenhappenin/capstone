@@ -59,7 +59,7 @@ class UserEventCard extends Component {
 
   edit() {
     let { name, description, sport, venue, capacity, street, city, state, zip, skill_level, date, time } = this.props.userEvent;
-    let timeFormat = moment(time, 'YYYY MM DD hh:mm:ss z' ).format('hh:mm');
+    let timeFormat = moment(time, 'YYYY MM DD hh:mm:ss z' ).format("h:mm");
     return(
       <div>
         <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
@@ -177,7 +177,7 @@ class UserEventCard extends Component {
   display() {
     let sportEvent = this.props.userEvent;
     let dateFormat = moment(sportEvent.date ).format('MMMM Do YYYY');
-    let timeFormat = moment(sportEvent.time, 'YYYY MM DD hh:mm:ss z' ).format('h:mm a');
+    let timeFormat = moment(sportEvent.time, 'YYYY MM DD hh:mm:ss z' ).format('h:mm A');
     let id = `userEvent-${this.props.userEvent.id}`
     let sportPic;
 
@@ -258,12 +258,12 @@ class UserEventCard extends Component {
                         <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
                       </div>
                       <div className='col s4'>
-                        <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{ timeFormat }</span>
+                        <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}> {timeFormat} </span>
                       </div>
                     </div>
                     <div className='row center'>
                       <div className='col s6'>
-                        <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}>{ dateFormat }</span>
+                        <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}> {dateFormat}</span>
                       </div>
                       <div className='col s6'>
                         <span style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span style={{fontSize: '14px'}}>{ sportEvent.venue }</span>
@@ -272,14 +272,12 @@ class UserEventCard extends Component {
                     { this.showDescription(sportEvent) }
                     <div className='row center'>
                     <div className='col s12'>
-                       <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
-                       <Counter capacity={sportEvent.capacity} />
-                         <div>
-                           <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn-flat right'><i className='material-icons'>delete</i></button>
-                           <button type='button' onClick={this.toggleEdit} className='btn-flat right' style={{marginRight: '5px'}}><i className="material-icons">mode_edit</i></button>
-                         </div>
-                      </div>
+                     <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
+                     <Counter capacity={sportEvent.capacity} />
+                       <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn-flat right'><i className='material-icons'>delete</i></button>
+                       <button type='button' onClick={this.toggleEdit} className='btn-flat right' style={{marginRight: '5px'}}><i className="material-icons">mode_edit</i></button>
                     </div>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -317,12 +315,12 @@ class UserEventCard extends Component {
                             <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
                           </div>
                           <div className='col s4'>
-                            <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{ timeFormat }</span>
+                            <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{timeFormat}</span>
                           </div>
                         </div>
                         <div className='row center'>
                           <div className='col s6'>
-                            <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}>{ dateFormat }</span>
+                            <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}>{dateFormat}</span>
                           </div>
                           <div className='col s6'>
                             <span style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span style={{fontSize: '14px'}}>{ sportEvent.venue }</span>

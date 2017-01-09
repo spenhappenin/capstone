@@ -50,11 +50,7 @@ class Counter extends Component {
   display() {
    return (
      <div>
-      <div>
-        <div>
-          { this.counterContent() }
-        </div>
-      </div>
+      { this.counterContent() }
     </div> )
   }
 
