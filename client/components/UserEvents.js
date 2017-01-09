@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import UserEventCard from './UserEventCard';
 import { fetchUserEvents } from '../actions/userEvents';
 import { Link } from 'react-router';
-import SearchBar from './SearchBar'
+import SearchBar from './SearchBar';
+import store, { history } from '../store';
 
 class UserEvents extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class UserEvents extends Component {
 
   showPosition = (position) => {
     this.setState({ latitude: position.coords.latitude, longitude: position.coords.longitude });
-    
+
   }
 
   componentDidMount() {
@@ -56,10 +57,7 @@ class UserEvents extends Component {
             <GoogleMap userEvents={ this.props.userEvents } />
           </div>
           <div className='col s5 event-list'>
-
-                <div className=''>
-                <SearchBar />
-                </div>
+            <SearchBar history={history} />
             <h1 className='center'> pug Events </h1>
             <div className='row'>
               <div className='col s12 m5'>

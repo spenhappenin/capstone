@@ -11,6 +11,7 @@ $secondary-color: color("blue", "base") !default;
 @import 'pugEvent';
 @import 'pugEvents';
 @import 'nav';
+@import 'search';
 
 * {
   // border: 1px solid red;
@@ -18,6 +19,10 @@ $secondary-color: color("blue", "base") !default;
 
 body {
   font-family: 'Arimo', sans-serif;
+}
+
+#slide-search {
+    display: none;
 }
 
 .flex-stuff {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { searchQuery, fetchUserEvents } from '../actions/userEvents';
+import GoogleMap from './GoogleMap';
 
 class SearchBar extends Component {
   constructor (props) {
@@ -8,6 +9,13 @@ class SearchBar extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearSearch = this.clearSearch.bind(this);
+  }
+
+  componentDidMount() {
+    $('#search-form').hide();
+    $('#search .trigger').click(function(){
+      $('#search-form').animate({width: 'toggle'}, 500);
+    });
   }
 
   handleSubmit(e) {
@@ -22,25 +30,21 @@ class SearchBar extends Component {
 
   render () {
     return (
-      <div className='row'>
-        <div className='col s8'>
-          <form onSubmit={this.handleSubmit}>
-            <div className="input-field">
-              <i className="material-icons prefix">search</i>
-                <input
-                  className="validate"
-                  id="icon_prefix"
-                  type='text'
-                  ref='search'
-                  required={true}
-                  placeholder='Search Term' />
-              <label htmlFor="icon_prefix"></label>
-            </div>
+      <div>
+        <span id='search'>
+          <i className="material-icons prefix trigger">search</i>
+          <form  className='search-bar' id='search-form' onSubmit={this.handleSubmit} >
+            <span className="input-field">
+              <input
+                className="validate clearable"
+                id="icon_prefix"
+                type='text'
+                ref='search'
+                required={true}
+                placeholder='Search Game' />
+            </span>
           </form>
-        </div>
-        <div className='col s2'>
-          <button type='button' className='btn grey' onClick={this.clearSearch}>Clear Search</button>
-        </div>
+        </span>
       </div>
     )
   }
