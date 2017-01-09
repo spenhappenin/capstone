@@ -18,7 +18,6 @@
 //= require_tree .
 
 	function gotPostion(position) {
-		console.log('gotPosition')
 		var userLat = position.coords.latitude
 		var userLong = position.coords.longitude 
 		sessionStorage.setItem("userLat",userLat);
@@ -26,10 +25,8 @@
 	}
 
 	function getLocation() {
-		console.log('getLocation')
 		navigator.geolocation.getCurrentPosition(gotPostion)
 	}
 
-	if(sessionStorage.getItem("userLat") === null && sessionStorage.getItem("userLong") === null) {
-		getLocation()	
-	}
+	getLocation()	
+

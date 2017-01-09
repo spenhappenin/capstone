@@ -20,8 +20,7 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = Event.new(events_params)
-    address = "#{@event.street}, #{@event.city}, #{@event.state}"
-    latlong = Event.getLatLong(address)
+    latlong = @event.getLatLong
     @event.latitude = latlong[:lat]
     @event.longitude = latlong[:lng]
     @event.user_id = current_user.id
@@ -36,10 +35,10 @@ class Api::EventsController < ApplicationController
   end
 
   def update
-    @event.update(events_params)
-    if @event.save
-      render json: @event
-    else
+    @position = params[:position][:lat]
+    @position += ' '
+    @position += params[:position][:long]
+    unless @event.update(events_params)
       render json: {errors: @event.errors}, status: 401
     end
   end

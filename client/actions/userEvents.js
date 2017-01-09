@@ -48,17 +48,21 @@ export const searchQuery = (query) => {
 
 export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
                             street, city, state, zip, skill_level, description, active ) => {
+ let lat = sessionStorage.getItem("userLat")
+ let long = sessionStorage.getItem("userLong")
  return(dispatch) => {
    $.ajax({
      url: `/api/events/${id}`,
      type: 'PUT',
      dataType: 'JSON',
      data: { events: {name, sport, date, time, capacity, venue,
-     street, city, state, zip, skill_level, description, active}}
-   }).done(userEvent => {
+     street, city, state, zip, skill_level, description, active},
+     position: {lat, long}}
+   }).done(data => {
+    let userEvent = data.event
      dispatch({ type: 'EDIT_USER_EVENT', userEvent });
    }).fail(data => {
-     console.log(uesrEvent);
+     console.log(userEvent);
    });
  }
 }

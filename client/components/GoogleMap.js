@@ -78,6 +78,7 @@ class GoogleMap extends Component {
 
   buildMarkers(events) {
     let m = events.map( e => {
+      var info = `<p>${e.name}</p><p>${e.sport}</p>`
       let sportPic;
       switch(e.sport) {
         case 'basketball':
@@ -132,7 +133,7 @@ class GoogleMap extends Component {
             "width":  50,
             "height": 50
           },
-          "infowindow": e.name
+          "infowindow": info
         }
       )
     })

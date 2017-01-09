@@ -1,7 +1,17 @@
 import React from 'react';
 
 const NoMatch = () => (
-  <div>404</div>
+  <div>
+  	<br/>
+  	<br/>
+  	<br/>
+  	<br/>
+  	<br/>
+  	<br/>
+  	<br/>
+  	<br/>
+  	<span>Page Not Found Bitch!</span>
+  </div>
 )
 
 export default NoMatch;

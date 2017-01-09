@@ -23,7 +23,8 @@ class Event < ApplicationRecord
 		self.longitude
 	end
 
-	def self.getLatLong(address)
+	def getLatLong
+		address = "#{self.street}, #{self.city}, #{self.state} #{self.zip}"
 		data = MultiGeocoder.geocode(address)
 		{lat: data.latitude, lng: data.longitude}
 	end
