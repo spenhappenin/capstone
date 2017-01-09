@@ -329,7 +329,6 @@ class UserEventCard extends Component {
                         { this.showDescription(sportEvent) }
                         <div className='center'>
                           <Counter userEvent={sportEvent} capacity={sportEvent.capacity}/>
-                          <Counter capacity={sportEvent.capacity}/>
                       </div>
                     </div>
                   </li>

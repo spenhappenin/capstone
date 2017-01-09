@@ -17,13 +17,16 @@ export const fetchUserEvents = () => {
 }
 
 export const peopleAttending = (eventId, attending) => {
+  let lat = sessionStorage.getItem("userLat")
+  let long = sessionStorage.getItem("userLong")
   return(dispatch) => {
     $.ajax({
       url: `/api/events/${eventId}`,
       type: 'PUT',
       dataType: 'JSON',
-      data: { events: { attending } }
-    }).done( userEvent => {
+      data: { events: { attending }, position: {lat, long} }
+    }).done( data => {
+      let userEvent = data.event
       dispatch({ type: 'PEOPLE_ATTENDING', userEvent })
     }).fail( data => {
       console.log(data)
@@ -61,8 +64,7 @@ export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
      data: { events: {name, sport, date, time, capacity, venue,
      street, city, state, zip, skill_level, description, active},
      position: {lat, long}}
-   }).done(data => {
-    let userEvent = data.event
+   }).done(userEvent => {
      dispatch({ type: 'EDIT_USER_EVENT', userEvent });
    }).fail(data => {
      console.log(userEvent);

@@ -35,9 +35,11 @@ class Api::EventsController < ApplicationController
   end
 
   def update
-    @position = params[:position][:lat]
-    @position += ' '
-    @position += params[:position][:long]
+    if params[:position]
+      @position = params[:position][:lat]
+      @position += ' '
+      @position += params[:position][:long]
+    end
     unless @event.update(events_params)
       render json: {errors: @event.errors}, status: 401
     end
