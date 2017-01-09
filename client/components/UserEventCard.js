@@ -152,8 +152,8 @@ class UserEventCard extends Component {
                   </div>
                 </div>
                 <div>
-                  <button style={{ marginBottom: '22px'}} type='submit' className='btn green comment-btn'>Save</button>
-                  <button style={{ marginBottom: '22px'}} type='button' onClick={this.toggleEdit} className='btn orange comment-btn right'>Cancel</button>
+                  <button style={{ marginBottom: '22px'}} type='submit' className='btn-flat comment-btn'>Save</button>
+                  <button style={{ marginBottom: '22px'}} type='button' onClick={this.toggleEdit} className='btn-flat comment-btn right'>Cancel</button>
                 </div>
               </form>
             </li>
@@ -274,13 +274,12 @@ class UserEventCard extends Component {
                     <div className='col s12'>
                        <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
                        <Counter capacity={sportEvent.capacity} />
+                         <div>
+                           <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn-flat right'><i className='material-icons'>delete</i></button>
+                           <button type='button' onClick={this.toggleEdit} className='btn-flat right' style={{marginRight: '5px'}}><i className="material-icons">mode_edit</i></button>
+                         </div>
                       </div>
                     </div>
-                  <div>
-                    <button type='button' className='btn green'>Submit</button>
-                    <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn red comment-btn right'><i className='material-icons'>delete</i></button>
-                    <button type='button' onClick={this.toggleEdit} className='btn orange comment-btn right' style={{marginRight: '5px'}}><i className="material-icons">mode_edit</i></button>
-                  </div>
                 </div>
               </li>
             </ul>

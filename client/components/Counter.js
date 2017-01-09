@@ -40,7 +40,7 @@ class Counter extends Component {
       } else {
         return(
           <div>
-            <button className="btn center" onClick={this.incrementCount}>Join</button>
+            <button className="btn-flat center" onClick={this.incrementCount}>Join</button>
           </div>
         )
       }
