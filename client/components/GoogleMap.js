@@ -132,7 +132,7 @@ class GoogleMap extends Component {
             "width":  50,
             "height": 50
           },
-          "infowindow": e.description
+          "infowindow": e.name
         }
       )
     })
