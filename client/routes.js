@@ -16,6 +16,8 @@ import UserEvents from './components/UserEvents';
 import UserEventCard from './components/UserEventCard';
 import AddEvent from './components/AddEvent';
 import KeepUserSignedIn from './components/KeepUserSignedIn'
+import Profile from './components/Profile';
+import Settings from './components/Settings';
 
 const AdminAccess = UserAuthWrapper({
   authSelector: state => state.user,
@@ -38,6 +40,8 @@ export default (
           <Route path='userEvents' component={UserEvents} />
           <Route path='userEventCard' component={UserEventCard} />
           <Route path='addEvent' component={AddEvent} />
+          <Route path='profile' component={Profile} />
+          <Route path='settings' component={Settings} />
           <Route component={AdminRoutes}>
             <Route path="/admin" component={Admin} />
             {/* PROTECTED BY ADMIN ACCESS */}

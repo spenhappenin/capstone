@@ -8,12 +8,12 @@ class Api::EventsController < ApplicationController
 
   end
 
-  def all 
+  def all
     @position = params[:position][:lat]
     @position += ' '
     @position += params[:position][:long]
     @events = Event.all
-  end 
+  end
 
   def new
   end

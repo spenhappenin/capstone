@@ -44,18 +44,19 @@ class LandingSignIn extends React.Component {
       <div className='container left landing-form'>
         <div className='row'>
           <div className='col s8 center'>
-            <h2>Sign in</h2>
+            <h2>Welcome to PUG </h2>
+            <h5> The world's largest network for amateur pick-up games.</h5>
           </div>
         </div>
           <form onSubmit={this.handleSubmit}>
             <div className='row'>
-                <div className='col s4'>
-                  <label> Email </label>
-                  <input className='input foo' id='bar' type="email" required={true} ref="email" />
-                </div>
-                <div className='col s4'>
-                  <label> Password </label>
-                  <input className=' input' type="password" required={true} ref="password" />
+              <div className='col s4'>
+                <label> Email </label>
+                <input className='input foo' id='bar' type="email" required={true} ref="email" />
+              </div>
+              <div className='col s4'>
+                <label> Password </label>
+                <input className=' input' type="password" required={true} ref="password" />
               </div>
             </div>
             <div className='row'>

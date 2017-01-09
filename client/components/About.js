@@ -8,7 +8,7 @@ class About extends Component {
         <div className='about-background'>
         <div className='row'>
           <div className='col s12 m12 center'>
-            <h3> The pug Team </h3>
+            <h3> The PUG Team </h3>
           </div>
         </div>
           <div className='row'>
@@ -25,7 +25,7 @@ class About extends Component {
             <div className='col s3'>
               <div className='alex z-depth-5 responsive-img'> </div>
               <hr />
-              <p className='center'><em> Asian Samurai </em> </p>
+              <p className='center' style={{fontSize: '12px'}}><span style={{fontWeight: 'bolder', fontSize: '16px', color: '#027e99'}}> Alex Romney </span> is a technology guru and sports entusiast. After being introduced to volleyball at a young age, his love for the game has grown while coaching and playing at all levels. When he's not watching anime, he enjoys being active and can often be found hiking with his wife, Amy. Alex enjoys learning and has discovered a new love for coding at DevPoint labs this year. He has a love for all food, his Japanese roots and looks forward to a career as a software developer. </p>
               <div className='social-media'>
                 <a href='https://github.com/AlexRomney' target='_blank' rel='noopener'><img className='social-icons responsive-img' style={{height: '55px', width: '55px'}} src='http://res.cloudinary.com/omash612/image/upload/v1483476650/daftpunkcat2_wj6cy9.gif' /></a>
                 <a href='https://www.linkedin.com/in/alex-romney' target='_blank' rel='noopener'><img className='social-icons responsive-img' style={{height: '40px', width: '40px', marginTop: '6px'}} src='http://res.cloudinary.com/omash612/image/upload/v1483478100/linkedinlogo_sjckc6.png' /> </a>

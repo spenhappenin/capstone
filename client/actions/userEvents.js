@@ -7,8 +7,8 @@ export const fetchUserEvents = () => {
       type: 'GET',
       dataType: 'JSON',
       data: {position: {lat, long}}
-    }).done( userEvents => {  
-      userEvents.sort(function(a,b) {return (a.distance_from_user > b.distance_from_user) ? 1 : ((b.distance_from_user > a.distance_from_user) ? -1 : 0);} ); 
+    }).done( userEvents => {
+      userEvents.sort(function(a,b) {return (a.distance_from_user > b.distance_from_user) ? 1 : ((b.distance_from_user > a.distance_from_user) ? -1 : 0);} );
 
       dispatch({ type: 'ALL_USER_EVENTS', userEvents });
     }).fail( data => {

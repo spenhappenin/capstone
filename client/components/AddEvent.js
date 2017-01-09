@@ -187,11 +187,9 @@ class AddEvent extends Component {
                   <label className='center'> Skill Level </label>
                   <select ref='skill_level' className='placeholder' value="" required>
                     <option value="" disabled> </option>
-                    <option value='Open'> Open </option>
-                    <option value='AA'> AA </option>
-                    <option value='A'> A </option>
-                    <option value='B'> B </option>
-                    <option value='Novice'> Novice </option>
+                    <option value='Advanced'> Advanced </option>
+                    <option value='intermediate'> Intermediate </option>
+                    <option value='beginner'> Beginner </option>
                     <option value='Everyone'> Everyone </option>
                   </select>
                 </div>

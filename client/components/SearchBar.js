@@ -13,8 +13,8 @@ class SearchBar extends Component {
 
   componentDidMount() {
     $('#search-form').hide();
-    $('#search .trigger').click(function(){
-      $('#search-form').animate({width: 'toggle'}, 500);
+    $('#searching .trigger').click(function(){
+      $('#search-form').animate({width: 'toggle'}, 400);
     });
   }
 
@@ -30,24 +30,7 @@ class SearchBar extends Component {
 
   render () {
     return (
-      <div>
-        <span id='search'>
-          <i className="material-icons prefix trigger">search</i>
-          <form  className='search-bar' id='search-form' onSubmit={this.handleSubmit} >
-            <span className="input-field">
-              <input
-                className="validate clearable"
-                id="icon_prefix"
-                type='text'
-                ref='search'
-                required={true}
-                placeholder='Search Game' />
-            </span>
-              <button className='btn red' onClick={this.clearSearch}> x </button>
-          </form>
-        </span>
-      </div>
-    )
+      <div>        <span id='searching'>          <i className="material-icons trigger">search</i>          <div className='nav-wrapper'>            <form  className='search-bar' id='search-form' onSubmit={this.handleSubmit} >              <div className="input-field">                <input id="search" type='search' ref='search' placeholder='Search Game' required={true} />                <i className="material-icons red-text" onClick={this.clearSearch}>close</i>              </div>            </form>          </div>        </span>      </div>    )
   }
 }
 

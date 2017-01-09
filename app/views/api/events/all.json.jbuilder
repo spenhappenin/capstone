@@ -1,5 +1,5 @@
 json.array! @events do |event|
-  json.id event.id 
+  json.id event.id
 	json.name event.name
 	json.sport event.sport
 	json.date event.date
@@ -17,5 +17,5 @@ json.array! @events do |event|
 	json.latitude event.latitude
 	json.longitude event.longitude
 	json.user_id event.user_id
-	json.distance_from_user event.distance_from(@position).round(2)
+	json.distance_from_user event.distance_from(@position).round(1)
 end
