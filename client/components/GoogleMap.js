@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddEvent from './AddEvent';
+import moment from 'moment';
 
 class GoogleMap extends Component {
   constructor(props) {
@@ -77,8 +78,23 @@ class GoogleMap extends Component {
   }
 
   buildMarkers(events) {
-    let m = events.map( e => {
-      var info = `<p>${e.name}</p><p>${e.sport}</p>`
+    let m = events.map( e => {  
+    let timeFormat = moment(e.time, 'YYYY MM DD hh:mm:ss z' ).format('h:mm a');
+
+
+      var info = "<div className='row'>" +
+                    "<div className='col s12 m12 l12'>" +
+                      `<h6>${e.name}</h6>` +
+                    "</div>" +
+                    "<div className='col s12 m12 l12'>" +
+                      `<p>${e.street}</p>` +
+                    "</div>" +
+                    "<div className='col s12 m12 l12'>" +
+                    `<span style={{fontSize: '14px'}}>${timeFormat}</span>` +
+                    "</div>" +
+                  "</div>";
+
+
       let sportPic;
       switch(e.sport) {
         case 'basketball':
