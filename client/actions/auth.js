@@ -50,7 +50,7 @@ export const handleFacebookLogin = (auth, history) => {
       dispatch(refreshLogin(response.user));
       history.push('/userEvents');
     }).fail( response => {
-      dispatch(logout());
+      history.push('/signin');
     })
   }
 }
