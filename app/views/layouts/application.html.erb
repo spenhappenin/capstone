@@ -9,6 +9,7 @@
     <% if Rails.env.development? %>
       <script src="http://localhost:3808/webpack-dev-server.js"></script>
     <% end %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//maps.google.com/maps/api/js?key=<%= ENV['GOOGLE_API_TOKEN'] %>"></script>
     <script type="text/javascript' src='https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_API_TOKEN'] %>" ></script>
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>

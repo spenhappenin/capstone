@@ -13,6 +13,10 @@ $secondary-color: color("blue", "base") !default;
 @import 'nav';
 @import 'search';
 
+.row {
+  margin-bottom: 0 !important;
+}
+
 * {
   // border: 1px solid red;
 }
@@ -58,7 +62,11 @@ a.secondary-content {
 }
 
 .landing-image {
-  height: 100vh;
+  min-height: calc(100vh - 64px);
+}
+
+.actual-landing-image {
+  min-height: 100%;
 }
 
 .parallax-container {

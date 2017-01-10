@@ -26,7 +26,7 @@ class Landing extends Component {
       <div className="box">
         <div className="landing-image">
           <LandingSignIn history={history} noLogin={true} />
-          <div className="parallax"> <img className='responsive-img' src="https://res.cloudinary.com/omash612/image/upload/c_scale,w_2060/v1483657677/basketball_landing_iglcrw.jpg" alt='Basketball Shooting' /> </div>
+          <div className="parallax"> <img className='responsive-img actual-landing-image' src="https://res.cloudinary.com/omash612/image/upload/c_scale,w_2060/v1483657677/basketball_landing_iglcrw.jpg" alt='Basketball Shooting' /> </div>
         </div>
         <div className='what-is-pug'>
           <div className='col s12'>
