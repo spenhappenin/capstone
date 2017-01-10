@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     post 'facebook_login', to: 'third_party_auth#facebook'
     resources :user_events
     resources :events
-    get 'all_events', to: 'events#all'
   end
 
   get '*unmatched_route', to: 'home#index'
