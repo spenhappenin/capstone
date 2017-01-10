@@ -17,5 +17,9 @@ json.event do
 	json.latitude @event.latitude
 	json.longitude @event.longitude
 	json.user_id @event.user_id
-	json.distance_from_user @event.distance_from(@position).round(1)
+  if @position
+    json.distance_from_user event.distance_from(@position).round(1)
+  else
+    json.distance_from_user 'Cannot Find Location'
+  end
 end

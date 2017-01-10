@@ -13,8 +13,6 @@ class Api::EventsController < ApplicationController
       @position = params[:position][:lat]
       @position += ' '
       @position += params[:position][:long]
-    else
-      @position = ""
     end
     @events = Event.all
   end
@@ -27,8 +25,6 @@ class Api::EventsController < ApplicationController
       @position = params[:position][:lat]
       @position += ' '
       @position += params[:position][:long]
-    else
-      @position = ""
     end
     @event = Event.new(events_params)
     latlong = @event.getLatLong
@@ -48,8 +44,6 @@ class Api::EventsController < ApplicationController
       @position = params[:position][:lat]
       @position += ' '
       @position += params[:position][:long]
-    else
-      @position = ""
     end
     unless @event.update(events_params)
       render json: {errors: @event.errors}, status: 401
