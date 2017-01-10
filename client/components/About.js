@@ -12,7 +12,7 @@ class About extends Component {
           </div>
         </div>
           <div className='row'>
-            <div className='col s12 m3'>
+            <div className='col s12 m3 l3'>
               <div className='spencer z-depth-5 responsive-img'> </div>
               <hr />
               <p className='center small'><em> Ginger </em></p>
