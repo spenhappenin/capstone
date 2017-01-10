@@ -75,17 +75,18 @@ export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
 }
 
 export const deleteUserEventCard = (id) => {
- return(dispatch) => {
-   $.ajax({
-     url: `/api/events/${id}`,
-     type: 'DELETE',
-     dataType: 'JSON'
-   }).done(data => {
-     confirm('Really Delete?');
-     dispatch({ type: 'DELETE_USER_EVENT', id });
-   }).fail(data => {
-     console.log(data);
-   });
+  if (confirm('Really Delete?')) {
+   return(dispatch) => {
+     $.ajax({
+       url: `/api/events/${id}`,
+       type: 'DELETE',
+       dataType: 'JSON'
+     }).done(data => {
+       dispatch({ type: 'DELETE_USER_EVENT', id });
+     }).fail(data => {
+       console.log(data);
+     });
+   }
  }
 }
 
