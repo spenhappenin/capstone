@@ -58,7 +58,14 @@ class UserEvents extends Component {
           </div>
           <div className='col s12 m5 l5 event-list'>
             <SearchBar history={history} />
-            <h2 className='center big'> <span style={{color: '#ff7821'}}>PUG</span> Events </h2>
+            <div className='row pug-events'>
+              <div className='col s12 m6 l6 center'>
+                <img src='just_pug.svg' className='just-pug' />
+              </div>
+              <div className='col s12 m6 l6 center'>
+                <h2 className='center big'>  Events </h2> 
+              </div>
+            </div>
             <div className='row'>
               <div className='col s12 m5'>
                 <Link to={'/addEvent'} className='btn fixedbutton btn-floating btn-large waves-effect waves-light'></Link>
