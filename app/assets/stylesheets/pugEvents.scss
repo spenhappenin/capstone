@@ -1,9 +1,11 @@
 .fixedbutton {
-		// background-image: url('pug_butt.png');
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    margin-right: 20px;
-    margin-bottom: 15px;
+	background-image: url(asset_path("pug_button.svg"));
+	background-size: contain;
+	background-repeat: no-repeat;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  margin-right: 20px;
+  margin-bottom: 15px; 
 }
 

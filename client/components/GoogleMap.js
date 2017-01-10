@@ -18,7 +18,8 @@ class GoogleMap extends Component {
   }
 
   componentWillUnmount() {
-    $(".pug-logo").removeClass("none")
+    // $(".pug-logo").removeClass("none")
+    $(".pug-logo").addClass("just-pug")
   }
 
   userLocation = () => {
