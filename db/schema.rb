@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20170110035055) do
     t.text     "attending"
     t.boolean  "active"
     t.float    "latitude"
-    t.float    "longitude"
+      t.float    "longitude"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

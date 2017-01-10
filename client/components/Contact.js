@@ -25,29 +25,29 @@ class Contact extends React.Component {
     return(
       <div>
         <div className='row' style={{marginTop: '60px', marginLeft: '15px', marginBottom: '15px'}}>
-          <div className='col s12 m7 l7' style={{backgroundColor: 'rgba(186, 186, 186, 0.2)', borderRadius: '10px'}}>
+          <div className='col s12 m4' style={{backgroundColor: 'rgba(186, 186, 186, 0.2)', borderRadius: '10px'}}>
             <form onSubmit={this.handleSubmit} ref='contactForm'>
               <h2 className='big white-text'> Contact Us </h2>
               <div className='row'>
-                <div className='col s12'>
+                <div className='col s12 m12'>
                   <label className='left white-text'> Name </label>
                   <input type='text' placeholder='John Doe' className='name-box white-text' required />
                 </div>
               </div>
               <div className='row'>
-                <div className='col s12'>
+                <div className='col s12 m12'>
                   <label className='left white-text'> Email </label>
                   <input type='email' placeholder='test@test.com' className='email-box white-text' required />
                 </div>
               </div>
               <div className='row'>
-                <div className='col s12'>
+                <div className='col s12 m12'>
                   <label className='left white-text'> Message </label>
                   <textarea className='white-text' placeholder='Write Message Here...'></textarea>
                 </div>
               </div>
               <div className='row'>
-                <div className='col s12'>
+                <div className='col s12 m12'>
                   <input type='submit' className='btn blue right' value='Send' />
                 </div>
               </div>

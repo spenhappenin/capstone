@@ -66,6 +66,7 @@ export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
      position: {lat, lng}}
    }).done( data => {
      let userEvent = data.event
+     debugger
      dispatch({ type: 'EDIT_USER_EVENT', userEvent });
    }).fail(data => {
      console.log(userEvent);

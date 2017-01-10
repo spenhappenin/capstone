@@ -14,12 +14,11 @@ class GoogleMap extends Component {
 
   componentWillMount() {
     this.userLocation();
-    $(".pug-logo").addClass("none")
+    $(".pug-logo").addClass("just-pug")
   }
 
   componentWillUnmount() {
-    // $(".pug-logo").removeClass("none")
-    $(".pug-logo").addClass("just-pug")
+    $(".pug-logo").removeClass("just-pug")
   }
 
   userLocation = () => {

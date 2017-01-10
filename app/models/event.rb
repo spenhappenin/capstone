@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-
 	validates_presence_of :name, :date, :time, :venue,
 												:street, :city, :state, :zip,
 												:skill_level, :sport
@@ -11,27 +10,45 @@ class Event < ApplicationRecord
 	serialize :attending, Array
 
 	after_create :set_attending
+	after_commit :setLatLong
 
 	acts_as_mappable
 	include Geokit::Geocoders
 
-	def lat 
-		self.latitude 
-	end 
+	def lat
+		self.latitude
+	end
 
-	def lng 
+	def lng
 		self.longitude
 	end
 
 	def getLatLong
 		address = "#{self.street}, #{self.city}, #{self.state} #{self.zip}"
-		data = MultiGeocoder.geocode(address)
-		{lat: data.latitude, lng: data.longitude}
+		begin
+			data = MultiGeocoder.geocode(address)
+			{lat: data.latitude, lng: data.longitude}
+		rescue
+			puts 'Geocoder Error'
+		end
+	end
+
+	private
+
+	def setLatLong
+		address = "#{self.street}, #{self.city}, #{self.state} #{self.zip}"
+		begin
+			data = MultiGeocoder.geocode(address)
+		rescue
+			puts 'Geocoder Error'
+		end
+		if data
+			self.update_columns(latitude: data.lat, longitude: data.lng)
+		end
 	end
 
 	def set_attending
 		self.attending << self.user_id.to_s
 		self.save
 	end
-
 end

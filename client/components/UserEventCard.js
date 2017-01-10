@@ -37,6 +37,7 @@ class UserEventCard extends Component {
     this.props.dispatch(editUserEventCard(this.props.userEvent.id, event_name, event_sport, event_date, event_time, capacity, venue,
                                 event_street, event_city, event_state, event_zip, skill_level, description, active ));
     this.toggleEdit();
+    this.props.updateqEvents()
   }
 
   componentDidMount() {
@@ -59,7 +60,7 @@ class UserEventCard extends Component {
 
   edit() {
     let { name, description, sport, venue, capacity, street, city, state, zip, skill_level, date, time } = this.props.userEvent;
-    let timeFormat = moment(time, 'YYYY MM DD hh:mm:ss z' ).format("h:mm a");
+    let timeFormat = moment(time, 'YYYY MM DD hh:mm:ss z' ).format("HH:mm");
     return(
       <div>
         <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >

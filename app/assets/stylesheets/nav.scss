@@ -7,11 +7,12 @@
   height: 200px;
   margin: 0;
   margin-left: 30px;
+  margin-top: '10px';
 }
 
 .just-pug {
   display: inline-block;
-  background-image: url('just_pug.png');
+  background-image: url(asset_path('just_pug.png'));
   background-repeat: no-repeat;
   background-size: contain;
   width: 100px;

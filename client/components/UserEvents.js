@@ -11,10 +11,15 @@ class UserEvents extends Component {
   constructor(props) {
     super(props);
     this.state = ({ latitude: 0.00, longitude: 0.00 })
+    this.updatedEvents = this.updatedEvents.bind(this)
   }
 
   componentWillMount() {
     this.userLocation();
+  }
+
+  updatedEvents() {
+    
   }
 
   userLocation = () => {
@@ -42,7 +47,7 @@ class UserEvents extends Component {
     let userEvents = this.props.userEvents;
     if(userEvents.length) {
       return userEvents.map( userEvent => {
-        return (<UserEventCard key={userEvent.id} userEvent={userEvent} />);
+        return (<UserEventCard key={userEvent.id} userEvent={userEvent} updateEvents={this.updateEvents} />);
       });
     } else {
       return (<h1 className='center small'> No Events! Create One! </h1>);
@@ -60,10 +65,10 @@ class UserEvents extends Component {
             <SearchBar history={history} />
             <div className='row pug-events'>
               <div className='col s12 m6 l6 center'>
-                <img src='just_pug.svg' className='just-pug' />
+                <img src='just_pug.svg' className='just-pug1' style={{height: '80px', marginLeft: '110px', marginTop: '20px'}} />
               </div>
               <div className='col s12 m6 l6 center'>
-                <h2 className='center big'>  Events </h2> 
+                <h2 className='center big' style={{marginRight: '50px'}}>  Events </h2>
               </div>
             </div>
             <div className='row'>
