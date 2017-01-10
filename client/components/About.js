@@ -12,7 +12,7 @@ class About extends Component {
           </div>
         </div>
           <div className='row'>
-            <div className='col s3'>
+            <div className='col s12 m3'>
               <div className='spencer z-depth-5 responsive-img'> </div>
               <hr />
               <p className='center'><em> Ginger </em></p>
@@ -22,7 +22,7 @@ class About extends Component {
                 <a href='mailto:spencer.richards7@gmail.com'><img className='social-icons responsive-img' src="https://res.cloudinary.com/omash612/image/upload/v1483478773/gmailLogo_as7oja.png" style={{ height: '40px', width: '40px', marginTop: '6px'}}></img></a>
               </div>
             </div>
-            <div className='col s3'>
+            <div className='col s12 m3'>
               <div className='alex z-depth-5 responsive-img'> </div>
               <hr />
               <p className='center' style={{fontSize: '12px'}}><span style={{fontWeight: 'bolder', fontSize: '16px', color: '#027e99'}}> Alex Romney </span> is a technology guru and sports entusiast. After being introduced to volleyball at a young age, his love for the
@@ -34,7 +34,7 @@ class About extends Component {
                 <a href='mailto:alexromney1215@gmail.com'><img className='social-icons responsive-img' src="https://res.cloudinary.com/omash612/image/upload/v1483478773/gmailLogo_as7oja.png" style={{ height: '40px', width: '40px', marginTop: '6px'}}></img></a>
               </div>
             </div>
-            <div className='col s3'>
+            <div className='col s12 m3'>
               <div className='william z-depth-5'> </div>
               <hr />
               <p className='center' style={{fontSize: '12px'}}><span style={{fontWeight: 'bolder', fontSize: '16px', color: '#027e99'}}> William Winger</span> is a Utah native and animal rescue advocate.  He studied web development at DevPoint Labs and his professional experience spans from manufacturing manager to electrician. His passion for coding led him to a full stack course in Ruby and JavaScript. When he is not creating web applications he enjoys spending time with his Labrador retriever, Maddie. </p>
@@ -45,7 +45,7 @@ class About extends Component {
              </div>
             </div>
 
-            <div className='col s3'>
+            <div className='col s12 m3'>
               <div className='rebecca z-depth-5'> </div>
               <hr />
               <p className='center' style={{fontSize: '12px'}}><span style={{fontWeight: 'bolder', fontSize: '16px', color: '#027e99'}}> Rebecca Shifflett</span> holds a bachelor’s and master’s in Public Health and is a certified yoga instructor. She believes staying active and connected to others is vital for personal wellness and growth. She recently completed a full stack web development course at DevPoint Labs and is eager to continue a career path in web development.  </p>
