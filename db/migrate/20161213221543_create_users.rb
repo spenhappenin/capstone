@@ -12,7 +12,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :favorite
       t.string :availability
       t.string :provider
-      t.string :uid 
+      t.string :uid
 
       t.timestamps
     end
