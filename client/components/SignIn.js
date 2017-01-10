@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { refreshLogin, handleFacebookLogin } from '../actions/auth';
 import { setFlash } from '../actions/flash';
 import FacebookLogin from 'react-facebook-login';
+import store, { history } from '../store';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -75,6 +76,7 @@ class SignIn extends React.Component {
                 <div className='col s12 center'>
                   <FacebookLogin
                     appId = '1653601048266232'
+                    history={history}
                     autoLoad = { false }
                     fields = 'name, email'
                     className = 'facebook-button'
