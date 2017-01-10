@@ -27,20 +27,19 @@ class Counter extends Component {
       if(userEvent.attending.length === this.props.capacity) {
         return(
           <div>
-            <label htmlFor='capacity'>Full</label>
             <button className="btn-flat disabled center">Full</button>
           </div>
         )
       } else if(userEvent.attending.find(id => id === this.props.user.id.toString())) {
         return(
           <div>
-            <button className="btn-flat disabled center">Attending</button>
+            <button className="btn-flat disabled center"><span className='orange-text'>Attending</span></button>
           </div>
         )
       } else {
         return(
           <div>
-            <button className="btn-flat center" onClick={this.incrementCount}>Join</button>
+            <button className="btn-flat center blue-text" onClick={this.incrementCount}>Join</button>
           </div>
         )
       }

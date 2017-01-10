@@ -51,7 +51,7 @@ class LandingSignIn extends React.Component {
           </div>
           <div className='row'>
             <div className='col s8 center'>
-              <input type='submit' value='Login' className="btn blue" />
+              <input type='submit' value='Login' className="btn blue" style={{marginBottom: '10px'}} />
             </div>
           </div>
         <div className='row'>
@@ -76,11 +76,11 @@ class LandingSignIn extends React.Component {
 
   render() {
     return (
-      <div className='container left landing-form'>
+      <div className='left container landing-form'>
         <div className='row'>
           <div className='col s8 center'>
-            <h2>Welcome to PUG </h2>
-            <h5> The world's largest network for amateur pick-up games.</h5>
+            <h2 className='big' style={{color: '#26c5f0'}}>Welcome to PUG </h2>
+            <p className='small' style={{fontSize: '28px'}}>The world's largest network for amateur <span style={{color: "#ff7821"}}>pick-up games.</span></p>
           </div>
         </div>
         { this.displayLogin() }

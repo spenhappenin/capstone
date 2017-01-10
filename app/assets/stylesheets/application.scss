@@ -1,6 +1,6 @@
 @import "materialize/components/color";
 $primary-color: color("red", "lighten-2") !default;
-$secondary-color: color("blue", "base") !default;
+$secondary-color: color("cyan", "base") !default;
 @import 'materialize';
 @import 'font-awesome';
 @import 'flash';
@@ -17,12 +17,18 @@ $secondary-color: color("blue", "base") !default;
   margin-bottom: 0 !important;
 }
 
-* {
-  // border: 1px solid red;
+.big {
+  font-family: 'Palanquin Dark', sans-serif !important;
 }
 
-body {
-  font-family: 'Arimo', sans-serif;
+.small {
+  font-family: 'Palanquin', sans-serif !important;
+  font-size: 24px;
+}
+
+
+* {
+  // border: 1px solid red;
 }
 
 #slide-search {
@@ -30,10 +36,10 @@ body {
 }
 
 .toasted {
-  background-color: green;
-  border-radius: 10px;
+  background-color: #ff802f;
+  border-radius: 5px;
   color: white;
-  margin-right: 150px;
+  margin-right: 300px;
   margin-top: 50px;
 }
 
@@ -74,8 +80,18 @@ a.secondary-content {
 }
 
 .sign-up {
-  background-color: #354458;
-  height: 435px;
+  background-color: #081f2b;
+  height: 350px;
+}
+
+.sign-up2 {
+  background-color: #081f2b;
+  height: 300px;
+}
+
+.sign-up3 {
+  background-color: #081f2b;
+  height: 300px;
 }
 
 .sign-up-title {

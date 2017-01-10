@@ -15,7 +15,7 @@ class NavBar extends React.Component {
   componentDidMount() {
     $('.button-collapse').sideNav({
       menuWidth: 200,
-      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      closeOnClick: true,
     }
   );
     $('.dropdown-button').dropdown();
@@ -35,7 +35,7 @@ class NavBar extends React.Component {
             <li><Link className='nav-tabs' to='/'>Home</Link></li>
             <li><Link className='nav-tabs' to='/userEvents'>Events</Link></li>
             <li><Link className='nav-tabs' style={{marginRight: '15px'}} to='/contact'>Contact</Link></li>
-            <Dropdown className='grey' trigger={<li style={{cursor: 'pointer', color: '#bbbbbb', marginRight: '10px'}}>{user.first_name} {user.last_name}</li>}>
+            <Dropdown className='grey' trigger={<li style={{cursor: 'pointer', color: '#26c5f0', marginRight: '10px'}}>{user.first_name} {user.last_name}</li>}>
               <li>
                 <Link to='/profile' className='white-text'><i className='material-icons'>perm_identity</i>View Profile</Link>
               </li>
@@ -77,7 +77,7 @@ class NavBar extends React.Component {
           <div className="nav-wrapper">
           <Link className='nav-tabs pug-logo' to='/'><div id="map-logo">
             <br />
-            <p className='black-text'> Get in the Game </p>
+            <p className='nav-tabs'> Get in the Game </p>
           </div></Link>
 
             <a href='#' data-activates='mobile' className='button-collapse'>

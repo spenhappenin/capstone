@@ -60,7 +60,7 @@ class SignUp extends React.Component {
         <div className='right'>
           <div className='row'>
             <div className='col s12 center'>
-                <h3 className='black-text'>Welcome To PUG!</h3>
+                <h3 className='big' style={{color: '#26c5f0'}}>Welcome To PUG!</h3>
               </div>
             </div>
             <form onSubmit={this.handleSubmit}>

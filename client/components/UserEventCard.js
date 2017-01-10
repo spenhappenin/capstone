@@ -59,7 +59,7 @@ class UserEventCard extends Component {
 
   edit() {
     let { name, description, sport, venue, capacity, street, city, state, zip, skill_level, date, time } = this.props.userEvent;
-    let timeFormat = moment(time, 'YYYY MM DD hh:mm:ss z' ).format("h:mm");
+    let timeFormat = moment(time, 'YYYY MM DD hh:mm:ss z' ).format("h:mm a");
     return(
       <div>
         <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
@@ -152,8 +152,8 @@ class UserEventCard extends Component {
                   </div>
                 </div>
                 <div>
-                  <button style={{ marginBottom: '22px'}} type='submit' className='btn-flat comment-btn'>Save</button>
-                  <button style={{ marginBottom: '22px'}} type='button' onClick={this.toggleEdit} className='btn-flat comment-btn right'>Cancel</button>
+                  <button style={{ marginBottom: '22px'}} type='submit' className='btn-flat comment-btn'><span className='blue-text'>Save</span></button>
+                  <button style={{ marginBottom: '22px'}} type='button' onClick={this.toggleEdit} className='btn-flat comment-btn right'><span className='red-text'>Cancel</span></button>
                 </div>
               </form>
             </li>
@@ -167,7 +167,7 @@ class UserEventCard extends Component {
       return(
         <div className='row center'>
           <div className='col s12'>
-            <span style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span style={{fontSize: '14px'}}>{ sportEvent.description }</span>
+            <span className='big' style={{fontWeight: '900', fontSize: '16px'}}>Description</span>: <span className='small' style={{fontSize: '15px'}}>{ sportEvent.description }</span>
           </div>
         </div>
       )
@@ -177,7 +177,7 @@ class UserEventCard extends Component {
   display() {
     let sportEvent = this.props.userEvent;
     let dateFormat = moment(sportEvent.date ).format('MMMM Do YYYY');
-    let timeFormat = moment(sportEvent.time, 'YYYY MM DD hh:mm:ss z' ).format('h:mm A');
+    let timeFormat = moment(sportEvent.time, 'YYYY MM DD hh:mm:ss z' ).format('h:mm a');
     let id = `userEvent-${this.props.userEvent.id}`
     let sportPic;
 
@@ -237,13 +237,13 @@ class UserEventCard extends Component {
                     <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
                   </div>
                   <div>
-                    <h5>{ sportEvent.name }</h5>
+                    <h5 style={{color: '#26c5f0'}}>{ sportEvent.name }</h5>
                   </div>
                   <div className='row event-street'>
-                    <div className='col s4 m4 '>
+                    <div className='col s4 m4 small' style={{fontSize: '16px'}}>
                       { sportEvent.street }
                     </div>
-                    <div className='col s4 m4'>
+                    <div className='col s4 m4 small' style={{fontSize: '16px'}}>
                      { sportEvent.distance_from_user } Miles
                     </div>
                   </div>
@@ -252,21 +252,21 @@ class UserEventCard extends Component {
                 <div className="collapsible-body" style={{ padding: '10px' }}>
                     <div className='row center'>
                       <div className='col s4'>
-                        <span style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span style={{fontSize: '14px'}}>{ sportEvent.skill_level }</span>
+                        <span className='big' style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span className='small' style={{fontSize: '15px'}}>{ sportEvent.skill_level }</span>
                       </div>
                       <div className='col s4'>
-                        <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
+                        <span className='big' style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span className='small' style={{fontSize: '15px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
                       </div>
                       <div className='col s4'>
-                        <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}> {timeFormat} </span>
+                        <span className='big' style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span className='small' style={{fontSize: '15px'}}> {timeFormat} </span>
                       </div>
                     </div>
                     <div className='row center'>
                       <div className='col s6'>
-                        <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}> {dateFormat}</span>
+                        <span className='big' style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span className='small' style={{fontSize: '15px'}}> {dateFormat}</span>
                       </div>
                       <div className='col s6'>
-                        <span style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span style={{fontSize: '14px'}}>{ sportEvent.venue }</span>
+                        <span className='big' style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span className='small' style={{fontSize: '15px'}}>{ sportEvent.venue }</span>
                       </div>
                     </div>
                     { this.showDescription(sportEvent) }
@@ -274,8 +274,8 @@ class UserEventCard extends Component {
                     <div className='col s12'>
                      <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
                      <Counter capacity={sportEvent.capacity} />
-                       <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn-flat right'><i className='material-icons'>delete</i></button>
-                       <button type='button' onClick={this.toggleEdit} className='btn-flat right' style={{marginRight: '5px'}}><i className="material-icons">mode_edit</i></button>
+                       <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn-flat right'><i className='material-icons red-text'>delete</i></button>
+                       <button type='button' onClick={this.toggleEdit} className='btn-flat right' style={{marginRight: '5px'}}><i className="material-icons green-text">mode_edit</i></button>
                     </div>
                   </div>
                 </div>
@@ -294,13 +294,13 @@ class UserEventCard extends Component {
                         <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
                       </div>
                       <div>
-                        <h5>{ sportEvent.name }</h5>
+                        <h5 style={{color: '#26c5f0'}}>{ sportEvent.name }</h5>
                       </div>
                       <div className='row event-street'>
-                        <div className='col s4 m4'>
+                        <div className='col s4 m4 small' style={{fontSize: '16px'}}>
                           { sportEvent.street }
                         </div>
-                        <div className='col s4 m4'>
+                        <div className='col s4 m4 small' style={{fontSize: '16px'}}>
                          { sportEvent.distance_from_user } Miles
                         </div>
                       </div>
@@ -309,21 +309,21 @@ class UserEventCard extends Component {
                     <div className="collapsible-body" style={{ padding: '10px' }}>
                         <div className='row center'>
                           <div className='col s4'>
-                            <span style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span style={{fontSize: '14px'}}>{ sportEvent.skill_level }</span>
+                            <span  className='big' style={{fontWeight: '900', fontSize: '16px'}}>Skill Level</span>: <span className='small' style={{fontSize: '15px'}}>{ sportEvent.skill_level }</span>
                           </div>
                           <div className='col s4'>
-                            <span style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span style={{fontSize: '14px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
+                            <span className='big' style={{fontWeight: '900', fontSize: '16px'}}>Capacity</span>: <span className='small' style={{fontSize: '15px'}}>{userEvent.attending.length}/{ sportEvent.capacity }</span>
                           </div>
                           <div className='col s4'>
-                            <span style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span style={{fontSize: '14px'}}>{timeFormat}</span>
+                            <span className='big' style={{fontWeight: '900', fontSize: '16px'}}>Time</span>: <span className='small' style={{fontSize: '15px'}}>{timeFormat}</span>
                           </div>
                         </div>
                         <div className='row center'>
                           <div className='col s6'>
-                            <span style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span style={{fontSize: '14px'}}>{dateFormat}</span>
+                            <span className='big' style={{fontWeight: '900', fontSize: '16px'}}>Date</span>: <span className='small' style={{fontSize: '15px'}}>{dateFormat}</span>
                           </div>
                           <div className='col s6'>
-                            <span style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span style={{fontSize: '14px'}}>{ sportEvent.venue }</span>
+                            <span className='big' style={{fontWeight: '900', fontSize: '16px'}}>Location</span>: <span className='small' style={{fontSize: '15px'}}>{ sportEvent.venue }</span>
                           </div>
                         </div>
                         { this.showDescription(sportEvent) }

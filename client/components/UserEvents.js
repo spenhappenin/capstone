@@ -45,7 +45,7 @@ class UserEvents extends Component {
         return (<UserEventCard key={userEvent.id} userEvent={userEvent} />);
       });
     } else {
-      return (<h1 className='center'> No Events! Create One! </h1>);
+      return (<h1 className='center small'> No Events! Create One! </h1>);
     }
   }
 
@@ -58,7 +58,7 @@ class UserEvents extends Component {
           </div>
           <div className='col s5 event-list'>
             <SearchBar history={history} />
-            <h2 className='center'> PUG Events </h2>
+            <h2 className='center big'> <span style={{color: '#ff7821'}}>PUG</span> Events </h2>
             <div className='row'>
               <div className='col s12 m5'>
                 <Link to={'/addEvent'} className='btn fixedbutton btn-floating btn-large waves-effect waves-light'><i className="material-icons">add</i></Link>
