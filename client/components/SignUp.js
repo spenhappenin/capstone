@@ -16,10 +16,9 @@ class SignUp extends React.Component {
     });
     $('select').material_select();
     $('body').css('background-image', "url(https://res.cloudinary.com/omash612/image/upload/c_scale,w_2131/v1483683226/artsyBasketball_ysrsox.jpg)");
-    $('body').css('height', '900px');
-    $('body').css('background-position', '200% 25%');
     $('body').css('background-size', 'cover');
     $('body').css('background-repeat', 'no-repeat');
+    $('body').css('height', '100vh');
   }
 
   handleSubmit(e) {

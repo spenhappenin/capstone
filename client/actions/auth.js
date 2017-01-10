@@ -21,7 +21,7 @@ export const logout = (router) => {
       url: '/users/sign_out',
       type: 'DELETE'
     }).done( () => {
-      router.push('/signin');
+      history.push('/signin');
       dispatch(setUser());
     });
   }

@@ -35,7 +35,7 @@ class NavBar extends React.Component {
             <li><Link className='nav-tabs' to='/'>Home</Link></li>
             <li><Link className='nav-tabs' to='/userEvents'>Events</Link></li>
             <li><Link className='nav-tabs' style={{marginRight: '15px'}} to='/contact'>Contact</Link></li>
-            <Dropdown className='grey' trigger={<li style={{cursor: 'pointer', color: '#bbbbbb'}}>{user.first_name} {user.last_name}</li>}>
+            <Dropdown className='grey' trigger={<li style={{cursor: 'pointer', color: '#bbbbbb', marginRight: '10px'}}>{user.first_name} {user.last_name}</li>}>
               <li>
                 <Link to='/profile' className='white-text'><i className='material-icons'>perm_identity</i>View Profile</Link>
               </li>

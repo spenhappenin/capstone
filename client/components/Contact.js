@@ -10,6 +10,7 @@ class Contact extends React.Component {
   componentDidMount() {
     $('body').css('background-image', "url(https://res.cloudinary.com/omash612/image/upload/c_scale,w_1978/v1483472712/hdSoccerGame_jwonev.jpg)");
     $('body').css('background-size', 'cover');
+    $('body').css('background-position', '100% 70%');
     $('body').css('background-repeat', 'no-repeat');
     $('body').css('height', '100vh');
   }

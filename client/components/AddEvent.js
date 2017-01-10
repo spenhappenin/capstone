@@ -70,6 +70,7 @@ class AddEvent extends Component {
                   <option value="" disabled> </option>
                   <option value='baseball'> Baseball </option>
                   <option value='basketball'> Basketball </option>
+                  <option value='badminton'> Badminton </option>
                   <option value='football'> Football </option>
                   <option value='frisbee'> Frisbee </option>
                   <option value='golf'> Golf </option>

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { refreshLogin, handleFacebookLogin } from '../actions/auth';
 import { setFlash } from '../actions/flash';
 import FacebookLogin from 'react-facebook-login';
-import store, { history } from '../store';
 
 $('input').attr('autocomplete','off');
 
@@ -59,7 +58,6 @@ class LandingSignIn extends React.Component {
           <div className='col s8 center'>
             <FacebookLogin
               appId = '1653601048266232'
-              history={history}
               autoLoad = { false }
               fields = 'name, email'
               className = 'facebook-button'

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { refreshLogin, handleFacebookLogin } from '../actions/auth';
 import { setFlash } from '../actions/flash';
 import FacebookLogin from 'react-facebook-login';
-import store, { history } from '../store';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -13,9 +12,9 @@ class SignIn extends React.Component {
 
   componentDidMount() {
     $('body').css('background-image', "url(https://res.cloudinary.com/omash612/image/upload/c_scale,w_2216/v1483592932/baseballMit_vlwj1y.jpg)");
-    $('body').css('background-position', '200% 25%');
     $('body').css('background-size', 'cover');
     $('body').css('background-repeat', 'no-repeat');
+    $('body').css('height', '100vh');
   }
 
   handleSubmit(e) {
@@ -76,7 +75,6 @@ class SignIn extends React.Component {
                 <div className='col s12 center'>
                   <FacebookLogin
                     appId = '1653601048266232'
-                    history={history}
                     autoLoad = { false }
                     fields = 'name, email'
                     className = 'facebook-button'
