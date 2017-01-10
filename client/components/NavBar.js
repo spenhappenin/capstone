@@ -13,7 +13,11 @@ class NavBar extends React.Component {
   }
 
   componentDidMount() {
-    $('.button-collapse').sideNav();
+    $('.button-collapse').sideNav({
+      menuWidth: 200,
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
     $('.dropdown-button').dropdown();
   }
 
@@ -77,13 +81,13 @@ class NavBar extends React.Component {
           </div></Link>
 
             <a href='#' data-activates='mobile' className='button-collapse'>
-              <i className='fa fa-bars'></i>
+              <i className='fa fa-bars nav-tabs' ></i>
             </a>
-            <ul className="right hide-on-med-and-down">
+            <ul className="right hide-on-and-down">
               {this.navs()}
             </ul>
             <ul className="side-nav grey" id="mobile">
-              <i className="material-icons">polymer</i>
+              <i className="material-icons ">polymer</i>
               {this.navs()}
             </ul>
           </div>
