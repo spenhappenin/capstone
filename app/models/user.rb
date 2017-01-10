@@ -16,7 +16,7 @@ class User < ApplicationRecord
       user.provider = provider
       user.uid = auth[:userID]
       unless user.save
-        puts "errors" + user.errors.full_messages.to_sentence
+        puts "errors " + user.errors.full_messages.to_sentence
       end
     else
       user = User.new
@@ -24,6 +24,7 @@ class User < ApplicationRecord
       full_name = auth[:name].split(' ')
       user.first_name = full_name.first
       user.last_name = full_name.last
+      user.username = auth[:name]
       user.provider = provider
       user.uid = auth[:userID]
       user.password = Devise.friendly_token
