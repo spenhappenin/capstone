@@ -12,10 +12,22 @@ class User < ApplicationRecord
   validates_inclusion_of :role, in: %w(user admin)
 
   def self.from_third_party_auth(provider, auth)
-    where(provider: provider, uid: auth[:userID]).first_or_create do |user|
+    if user = where(email: auth[:email]).first
+      user.provider = provider
+      user.uid = auth[:userID]
+      user.save
+    else
+      user = User.new
       user.email = auth[:email]
+      full_name = auth[:name].split(' ')
+      user.first_name = full_name.first
+      user.last_name = full_name.last
+      user.provider = provider
+      user.uid = auth[:userID]
       user.password = Devise.friendly_token
+      user.save
     end
+    user
   end
 
 end

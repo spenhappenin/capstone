@@ -40,22 +40,22 @@ class LandingSignIn extends React.Component {
       return(
         <form onSubmit={this.handleSubmit}>
           <div className='row'>
-            <div className='col s4'>
+            <div className='col s6'>
               <label> Email </label>
               <input className='input foo' id='bar' type="email" required={true} ref="email" />
             </div>
-            <div className='col s4'>
+            <div className='col s6'>
               <label> Password </label>
               <input className=' input' type="password" required={true} ref="password" />
             </div>
           </div>
           <div className='row'>
-            <div className='col s8 center'>
+            <div className='center'>
               <input type='submit' value='Login' className="btn blue" style={{marginBottom: '10px'}} />
             </div>
           </div>
         <div className='row'>
-          <div className='col s8 center'>
+          <div className='center'>
             <FacebookLogin
               appId = '1653601048266232'
               autoLoad = { false }
@@ -76,14 +76,18 @@ class LandingSignIn extends React.Component {
 
   render() {
     return (
-      <div className='left container landing-form'>
-        <div className='row'>
-          <div className='col s8 center'>
-            <h2 className='big' style={{color: '#26c5f0'}}>Welcome to PUG </h2>
-            <p className='small' style={{fontSize: '28px'}}>The world's largest network for amateur <span style={{color: "#ff7821"}}>pick-up games.</span></p>
+      <div className='row'>
+        <div className='left container landing-form'>
+          <div className='col s8' style={{backgroundColor: 'rgba(8, 31, 43, 0.6)', borderRadius: '10px'}}>
+            <div className='row'>
+              <div className='center'>
+                <h2 className='big' style={{color: '#26c5f0'}}>Welcome to PUG </h2>
+                <p className='small' style={{fontSize: '28px'}}>The world's largest network for amateur <span style={{color: "#ff7821"}}>pick-up games.</span></p>
+              </div>
+            </div>
+            { this.displayLogin() }
           </div>
         </div>
-        { this.displayLogin() }
       </div>
     )
   }

@@ -85,15 +85,15 @@ class GoogleMap extends Component {
   buildMarkers(events) {
     let m = events.map( e => {
     let timeFormat = moment(e.time, 'YYYY MM DD hh:mm:ss z' ).format('h:mm a');
-    var info = "<div className='row'>" +
+    var info = "<div className='row' style={{backgroundColor: '#081f2b'}}>" +
                   "<div className='col s12 m12 l12'>" +
-                    `<h6>${e.name}</h6>` +
+                    `<h6 className='big white-text'>${e.name}</h6>` +
                   "</div>" +
                   "<div className='col s12 m12 l12'>" +
-                    `<p>${e.street}</p>` +
+                    `<p className='small white-text'>${e.street}</p>` +
                   "</div>" +
                   "<div className='col s12 m12 l12'>" +
-                  `<span style={{fontSize: '14px'}}>${timeFormat}</span>` +
+                  `<span className='small white-text' style={{fontSize: '14px'}}>${timeFormat}</span>` +
                   "</div>" +
                 "</div>";
 
