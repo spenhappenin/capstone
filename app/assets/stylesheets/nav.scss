@@ -9,6 +9,17 @@
   margin-left: 30px;
 }
 
+.just-pug {
+  display: inline-block;
+  background-image: url('just_pug.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  margin-left: 30px;
+}
+
 .nav-tabs {
   font-family: 'Arimo', sans-serif;
 	color: #ff7821;
@@ -16,8 +27,6 @@
 
 .none {
 	display: none;
-	// background-image: url(asset_path("pug_logo1.svg"));
-	// background-image: url(asset_path("pug_logo1.svg"));
 }
 
 .show {
