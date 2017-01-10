@@ -4,11 +4,6 @@ class Api::EventsController < ApplicationController
 
 
   def index
-    @events = Event.all
-
-  end
-
-  def all
     if params[:position]
       @position = params[:position][:lat]
       @position += ','

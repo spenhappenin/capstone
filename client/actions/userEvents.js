@@ -3,7 +3,7 @@ export const fetchUserEvents = () => {
     let lat = sessionStorage.getItem("userLat")
     let lng = sessionStorage.getItem("userLong")
     $.ajax({
-      url: '/api/all_events',
+      url: '/api/events',
       type: 'GET',
       dataType: 'JSON',
       data: {position: {lat, lng}}
