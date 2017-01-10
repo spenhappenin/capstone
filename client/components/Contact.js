@@ -8,7 +8,7 @@ class Contact extends React.Component {
   }
 
   componentDidMount() {
-    $('body').css('background-image', "url(http://res.cloudinary.com/omash612/image/upload/c_scale,w_1978/v1483472712/hdSoccerGame_jwonev.jpg)");
+    $('body').css('background-image', "url(https://res.cloudinary.com/omash612/image/upload/c_scale,w_1978/v1483472712/hdSoccerGame_jwonev.jpg)");
     $('body').css('background-position', '200% 25%');
     $('body').css('background-size', 'cover');
     $('body').css('background-repeat', 'no-repeat');

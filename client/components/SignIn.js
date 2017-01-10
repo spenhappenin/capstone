@@ -11,7 +11,7 @@ class SignIn extends React.Component {
   }
 
   componentDidMount() {
-    $('body').css('background-image', "url(http://res.cloudinary.com/omash612/image/upload/c_scale,w_2216/v1483592932/baseballMit_vlwj1y.jpg)");
+    $('body').css('background-image', "url(https://res.cloudinary.com/omash612/image/upload/c_scale,w_2216/v1483592932/baseballMit_vlwj1y.jpg)");
     $('body').css('background-position', '200% 25%');
     $('body').css('background-size', 'cover');
     $('body').css('background-repeat', 'no-repeat');

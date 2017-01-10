@@ -26,7 +26,7 @@ class Landing extends Component {
       <div className="box">
         <div className="landing-image">
           <LandingSignIn history={history} noLogin={true} />
-          <div className="parallax"> <img className='responsive-img' src="http://res.cloudinary.com/omash612/image/upload/c_scale,w_2060/v1483657677/basketball_landing_iglcrw.jpg" alt='Basketball Shooting' /> </div>
+          <div className="parallax"> <img className='responsive-img' src="https://res.cloudinary.com/omash612/image/upload/c_scale,w_2060/v1483657677/basketball_landing_iglcrw.jpg" alt='Basketball Shooting' /> </div>
         </div>
         <div className='what-is-pug'>
           <div className='col s12'>
@@ -37,7 +37,7 @@ class Landing extends Component {
           </div>
         </div>
         <div className='parallax-container'>
-          <div className='parallax'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483472712/hdBasketballCourt_b8cm4f.jpg' alt='Picture of sunny basketball court' /> </div>
+          <div className='parallax'> <img className='responsive-img' src='https://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483472712/hdBasketballCourt_b8cm4f.jpg' alt='Picture of sunny basketball court' /> </div>
         </div>
         <div className='sign-up'>
           <div className='row'>
@@ -53,7 +53,7 @@ class Landing extends Component {
             </div>
           </div>
           <div className='parallax-container'>
-            <div className='parallax'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483594313/soccerTeam_a8jcvz.jpg' alt='Picture of soccer team huddled together at night' /> </div>
+            <div className='parallax'> <img className='responsive-img' src='https://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483594313/soccerTeam_a8jcvz.jpg' alt='Picture of soccer team huddled together at night' /> </div>
           </div>
           <div className='sign-up'>
             <div className='row'>
@@ -68,7 +68,7 @@ class Landing extends Component {
             </div>
           </div>
           <div className='parallax-container'>
-            <div className='parallax'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/v1483467364/volleyball-background_h5pwkx.jpg' alt='Picture of beach volleyball' /> </div>
+            <div className='parallax'> <img className='responsive-img' src='https://res.cloudinary.com/omash612/image/upload/v1483467364/volleyball-background_h5pwkx.jpg' alt='Picture of beach volleyball' /> </div>
           </div>
           <About />
         </div>
@@ -81,7 +81,7 @@ class Landing extends Component {
       <div className="box">
         <div className="landing-image">
           <LandingSignIn history={history}/>
-          <div className="parallax"> <img className='responsive-img' src="http://res.cloudinary.com/omash612/image/upload/c_scale,w_2060/v1483657677/basketball_landing_iglcrw.jpg" alt='Basketball Shooting' /> </div>
+          <div className="parallax"> <img className='responsive-img' src="https://res.cloudinary.com/omash612/image/upload/c_scale,w_2060/v1483657677/basketball_landing_iglcrw.jpg" alt='Basketball Shooting' /> </div>
         </div>
         <div className='what-is-pug'>
           <div className='col s12'>
@@ -92,7 +92,7 @@ class Landing extends Component {
           </div>
         </div>
         <div className='parallax-container'>
-          <div className='parallax'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483472712/hdBasketballCourt_b8cm4f.jpg' alt='Picture of sunny basketball court' /> </div>
+          <div className='parallax'> <img className='responsive-img' src='https://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483472712/hdBasketballCourt_b8cm4f.jpg' alt='Picture of sunny basketball court' /> </div>
         </div>
         <div className='sign-up'>
           <div className='row'>
@@ -111,7 +111,7 @@ class Landing extends Component {
             </div>
           </div>
           <div className='parallax-container'>
-            <div className='parallax'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483594313/soccerTeam_a8jcvz.jpg' alt='Picture of soccer team huddled together at night' /> </div>
+            <div className='parallax'> <img className='responsive-img' src='https://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483594313/soccerTeam_a8jcvz.jpg' alt='Picture of soccer team huddled together at night' /> </div>
           </div>
           <div className='sign-up'>
             <div className='row'>
@@ -126,7 +126,7 @@ class Landing extends Component {
             </div>
           </div>
           <div className='parallax-container'>
-            <div className='parallax'> <img className='responsive-img' src='http://res.cloudinary.com/omash612/image/upload/v1483467364/volleyball-background_h5pwkx.jpg' alt='Picture of beach volleyball' /> </div>
+            <div className='parallax'> <img className='responsive-img' src='https://res.cloudinary.com/omash612/image/upload/v1483467364/volleyball-background_h5pwkx.jpg' alt='Picture of beach volleyball' /> </div>
           </div>
           <About />
         </div>
