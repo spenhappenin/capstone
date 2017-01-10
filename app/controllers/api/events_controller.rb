@@ -12,7 +12,7 @@ class Api::EventsController < ApplicationController
     if params[:position]
       @position = params[:position][:lat]
       @position += ' '
-      @position += params[:position][:long]
+      @position += params[:position][:lng]
     end
     @events = Event.all
   end
@@ -24,7 +24,7 @@ class Api::EventsController < ApplicationController
     if params[:position]
       @position = params[:position][:lat]
       @position += ' '
-      @position += params[:position][:long]
+      @position += params[:position][:lng]
     end
     @event = Event.new(events_params)
     latlong = @event.getLatLong
@@ -43,7 +43,7 @@ class Api::EventsController < ApplicationController
     if params[:position]
       @position = params[:position][:lat]
       @position += ' '
-      @position += params[:position][:long]
+      @position += params[:position][:lng]
     end
     unless @event.update(events_params)
       render json: {errors: @event.errors}, status: 401
@@ -61,7 +61,7 @@ class Api::EventsController < ApplicationController
   def search
     # @position = params[:position][:lat]
     # @position += ' '
-    # @position += params[:position][:long]
+    # @position += params[:position][:lng]
     like_condition = "%#{params[:query].downcase}%"
     results = Event.where('lower(name) like ? OR lower(venue) like ? OR lower(description) like ?
                           OR lower(street) like ? OR lower(city) like ? OR lower(state) like ?

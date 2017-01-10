@@ -1,12 +1,12 @@
 export const fetchUserEvents = () => {
   return(dispatch) => {
     let lat = sessionStorage.getItem("userLat")
-    let long = sessionStorage.getItem("userLong")
+    let lng = sessionStorage.getItem("userLong")
     $.ajax({
       url: '/api/all_events',
       type: 'GET',
       dataType: 'JSON',
-      data: {position: {lat, long}}
+      data: {position: {lat, lng}}
     }).done( userEvents => {
       userEvents.sort(function(a,b) {return (a.distance_from_user > b.distance_from_user) ? 1 : ((b.distance_from_user > a.distance_from_user) ? -1 : 0);} );
       dispatch({ type: 'ALL_USER_EVENTS', userEvents });
@@ -18,14 +18,14 @@ export const fetchUserEvents = () => {
 
 export const peopleAttending = (eventId, attending) => {
   let lat = sessionStorage.getItem("userLat");
-  let long = sessionStorage.getItem("userLong");
-  console.log(lat, long, 'attending', attending);
+  let lng = sessionStorage.getItem("userLong");
+  console.log("lat", lat, "lng", lng)
   return(dispatch) => {
     $.ajax({
       url: `/api/events/${eventId}`,
       type: 'PUT',
       dataType: 'JSON',
-      data: { events: { attending }, position: {lat, long} }
+      data: { events: { attending }, position: {lat, lng} }
     }).done( data => {
       let userEvent = data.event;
       dispatch({ type: 'PEOPLE_ATTENDING', userEvent })
@@ -38,11 +38,11 @@ export const peopleAttending = (eventId, attending) => {
 export const searchQuery = (query) => {
   return(dispatch) => {
     let lat = sessionStorage.getItem("userLat")
-    let long = sessionStorage.getItem("userLong")
+    let lng = sessionStorage.getItem("userLong")
     $.ajax({
       url: '/api/search_events',
       type: 'GET',
-      data: { query }, position: {lat, long}
+      data: { query }, position: {lat, lng}
     }).done( events => {
       events.sort(function(a,b) {return (a.distance_from_user > b.distance_from_user) ? 1 : ((b.distance_from_user > a.distance_from_user) ? -1 : 0);} );
       debugger;
@@ -56,7 +56,7 @@ export const searchQuery = (query) => {
 export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
                             street, city, state, zip, skill_level, description, active ) => {
  let lat = sessionStorage.getItem("userLat")
- let long = sessionStorage.getItem("userLong")
+ let lng = sessionStorage.getItem("userLong")
  return(dispatch) => {
    $.ajax({
      url: `/api/events/${id}`,
@@ -64,7 +64,7 @@ export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
      dataType: 'JSON',
      data: { events: {name, sport, date, time, capacity, venue,
      street, city, state, zip, skill_level, description, active},
-     position: {lat, long}}
+     position: {lat, lng}}
    }).done( data => {
      let userEvent = data.event
      dispatch({ type: 'EDIT_USER_EVENT', userEvent });
