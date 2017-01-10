@@ -17,8 +17,9 @@ export const fetchUserEvents = () => {
 }
 
 export const peopleAttending = (eventId, attending) => {
-  let lat = sessionStorage.getItem("userLat")
-  let long = sessionStorage.getItem("userLong")
+  let lat = sessionStorage.getItem("userLat");
+  let long = sessionStorage.getItem("userLong");
+  console.log(lat, long, 'attending', attending);
   return(dispatch) => {
     $.ajax({
       url: `/api/events/${eventId}`,
@@ -26,7 +27,7 @@ export const peopleAttending = (eventId, attending) => {
       dataType: 'JSON',
       data: { events: { attending }, position: {lat, long} }
     }).done( data => {
-      let userEvent = data.event
+      let userEvent = data.event;
       dispatch({ type: 'PEOPLE_ATTENDING', userEvent })
     }).fail( data => {
       console.log(data)
