@@ -11,7 +11,7 @@ class Api::EventsController < ApplicationController
   def all
     if params[:position]
       @position = params[:position][:lat]
-      @position += ' '
+      @position += ','
       @position += params[:position][:lng]
     end
     @events = Event.all
@@ -23,7 +23,7 @@ class Api::EventsController < ApplicationController
   def create
     if params[:position]
       @position = params[:position][:lat]
-      @position += ' '
+      @position += ','
       @position += params[:position][:lng]
     end
     @event = Event.new(events_params)
@@ -42,7 +42,7 @@ class Api::EventsController < ApplicationController
   def update
     if params[:position]
       @position = params[:position][:lat]
-      @position += ' '
+      @position += ','
       @position += params[:position][:lng]
     end
     unless @event.update(events_params)
@@ -60,7 +60,7 @@ class Api::EventsController < ApplicationController
 
   def search
     # @position = params[:position][:lat]
-    # @position += ' '
+    # @position += ','
     # @position += params[:position][:lng]
     like_condition = "%#{params[:query].downcase}%"
     results = Event.where('lower(name) like ? OR lower(venue) like ? OR lower(description) like ?
