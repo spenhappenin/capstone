@@ -45,7 +45,6 @@ export const searchQuery = (query) => {
       data: { query }, position: {lat, lng}
     }).done( events => {
       events.sort(function(a,b) {return (a.distance_from_user > b.distance_from_user) ? 1 : ((b.distance_from_user > a.distance_from_user) ? -1 : 0);} );
-      debugger;
       dispatch({ type: 'SEARCH_RESULTS', events});
     }).fail( data => {
       console.log(data);

@@ -38,7 +38,7 @@ class GoogleMap extends Component {
     let marker = window.markers[idx];
     marker.setMap(this.handler.getMap());
     marker.panTo();
-    this.handler.getMap().setZoom(13);
+    this.handler.getMap().setZoom(10)
     google.maps.event.trigger(marker.getServiceObject(), 'click');
   }
 
@@ -85,20 +85,17 @@ class GoogleMap extends Component {
   buildMarkers(events) {
     let m = events.map( e => {
     let timeFormat = moment(e.time, 'YYYY MM DD hh:mm:ss z' ).format('h:mm a');
-
-
-      var info = "<div className='row'>" +
-                    "<div className='col s12 m12 l12'>" +
-                      `<h6>${e.name}</h6>` +
-                    "</div>" +
-                    "<div className='col s12 m12 l12'>" +
-                      `<p>${e.street}</p>` +
-                    "</div>" +
-                    "<div className='col s12 m12 l12'>" +
-                    `<span style={{fontSize: '14px'}}>${timeFormat}</span>` +
-                    "</div>" +
-                  "</div>";
-
+    var info = "<div className='row'>" +
+                  "<div className='col s12 m12 l12'>" +
+                    `<h6>${e.name}</h6>` +
+                  "</div>" +
+                  "<div className='col s12 m12 l12'>" +
+                    `<p>${e.street}</p>` +
+                  "</div>" +
+                  "<div className='col s12 m12 l12'>" +
+                  `<span style={{fontSize: '14px'}}>${timeFormat}</span>` +
+                  "</div>" +
+                "</div>";
 
       let sportPic;
       switch(e.sport) {
