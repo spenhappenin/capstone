@@ -21,6 +21,8 @@ class AddEvent extends Component {
     let { event_name, sport, event_date, event_time, capacity,
           venue, street_address, event_city, event_state, event_zip,
           skill_level, event_description } = this.refs;
+    let lat = sessionStorage.getItem("userLat")
+    let long = sessionStorage.getItem("userLong")
 
     $.ajax({
       url: '/api/events',
@@ -39,7 +41,7 @@ class AddEvent extends Component {
         zip: event_zip.value,
         skill_level: skill_level.value,
         description: event_description.value,
-      }
+      }, position: {lat, long}
     }
     }).done( addEvent => {
       this.props.history.push("/userEvents");

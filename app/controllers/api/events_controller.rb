@@ -9,9 +9,11 @@ class Api::EventsController < ApplicationController
   end
 
   def all
-    @position = params[:position][:lat]
-    @position += ' '
-    @position += params[:position][:long]
+    if params[:position]
+      @position = params[:position][:lat]
+      @position += ' '
+      @position += params[:position][:long]
+    end
     @events = Event.all
   end
 
@@ -19,15 +21,18 @@ class Api::EventsController < ApplicationController
   end
 
   def create
+    if params[:position]
+      @position = params[:position][:lat]
+      @position += ' '
+      @position += params[:position][:long]
+    end
     @event = Event.new(events_params)
     latlong = @event.getLatLong
     @event.latitude = latlong[:lat]
     @event.longitude = latlong[:lng]
     @event.user_id = current_user.id
-    if @event.save
-      render json: @event
-    else
-      render json: {}
+    unless @event.save
+      render json: {errors: @event.errors}, status: 401
     end
   end
 
