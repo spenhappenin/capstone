@@ -15,7 +15,7 @@ export const refreshLogin = (user = null) => {
   }
 }
 
-export const logout = (router) => {
+export const logout = (history) => {
   return(dispatch) => {
     $.ajax({
       url: '/users/sign_out',
