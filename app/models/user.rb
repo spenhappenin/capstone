@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :user_events, dependent: :destroy
   has_many :comments
 
-  validates_presence_of :first_name, :last_name, :dob
   validates_uniqueness_of :username
   validates_inclusion_of :role, in: %w(user admin)
 
@@ -16,10 +15,6 @@ class User < ApplicationRecord
     where(provider: provider, uid: auth[:userID]).first_or_create do |user|
       user.email = auth[:email]
       user.password = Devise.friendly_token
-      name = auth[:name].split(' ')
-      user.first_name = name.first
-      user.last_name = name.last
-      user.dob = '1/1/1990'
     end
   end
 
