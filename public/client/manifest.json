@@ -1,1 +1,0 @@
-{"errors":[],"warnings":[],"version":"1.14.0","hash":"4122a14e9266dca7c55f","publicPath":"//localhost:3808/client/","assetsByChunkName":{"application":"application.js"},"assets":[{"name":"application.js","size":4604108,"chunks":[0],"chunkNames":["application"],"emitted":true},{"name":"manifest.json","size":0,"chunks":[],"chunkNames":[]}],"children":[]}
