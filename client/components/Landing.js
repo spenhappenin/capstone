@@ -17,6 +17,10 @@ class Landing extends Component {
     $('.parallax').parallax();
   }
 
+  componentDidUpdate() {
+    $('.parallax').parallax();
+  }
+
   handleClick() {
     location.href='/signup';
   }
