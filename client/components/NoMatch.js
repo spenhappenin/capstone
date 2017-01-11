@@ -5,7 +5,7 @@ const NoMatch = () => (
   	<br/>
   	<br/>
   	<br/>
-    <h3> Page Not Found </h3>
+    <h3 className='big' style={{color: '#26c5f0'}}> Page Not Found </h3>
   	<br/>
   	<br/>
   	<div>

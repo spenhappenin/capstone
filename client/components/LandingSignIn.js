@@ -42,11 +42,11 @@ class LandingSignIn extends React.Component {
           <div className='row'>
             <div className='col s6'>
               <label className='white-text'> Email </label>
-              <input className='input foo' id='bar' type="email" required={true} ref="email" />
+              <input className='input foo white-text' id='bar' type="email" required={true} ref="email" />
             </div>
             <div className='col s6'>
               <label className='white-text'> Password </label>
-              <input className=' input' type="password" required={true} ref="password" />
+              <input className='input white-text' type="password" required={true} ref="password" />
             </div>
           </div>
           <div className='row'>
