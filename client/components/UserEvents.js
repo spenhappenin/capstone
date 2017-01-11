@@ -69,7 +69,7 @@ class UserEvents extends Component {
             </div>
             <div className='row'>
               <div className='col s12 m5'>
-                <Link to={'/addEvent'} className='btn fixedbutton btn-floating btn-large waves-effect waves-light'></Link>
+                <Link to={'/addEvent'} className='btn fixedbutton btn-floating btn-large waves-effect waves-light'><i className="material-icons">add</i></Link>
               </div>
             </div>
             {this.displayEvents()}

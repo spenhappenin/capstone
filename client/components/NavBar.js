@@ -81,7 +81,6 @@ class NavBar extends React.Component {
               <p className='nav-tabs'> Get in the Game </p>
             </div>
           </Link>
-
             <a href='' data-activates='mobile' className='button-collapse'>
               <i className='fa fa-bars nav-tabs' ></i>
             </a>

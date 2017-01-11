@@ -21,6 +21,18 @@
   margin-left: 30px;
 }
 
+.just-pug-blue {
+  display: inline-block;
+  background-image: url(  asset_path('just_pug_blue.png'));
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
 .nav-tabs {
   font-family: 'Arimo', sans-serif;
 	color: #ff7821;
