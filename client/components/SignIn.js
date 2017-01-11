@@ -51,19 +51,19 @@ class SignIn extends React.Component {
             <form  onSubmit={this.handleSubmit}>
               <div className='row'>
                 <div className='col s12 center'>
-                  <h2 className='big white-text'>Login</h2>
+                  <h2 className='big' style={{color: '#26c5f0'}}>Login</h2>
                 </div>
               </div>
               <div className='row'>
                 <div className='col s12 right'>
-                  <label className='left white-text'> Email </label>
-                  <input className='login-caret white-text foo' id='bar' type="email" required={true} ref="email" />
+                  <label className='left'> Email </label>
+                  <input className='login-caret foo' id='bar' type="email" required={true} ref="email" />
                 </div>
               </div>
               <div className='row'>
                 <div className='col s12 right'>
-                  <label className='left white-text'> Password </label>
-                  <input className='login-caret white-text foo' type="password" required={true} ref="password" />
+                  <label className='left'> Password </label>
+                  <input className='login-caret foo' type="password" required={true} ref="password" />
                 </div>
               </div>
               <div className='row'>
