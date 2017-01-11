@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :user_events, dependent: :destroy
   has_many :comments
 
-  validates_uniqueness_of :username
   validates_inclusion_of :role, in: %w(user admin)
 
   def self.from_third_party_auth(provider, auth)
