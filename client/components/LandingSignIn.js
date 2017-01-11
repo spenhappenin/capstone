@@ -41,11 +41,11 @@ class LandingSignIn extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className='row'>
             <div className='col s6'>
-              <label> Email </label>
+              <label className='white-text'> Email </label>
               <input className='input foo' id='bar' type="email" required={true} ref="email" />
             </div>
             <div className='col s6'>
-              <label> Password </label>
+              <label className='white-text'> Password </label>
               <input className=' input' type="password" required={true} ref="password" />
             </div>
           </div>
@@ -78,11 +78,11 @@ class LandingSignIn extends React.Component {
     return (
       <div className='row'>
         <div className='left container landing-form'>
-          <div className='col s8' style={{backgroundColor: 'rgba(8, 31, 43, 0.6)', borderRadius: '10px'}}>
+          <div className='col s8' style={{backgroundColor: 'rgba(8, 31, 43, 0.6)', borderRadius: '10px', paddingBottom: '15px'}}>
             <div className='row'>
               <div className='center'>
                 <h2 className='big' style={{color: '#26c5f0'}}>Welcome to PUG </h2>
-                <p className='small' style={{fontSize: '28px'}}>The world's largest network for amateur <span style={{color: "#ff7821"}}>pick-up games.</span></p>
+                <p className='small white-text' style={{fontSize: '28px'}}>The world's largest network for amateur <span style={{color: "#ff7821"}}>pick-up games.</span></p>
               </div>
             </div>
             { this.displayLogin() }

@@ -19,7 +19,7 @@ class UserEvents extends Component {
   }
 
   updatedEvents() {
-    
+
   }
 
   userLocation = () => {
@@ -38,7 +38,7 @@ class UserEvents extends Component {
   componentDidMount() {
     this.props.dispatch(fetchUserEvents());
     $('body').css('background-image', '');
-    $('body').css('background-color', 'white');
+    $('body').css('background-color', '#0b2a3b');
     $('body').css('height', '100vh');
     $('body').css('width', '100%');
   }
@@ -50,7 +50,7 @@ class UserEvents extends Component {
         return (<UserEventCard key={userEvent.id} userEvent={userEvent} updateEvents={this.updateEvents} />);
       });
     } else {
-      return (<h1 className='center small'> No Events! Create One! </h1>);
+      return (<h1 className='center small white-text'> No Events! Create One! </h1>);
     }
   }
 
@@ -63,13 +63,9 @@ class UserEvents extends Component {
           </div>
           <div className='col s12 m5 l5 event-list'>
             <SearchBar history={history} />
-            <div className='row pug-events'>
-              <div className='col s12 m6 l6 center'>
-                <img src='just_pug.svg' className='just-pug1' style={{height: '80px', marginLeft: '110px', marginTop: '20px'}} />
-              </div>
-              <div className='col s12 m6 l6 center'>
-                <h2 className='center big' style={{marginRight: '50px'}}>  Events </h2>
-              </div>
+            <div className='pug-events center'>
+              <img src='http://res.cloudinary.com/omash612/image/upload/v1484100561/just-pug_q1iamb.svg' style={{height: '80px', marginTop: '20px'}} />
+              <h2 className='center big' style={{color: 'white'}}>  Events </h2>
             </div>
             <div className='row'>
               <div className='col s12 m5'>

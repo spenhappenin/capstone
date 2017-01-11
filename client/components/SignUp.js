@@ -23,15 +23,11 @@ class SignUp extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let { username, first_name, last_name, email, dob, phone_number, favorite, password, password_confirmation } = this.refs;
+    let { first_name, last_name, email, password, password_confirmation } = this.refs;
     let user = { user: {
-      username: username.value,
       first_name: first_name.value,
       last_name: last_name.value,
       email: email.value,
-      dob: dob.value,
-      phone_number: phone_number.value,
-      favorite: favorite.value,
       password: password.value,
       password_confirmation: password_confirmation.value
     }}
@@ -56,85 +52,61 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className='right'>
+      <div className='right'>
+        <div className='row'>
+          <div className='col s12 center'>
+              <h3 className='big' style={{color: '#26c5f0'}}>Welcome To PUG!</h3>
+            </div>
+          </div>
+
+          <form onSubmit={this.handleSubmit}>
+          <div className='row'>
+            <div className='col s6'>
+              <label> First Name </label>
+              <input className='placeholder black-text' ref="first_name" required={true} />
+            </div>
+            <div className='col s6'>
+              <label> Last Name </label>
+              <input className='placeholder black-text' ref="last_name" required={true} />
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col s12'>
+              <label className='center'> Email </label>
+              <input className='placeholder black-text' type="email" ref="email" required={true} />
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col s6'>
+              <label> Password </label>
+              <input className='placeholder black-text' type="password" ref="password" required={true} />
+            </div>
+            <div className='col s6'>
+              <label> Confirm Password </label>
+              <input className='placeholder black-text' type="password" ref="password_confirmation" required={true} />
+            </div>
+          </div>
+
+          <div className='row'>
+            <p className='center'>Would you like to receive event notifications? </p>
+            <div className='col s2 offset-s4'>
+              <input type="checkbox" className="filled-in blue" id="filled-in-box" defaultChecked="checked" />
+              <label htmlFor="filled-in-box">Email</label>
+            </div>
+            <div className='col s2'>
+              <input type="checkbox" className="filled-in blue" id="filled-in-checkbox" defaultChecked="checked" />
+              <label htmlFor="filled-in-checkbox">Text</label>
+            </div>
+          </div>
+
           <div className='row'>
             <div className='col s12 center'>
-                <h3 className='big' style={{color: '#26c5f0'}}>Welcome To PUG!</h3>
-              </div>
+              <button className="btn blue" style={{marginTop: '15px'}}>Sign Up</button>
             </div>
-            <form onSubmit={this.handleSubmit}>
-
-            <div className='row'>
-              <div className='col s12 center'>
-                <label> Username </label>
-                <input className='placeholder black-text' ref="username" />
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='col s6'>
-                <label> First Name </label>
-                <input className='placeholder black-text' ref="first_name" required={true} />
-              </div>
-              <div className='col s6'>
-                <label> Last Name </label>
-                <input className='placeholder black-text' ref="last_name" required={true} />
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='col s6'>
-                <label> DOB </label>
-                <input type='date' className='datepicker placeholder black-text' ref="dob" required={true} />
-              </div>
-              <div className='col s6'>
-                <label> Phone Number </label>
-                <input className='placeholder black-text' type='tel' ref="phone_number" />
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='col s6'>
-                <label> Favorite Sport </label>
-                <input className='placeholder black-text' ref="favorite" />
-              </div>
-              <div className='col s6'>
-                <label> Email </label>
-                <input className='placeholder black-text' type="email" ref="email" required={true} />
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='col s6'>
-                <label> Password </label>
-                <input className='placeholder black-text' type="password" ref="password" required={true} />
-              </div>
-              <div className='col s6'>
-                <label> Confirm Password </label>
-                <input className='placeholder black-text' type="password" ref="password_confirmation" required={true} />
-              </div>
-            </div>
-
-            <div className='row'>
-              <p className='center'>Would you like to receive event notifications? </p>
-              <div className='col s2 offset-s4'>
-                <input type="checkbox" className="filled-in blue" id="filled-in-box" defaultChecked="checked" />
-                <label htmlFor="filled-in-box">Email</label>
-              </div>
-              <div className='col s2'>
-                <input type="checkbox" className="filled-in blue" id="filled-in-checkbox" defaultChecked="checked" />
-                <label htmlFor="filled-in-checkbox">Text</label>
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='col s12 center'>
-                <button className="btn blue">Sign Up</button>
-              </div>
-            </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     )
   }

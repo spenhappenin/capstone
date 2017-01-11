@@ -25,7 +25,7 @@ class Contact extends React.Component {
     return(
       <div>
         <div className='row' style={{marginTop: '60px', marginLeft: '15px', marginBottom: '15px'}}>
-          <div className='col s12 m4' style={{backgroundColor: 'rgba(186, 186, 186, 0.2)', borderRadius: '10px'}}>
+          <div className='col s12 m4' style={{backgroundColor: 'rgba(186, 186, 186, 0.2)', borderRadius: '10px', paddingBottom: '15px'}}>
             <form onSubmit={this.handleSubmit} ref='contactForm'>
               <h2 className='big white-text'> Contact Us </h2>
               <div className='row'>
@@ -48,7 +48,7 @@ class Contact extends React.Component {
               </div>
               <div className='row'>
                 <div className='col s12 m12'>
-                  <input type='submit' className='btn blue right' value='Send' />
+                  <input type='submit' className='btn blue right' value='Send' style={{marginTop: '15px'}} />
                 </div>
               </div>
             </form>

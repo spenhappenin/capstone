@@ -32,11 +32,11 @@ class SearchBar extends Component {
     return (
       <div>
         <div id='searching'>
-          <i style={{display: 'inline-block', width: '10%', marginTop: '20px', verticalAlign: 'top'}} className="material-icons trigger">search</i>
+          <i style={{display: 'inline-block', width: '10%', marginTop: '20px', verticalAlign: 'top'}} className="material-icons trigger white-text">search</i>
           <div style={{display: 'inline-block', width: '90%'}} className='nav-wrapper'>
             <form  className='search-bar' id='search-form' onSubmit={this.handleSubmit} >
               <div className="input-field">
-                <input id="search" type='search' ref='search' placeholder='Search Game' required={true} />
+                <input id="search" type='search' ref='search' className='white-text' placeholder='Search Game' required={true} />
                 <i className="material-icons red-text" onClick={this.clearSearch}>close</i>
               </div>
             </form>

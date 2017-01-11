@@ -231,14 +231,14 @@ class UserEventCard extends Component {
       if(userEvent.user_id === user ) {
         return(
           <div id={id}>
-            <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
+            <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px', backgroundColor: 'white'}} >
               <li>
                 <div className="collapsible-header card-color flex " >
                   <div className='col s3'>
                     <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
                   </div>
                   <div>
-                    <h5 style={{color: '#26c5f0'}}>{ sportEvent.name }</h5>
+                    <h5  className='small' style={{color: '#26c5f0'}}>{ sportEvent.name }</h5>
                   </div>
                   <div className='row event-street'>
                     <div className='col s5 small' style={{fontSize: '16px'}}>
@@ -288,14 +288,14 @@ class UserEventCard extends Component {
            } else {
             return(
               <div id={id}>
-                <ul className="collapsible card-ul" data-collapsible="accordion" style={{borderRadius: '5px'}} >
+                <ul className="collapsible card-ul" data-collapsible="accordion" style={{borderRadius: '5px', backgroundColor: 'white'}} >
                   <li>
                     <div className="collapsible-header card-color flex " >
                       <div className='col s3'>
                         <img className='responsive-img' src={ sportPic } alt='Sport Icon' />
                       </div>
                       <div>
-                        <h5 style={{color: '#26c5f0'}}>{ sportEvent.name }</h5>
+                        <h5 className='small' style={{color: '#26c5f0'}}>{ sportEvent.name }</h5>
                       </div>
                       <div className='row event-street'>
                         <div className='col s5 small' style={{fontSize: '16px'}}>

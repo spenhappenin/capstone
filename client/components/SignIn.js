@@ -47,7 +47,7 @@ class SignIn extends React.Component {
     return (
       <div>
         <div className='row' style={{marginTop: '20px', marginRight: '15px'}}>
-          <div className='col s3 offset-s9' style={{backgroundColor: 'rgba(237, 237, 237, 0.2)', borderRadius: '10px'}}>
+          <div className='col s3 offset-s9' style={{backgroundColor: 'rgba(237, 237, 237, 0.2)', borderRadius: '10px', paddingBottom: '15px'}}>
             <form  onSubmit={this.handleSubmit}>
               <div className='row'>
                 <div className='col s12 center'>

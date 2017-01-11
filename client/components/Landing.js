@@ -47,6 +47,9 @@ class Landing extends Component {
               <p className='small center white-text' style={{lineHeight: '70%'}}> Schedule an event or find the right match up for you. </p>
             </div>
           </div>
+          <br />
+          <br />
+          <hr className='got-game'/>
         </div>
         <div className='parallax-container'>
           <div className='parallax'> <img className='responsive-img' src='https://res.cloudinary.com/omash612/image/upload/c_scale,h_800,w_1763/v1483594313/soccerTeam_a8jcvz.jpg' alt='Picture of soccer team huddled together at night' /> </div>

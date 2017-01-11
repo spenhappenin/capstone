@@ -15,7 +15,11 @@ class Settings extends React.Component {
   render() {
     return(
       <div>
-        <h1 className='center'> PUG Settings </h1>
+        <h1 className='center big' style={{color: '#26c5f0'}}> Settings </h1>
+        <br />
+        <hr className='got-game' />
+        <h4 className='small center'> Coming Soon! </h4>
+        <hr className='got-game' />
       </div>
     );
   }
