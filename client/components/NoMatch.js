@@ -9,7 +9,7 @@ const NoMatch = () => (
   	<br/>
   	<br/>
   	<div>
-      <img src='http://res.cloudinary.com/omash612/image/upload/v1484100566/pug-life_kgw5y2.jpg' />
+      <img src='https://res.cloudinary.com/omash612/image/upload/v1484100566/pug-life_kgw5y2.jpg' />
     </div>
   </div>
 )

@@ -64,7 +64,7 @@ class UserEvents extends Component {
           <div className='col s12 m5 l5 event-list'>
             <SearchBar history={history} />
             <div className='pug-events center'>
-              <img src='http://res.cloudinary.com/omash612/image/upload/v1484100561/just-pug_q1iamb.svg' style={{height: '80px', marginTop: '20px'}} />
+              <img src='https://res.cloudinary.com/omash612/image/upload/v1484100561/just-pug_q1iamb.svg' style={{height: '80px', marginTop: '20px'}} />
               <h2 className='center big' style={{color: 'white'}}>  Events </h2>
             </div>
             <div className='row'>

@@ -34,7 +34,7 @@ class Landing extends Component {
             <p className='small white-text' style={{color: '#26c5f0', lineHeight: '100%'}}>Connect on PUG to find hundreds of pick-up games in your area.</p>
             <p className='small white-text' style={{color: '#26c5f0', lineHeight: '100%'}}>Meet for some casual backyard pick-up, or schedule a time every week.</p>
             <p className='small white-text' style={{color: '#26c5f0', lineHeight: '100%'}}>Whatever your sport, PUG gets you in the game.</p>
-            <img src='http://res.cloudinary.com/omash612/image/upload/v1483630389/basketball_pin_ioirxi.png' alt='Sport Pin' className='center' />
+            <img src='https://res.cloudinary.com/omash612/image/upload/v1483630389/basketball_pin_ioirxi.png' alt='Sport Pin' className='center' />
           </div>
         </div>
         <div className='parallax-container'>
@@ -63,7 +63,7 @@ class Landing extends Component {
           <div className='row'>
             <div className='col s12 center'>
               <p className='small center white-text'>What are you waiting for? Join PUG now and compete with players like you. </p>
-              <img src='http://res.cloudinary.com/omash612/image/upload/v1483630414/volleyball_pin_t4gakn.png' alt='Volleyball Pin' style={{marginTop: '30px'}} />
+              <img src='https://res.cloudinary.com/omash612/image/upload/v1483630414/volleyball_pin_t4gakn.png' alt='Volleyball Pin' style={{marginTop: '30px'}} />
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@ class Landing extends Component {
             <p className='small white-text' style={{color: '#26c5f0', lineHeight: '100%'}}>Connect on PUG to find hundreds of pick-up games in your area.</p>
             <p className='small white-text' style={{color: '#26c5f0', lineHeight: '100%'}}>Meet for some casual backyard pick-up, or schedule a time every week.</p>
             <p className='small white-text' style={{color: '#26c5f0', lineHeight: '100%'}}>Whatever your sport, PUG gets you in the game.</p>
-            <img src='http://res.cloudinary.com/omash612/image/upload/v1483630389/basketball_pin_ioirxi.png' alt='Basketball Pin' className='center' />
+            <img src='https://res.cloudinary.com/omash612/image/upload/v1483630389/basketball_pin_ioirxi.png' alt='Basketball Pin' className='center' />
           </div>
         </div>
         <div className='parallax-container'>
@@ -118,7 +118,7 @@ class Landing extends Component {
             <div className='row'>
               <div className='col s12 center'>
                 <p className='small center white-text' style={{lineHeight: '70%'}}>What are you waiting for? Join PUG now and compete with players like you. </p>
-                <img src='http://res.cloudinary.com/omash612/image/upload/v1483630414/volleyball_pin_t4gakn.png' alt='Volleyball Pin' style={{marginTop: '30px'}} />
+                <img src='https://res.cloudinary.com/omash612/image/upload/v1483630414/volleyball_pin_t4gakn.png' alt='Volleyball Pin' style={{marginTop: '30px'}} />
               </div>
             </div>
           </div>
