@@ -82,7 +82,7 @@ class NavBar extends React.Component {
             </div>
           </Link>
             <a href='' data-activates='mobile' className='button-collapse'>
-              <i className='fa fa-bars nav-tabs' ></i>
+              <i className='material-icons nav-tabs'>menu</i>
             </a>
             <ul className="right hide-on-small-and-down">
               {this.navs()}
