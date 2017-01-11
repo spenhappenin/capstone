@@ -15,7 +15,8 @@ class About extends Component {
             <div className='col s12 m3 l3'>
               <div className='spencer z-depth-5 responsive-img'> </div>
               <hr className='about-hr' />
-              <p className='center small'><em> Ginger </em></p>
+              <p className='center small' style={{fontSize: '12px', height: '171px'}}><span  className='big' style={{fontWeight: 'bolder', fontSize: '18px', color: '#ff7821'}}> Spencer Richards</span> is a Utah native who enjoys learning, animals, and being outdoors. In his time at DevPoint Labs, he has grown to love coding, and is excited to create apps and software as a developer.
+              <br /> When he's not in school, Spencer loves to play badminton and is learning to fish. He enjoys traveling, burgers, and learning more about his favorite animals: sharks and golden retrievers. </p>
               <div className='social-media'>
                 <a href='https://github.com/spenhappenin' target='_blank' rel='noopener'><img className='social-icons responsive-img' style={{height: '55px', width: '55px'}} src='https://res.cloudinary.com/omash612/image/upload/v1483734372/spencer_github_pcbm3z.png' /></a>
                 <a href='https://www.linkedin.com/in/spencer-richards' target='_blank' rel='noopener'><img className='social-icons responsive-img' style={{height: '40px', width: '40px', marginTop: '6px'}} src='https://res.cloudinary.com/omash612/image/upload/v1483478100/linkedinlogo_sjckc6.png' /> </a>
@@ -37,7 +38,7 @@ class About extends Component {
             <div className='col s12 m3'>
               <div className='william z-depth-5 responsive-img'> </div>
               <hr className='about-hr' />
-              <p className='center small' style={{fontSize: '12px'}}><span className='big' style={{fontWeight: 'bolder', fontSize: '18px', color: '#ff7821'}}> William Winger</span> is a Utah native and animal rescue advocate.  He studied web development at DevPoint Labs and his professional experience spans from manufacturing manager to electrician. His passion for coding led him to a full stack course in Ruby and JavaScript. When he is not creating web applications he enjoys spending time with his Labrador retriever, Maddie. </p>
+              <p className='center small' style={{fontSize: '12px', height: '171px'}}><span className='big' style={{fontWeight: 'bolder', fontSize: '18px', color: '#ff7821'}}> William Winger</span> is a Utah native and animal rescue advocate.  He studied web development at DevPoint Labs and his professional experience spans from manufacturing manager to electrician. His passion for coding led him to a full stack course in Ruby and JavaScript. When he is not creating web applications he enjoys spending time with his Labrador retriever, Maddie. </p>
               <div className='social-media'>
                <a href='https://github.com/WilliamW101' target='_blank'><img className='social-icons' style={{height: '55px', width: '55px'}} src='https://res.cloudinary.com/omash612/image/upload/v1483734378/william_github_olct83.png' /></a>
                <a href='https://www.linkedin.com/in/william-winger' target='_blank' rel='noopener'><img className='social-icons responsive-img' style={{height: '40px', width: '40px', marginTop: '6px'}} src='https://res.cloudinary.com/omash612/image/upload/v1483478100/linkedinlogo_sjckc6.png' /> </a>
@@ -47,7 +48,7 @@ class About extends Component {
             <div className='col s12 m3'>
               <div className='rebecca z-depth-5 responsive-img'> </div>
               <hr className='about-hr' />
-              <p className='center small' style={{fontSize: '12px'}}><span className='big' style={{fontWeight: 'bolder', fontSize: '18px', color: '#ff7821'}}> Rebecca Shifflett</span> holds a bachelor’s and master’s in Public Health and is a certified yoga instructor. She believes staying active and connected to others is vital for personal wellness and growth. She recently completed a full stack web development course at DevPoint Labs and is eager to continue a career path in web development.  </p>
+              <p className='center small' style={{fontSize: '12px', height: '171px'}}><span className='big' style={{fontWeight: 'bolder', fontSize: '18px', color: '#ff7821'}}> Rebecca Shifflett</span> holds a bachelor’s and master’s in Public Health and is a certified yoga instructor. She believes staying active and connected to others is vital for personal wellness and growth. She recently completed a full stack web development course at DevPoint Labs and is eager to continue a career path in web development.  </p>
               <div className='social-media'>
                 <a href='https://github.com/rebeccashifflett' target='_blank' rel='noopener'><img className='social-icons responsive-img' style={{height: '55px', width: '55px'}} src='https://res.cloudinary.com/omash612/image/upload/v1483734375/femalecodertocat_dimxz8.png' /></a>
                 <a href='https://www.linkedin.com/in/rebecca-shifflett-rs' target='_blank' rel='noopener'><img className='social-icons responsive-img' style={{height: '40px', width: '40px', marginTop: '6px'}} src='https://res.cloudinary.com/omash612/image/upload/v1483478100/linkedinlogo_sjckc6.png' /> </a>
