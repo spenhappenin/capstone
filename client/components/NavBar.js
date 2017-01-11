@@ -88,8 +88,8 @@ class NavBar extends React.Component {
             <ul className="right hide-on-small-and-down">
               {this.navs()}
             </ul>
-            <ul className="side-nav grey" id="mobile">
-              <i className="material-icons ">polymer</i>
+            <ul className="side-nav" id="mobile">
+              <i className="material-icons "></i>
               {this.navs()}
             </ul>
           </div>
