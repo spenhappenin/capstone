@@ -35,7 +35,7 @@ class GoogleMap extends Component {
   }
 
   panToMarker(idx) {
-    let marker = window.markers[idx];
+    let marker = window.markers[idx] || window.markers[0];
     marker.setMap(this.handler.getMap());
     marker.panTo();
     this.handler.getMap().setZoom(10)

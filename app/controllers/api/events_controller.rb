@@ -54,16 +54,17 @@ class Api::EventsController < ApplicationController
 
 
   def search
-    # @position = params[:position][:lat]
-    # @position += ','
-    # @position += params[:position][:lng]
+    if params[:position]
+      @position = params[:position][:lat]
+      @position += ','
+      @position += params[:position][:lng]
+    end
     like_condition = "%#{params[:query].downcase}%"
-    results = Event.where('lower(name) like ? OR lower(venue) like ? OR lower(description) like ?
+    @events = Event.where('lower(name) like ? OR lower(venue) like ? OR lower(description) like ?
                           OR lower(street) like ? OR lower(city) like ? OR lower(state) like ?
                           OR lower(skill_level) like ? OR lower(sport) like ? OR lower(zip) like ?', like_condition,
                           like_condition, like_condition, like_condition, like_condition, like_condition,
                           like_condition, like_condition, like_condition)
-    render json: results
   end
 
   private

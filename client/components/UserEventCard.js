@@ -241,11 +241,11 @@ class UserEventCard extends Component {
                     <h5 style={{color: '#26c5f0'}}>{ sportEvent.name }</h5>
                   </div>
                   <div className='row event-street'>
-                    <div className='col s4 m4 small' style={{fontSize: '16px'}}>
-                      { sportEvent.street }
+                    <div className='col s5 small' style={{fontSize: '16px'}}>
+                      <p style={{margin: '0'}}>{ sportEvent.street }</p>
                     </div>
-                    <div className='col s4 m4 small' style={{fontSize: '16px'}}>
-                     { sportEvent.distance_from_user } Miles
+                    <div className='col s4 small' style={{fontSize: '16px'}}>
+                     { sportEvent.distance_from_user } Miles Away
                     </div>
                   </div>
                 </div>
@@ -298,11 +298,11 @@ class UserEventCard extends Component {
                         <h5 style={{color: '#26c5f0'}}>{ sportEvent.name }</h5>
                       </div>
                       <div className='row event-street'>
-                        <div className='col s4 m4 small' style={{fontSize: '16px'}}>
-                          { sportEvent.street }
+                        <div className='col s5 small' style={{fontSize: '16px'}}>
+                          <p style={{margin: '0'}}>{ sportEvent.street }</p>
                         </div>
-                        <div className='col s4 m4 small' style={{fontSize: '16px'}}>
-                         { sportEvent.distance_from_user } Miles
+                        <div className='col s4 small' style={{fontSize: '16px'}}>
+                         { sportEvent.distance_from_user } Miles Away
                         </div>
                       </div>
                     </div>

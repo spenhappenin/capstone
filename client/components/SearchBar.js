@@ -31,9 +31,9 @@ class SearchBar extends Component {
   render () {
     return (
       <div>
-        <span id='searching'>
-          <i className="material-icons trigger">search</i>
-          <div className='nav-wrapper'>
+        <div id='searching'>
+          <i style={{display: 'inline-block', width: '10%', marginTop: '20px', verticalAlign: 'top'}} className="material-icons trigger">search</i>
+          <div style={{display: 'inline-block', width: '90%'}} className='nav-wrapper'>
             <form  className='search-bar' id='search-form' onSubmit={this.handleSubmit} >
               <div className="input-field">
                 <input id="search" type='search' ref='search' placeholder='Search Game' required={true} />
@@ -41,7 +41,7 @@ class SearchBar extends Component {
               </div>
             </form>
           </div>
-        </span>
+        </div>
       </div>
     )
   }

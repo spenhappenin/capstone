@@ -42,8 +42,9 @@ export const searchQuery = (query) => {
     $.ajax({
       url: '/api/search_events',
       type: 'GET',
-      data: { query }, position: {lat, lng}
+      data: { query, position: {lat, lng}}
     }).done( events => {
+      console.log(events)
       events.sort(function(a,b) {return (a.distance_from_user > b.distance_from_user) ? 1 : ((b.distance_from_user > a.distance_from_user) ? -1 : 0);} );
       dispatch({ type: 'SEARCH_RESULTS', events});
     }).fail( data => {
@@ -66,7 +67,6 @@ export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
      position: {lat, lng}}
    }).done( data => {
      let userEvent = data.event
-     debugger
      dispatch({ type: 'EDIT_USER_EVENT', userEvent });
    }).fail(data => {
      console.log(userEvent);
