@@ -105,7 +105,7 @@ class AddEvent extends Component {
             <div className='row'>
               <div className='col s6'>
                 <label className='left'> Capacity </label>
-                <input type='number' placeholder='10' ref='capacity' />
+                <input type='number' placeholder='10' ref='capacity' required />
               </div>
 
               <div className='col s6'>

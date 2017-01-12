@@ -18,7 +18,7 @@ class Contact extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.refs.contactForm.reset();
-    Materialize.toast('Thank you for reaching out to us! We will get back to you shortly!', 6000, 'toasted');
+    Materialize.toast('Thank you for reaching out to us! We will get back to you as soon as possible!', 7000, 'toasted');
   }
 
   render() {
