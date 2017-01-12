@@ -38,6 +38,7 @@ class UserEventCard extends Component {
     this.props.dispatch(editUserEventCard(this.props.userEvent.id, event_name, event_sport, event_date, event_time, capacity, venue,
                                 event_street, event_city, event_state, event_zip, skill_level, description, active ));
     this.toggleEdit();
+  }
 
   componentDidMount() {
     $('.collapsible').collapsible();
