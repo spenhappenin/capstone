@@ -51,7 +51,7 @@ class SignIn extends React.Component {
             <form  onSubmit={this.handleSubmit}>
               <div className='row'>
                 <div className='col s12 center'>
-                  <h2 className='big white-text'>Login</h2>
+                  <h2 className='big' style={{color: '#26c5f0'}}>Login</h2>
                 </div>
               </div>
               <div className='row'>

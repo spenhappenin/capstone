@@ -75,7 +75,6 @@ export const editUserEventCard = (id, name, sport, date, time, capacity, venue,
 }
 
 export const deleteUserEventCard = (id) => {
-  if (confirm('Really Delete?')) {
    return(dispatch) => {
      $.ajax({
        url: `/api/events/${id}`,
@@ -87,7 +86,6 @@ export const deleteUserEventCard = (id) => {
        console.log(data);
      });
    }
- }
 }
 
 export const singleUserEvent = (id) => {

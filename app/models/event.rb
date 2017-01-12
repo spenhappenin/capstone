@@ -10,7 +10,7 @@ class Event < ApplicationRecord
 	serialize :attending, Array
 
 	after_create :set_attending
-	after_commit :setLatLong
+	after_update :setLatLong
 
 	acts_as_mappable
 	include Geokit::Geocoders

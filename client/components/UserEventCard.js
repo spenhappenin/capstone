@@ -12,6 +12,7 @@ class UserEventCard extends Component {
     this.state = { edit: false };
     this.toggleEdit = this.toggleEdit.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteEvent = this.deleteEvent.bind(this);
   }
 
   toggleEdit() {
@@ -63,7 +64,7 @@ class UserEventCard extends Component {
     let timeFormat = moment(time, 'YYYY MM DD hh:mm:ss z' ).format("HH:mm");
     return(
       <div>
-        <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px'}} >
+        <ul className="collapsible" data-collapsible="accordion" style={{borderRadius: '5px', backgroundColor: 'white'}} >
           <li>
             <form className='container' onSubmit={this.handleSubmit}>
               <div className='row'>
@@ -175,6 +176,11 @@ class UserEventCard extends Component {
     }
   }
 
+  deleteEvent(eventId) {
+    if(confirm('Really Delete?'))
+      this.props.dispatch(deleteUserEventCard(eventId));
+  }
+
   display() {
     let sportEvent = this.props.userEvent;
     let dateFormat = moment(sportEvent.date ).format('MMMM Do YYYY');
@@ -275,7 +281,7 @@ class UserEventCard extends Component {
                     <div className='col s12'>
                      <Counter userEvent={sportEvent} capacity={sportEvent.capacity} />
                      <Counter capacity={sportEvent.capacity} />
-                       <button type='button' onClick={() => this.props.dispatch(deleteUserEventCard(sportEvent.id))} className='btn-flat right'><i className='material-icons red-text'>delete</i></button>
+                       <button type='button' onClick={() => this.deleteEvent(sportEvent.id)} className='btn-flat right'><i className='material-icons red-text'>delete</i></button>
                        <button type='button' onClick={this.toggleEdit} className='btn-flat right' style={{marginRight: '5px'}}><i className="material-icons green-text">mode_edit</i></button>
                     </div>
                   </div>
