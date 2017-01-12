@@ -123,7 +123,7 @@ class GoogleMap extends Component {
         case 'tennis':
           sportPic = 'https://res.cloudinary.com/omash612/image/upload/v1483630411/tennis_pin_zazlxl.png';
           break;
-        case 'pingpong':
+        case 'ping pong':
           sportPic = 'https://res.cloudinary.com/omash612/image/upload/v1483630407/pong-pin_mzqmgs.png';
           break;
         case 'hockey':

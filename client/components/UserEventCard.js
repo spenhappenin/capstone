@@ -38,8 +38,6 @@ class UserEventCard extends Component {
     this.props.dispatch(editUserEventCard(this.props.userEvent.id, event_name, event_sport, event_date, event_time, capacity, venue,
                                 event_street, event_city, event_state, event_zip, skill_level, description, active ));
     this.toggleEdit();
-    this.props.updateEvents()
-  }
 
   componentDidMount() {
     $('.collapsible').collapsible();
@@ -212,7 +210,7 @@ class UserEventCard extends Component {
       case 'tennis':
         sportPic = 'https://res.cloudinary.com/omash612/image/upload/v1483630411/tennis_pin_zazlxl.png';
         break;
-      case 'pingpong':
+      case 'ping pong':
         sportPic = 'https://res.cloudinary.com/omash612/image/upload/v1483630407/pong-pin_mzqmgs.png';
         break;
       case 'hockey':

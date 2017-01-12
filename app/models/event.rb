@@ -10,7 +10,7 @@ class Event < ApplicationRecord
 	serialize :attending, Array
 
 	after_create :set_attending
-	after_update :setLatLong
+	before_save :setLatLong
 
 	acts_as_mappable
 	include Geokit::Geocoders
@@ -23,27 +23,21 @@ class Event < ApplicationRecord
 		self.longitude
 	end
 
-	def getLatLong
-		address = "#{self.street}, #{self.city}, #{self.state} #{self.zip}"
-		begin
-			data = MultiGeocoder.geocode(address)
-			{lat: data.latitude, lng: data.longitude}
-		rescue
-			puts 'Geocoder Error'
-		end
-	end
-
 	private
 
 	def setLatLong
-		address = "#{self.street}, #{self.city}, #{self.state} #{self.zip}"
+		address = "#{self.street}, #{self.city}, #{self.state}"
 		begin
 			data = MultiGeocoder.geocode(address)
 		rescue
 			puts 'Geocoder Error'
 		end
-		if data
-			self.update_columns(latitude: data.lat, longitude: data.lng)
+		if data.lat && data.lng
+			self.latitude = data.lat
+			self.longitude = data.lng
+		else
+			self.latitude = '40.7609915'
+			self.longitude = '-111.8828799'
 		end
 	end
 

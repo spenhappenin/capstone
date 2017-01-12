@@ -22,9 +22,6 @@ class Api::EventsController < ApplicationController
       @position += params[:position][:lng]
     end
     @event = Event.new(events_params)
-    latlong = @event.getLatLong
-    @event.latitude = latlong[:lat]
-    @event.longitude = latlong[:lng]
     @event.user_id = current_user.id
     unless @event.save
       render json: {errors: @event.errors}, status: 401

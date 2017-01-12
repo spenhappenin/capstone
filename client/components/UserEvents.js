@@ -11,15 +11,10 @@ class UserEvents extends Component {
   constructor(props) {
     super(props);
     this.state = ({ latitude: 0.00, longitude: 0.00 })
-    this.updatedEvents = this.updatedEvents.bind(this)
   }
 
   componentWillMount() {
     this.userLocation();
-  }
-
-  updatedEvents() {
-
   }
 
   userLocation = () => {
