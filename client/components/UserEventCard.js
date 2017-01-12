@@ -128,8 +128,8 @@ class UserEventCard extends Component {
                   <select ref='skill_level' className='placeholder' defaultValue={skill_level} required>
                     <option value="" disabled> </option>
                     <option value='Advanced'> Advanced </option>
-                    <option value='intermediate'> Intermediate </option>
-                    <option value='beginner'> Beginner </option>
+                    <option value='Intermediate'> Intermediate </option>
+                    <option value='Beginner'> Beginner </option>
                     <option value='Everyone'> Everyone </option>
                   </select>
                 </div>
