@@ -68,7 +68,7 @@ class SignIn extends React.Component {
               </div>
               <div className='row'>
                 <div className='col s12 center'>
-                  <input type='submit' value='Game On' className="btn blue" style={{marginBottom: '10px'}} />
+                  <input type='submit' value='Sign In' className="btn blue" style={{marginBottom: '10px'}} />
                 </div>
               </div>
               <div className='row'>
