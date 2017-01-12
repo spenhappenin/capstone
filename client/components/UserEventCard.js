@@ -125,7 +125,7 @@ class UserEventCard extends Component {
               <div className='row'>
                 <div className='col s8 offset-s2'>
                   <label className='center'> Skill Level </label>
-                  <select ref='skill_level' className='placeholder' value="" required>
+                  <select ref='skill_level' className='placeholder' defaultValue={skill_level} required>
                     <option value="" disabled> </option>
                     <option value='Advanced'> Advanced </option>
                     <option value='intermediate'> Intermediate </option>
