@@ -77,6 +77,7 @@ class UserEventCard extends Component {
                   <select ref='sport' className='placeholder' defaultValue={sport} ref='event_sport' required>
                     <option value='baseball'> Baseball </option>
                     <option value='basketball'> Basketball </option>
+                    <option value='badminton'> Badminton </option>
                     <option value='football'> Football </option>
                     <option value='frisbee'> Frisbee </option>
                     <option value='golf'> Golf </option>
