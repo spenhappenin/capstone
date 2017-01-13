@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { editUserEventCard, deleteUserEventCard } from '../actions/userEvents';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-// import * as moment from 'moment';
 import moment from 'moment';
 import Counter from './Counter';
 
