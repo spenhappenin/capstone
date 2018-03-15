@@ -22,7 +22,8 @@ gem 'delayed_job_active_record'
 group :development, :test do
   gem 'pry'
   gem 'faker'
-end
+  gem 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
+  gem 'watir', '~> 5.0'end
 
 group :development do
   gem 'letter_opener'

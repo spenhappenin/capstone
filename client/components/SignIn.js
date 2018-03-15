@@ -63,12 +63,12 @@ class SignIn extends React.Component {
               <div className='row'>
                 <div className='col s12 right'>
                   <label className='left'> Password </label>
-                  <input className='login-caret foo' type="password" required={true} ref="password" />
+                  <input className='login-caret foo' type="password" id='passwordAutomation' required={true} ref="password" />
                 </div>
               </div>
               <div className='row'>
                 <div className='col s12 center'>
-                  <input type='submit' value='Sign In' className="btn blue" style={{marginBottom: '10px'}} />
+                  <input type='submit' id='submitAutomation' value='Sign In' className="btn blue" style={{marginBottom: '10px'}} />
                 </div>
               </div>
               <div className='row'>

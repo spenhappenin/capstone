@@ -46,12 +46,12 @@ class LandingSignIn extends React.Component {
             </div>
             <div className='col s6'>
               <label className='white-text'> Password </label>
-              <input className='input white-text' type="password" required={true} ref="password" />
+              <input className='input white-text' id='passwordBar' type="password" required={true} ref="password" />
             </div>
           </div>
           <div className='row'>
             <div className='center'>
-              <input type='submit' value='Sign In' className="btn blue" style={{marginBottom: '10px'}} />
+              <input type='submit' value='Sign In' id='signinBar' className="btn blue" style={{marginBottom: '10px'}} />
             </div>
           </div>
         <div className='row'>
