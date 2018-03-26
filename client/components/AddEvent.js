@@ -66,12 +66,12 @@ class AddEvent extends Component {
             <div className='row'>
               <div className='col s6'>
                 <label className='left'> Event Name </label>
-                <input type='text' placeholder='Rec Basketball' ref='event_name' required />
+                <input type='text' id='createEventName' placeholder='Rec Basketball' ref='event_name' required />
               </div>
 
               <div className='col s6'>
                 <label className='left'> Sport </label>
-                <select ref='sport' className='placeholder' value="" required>
+                <select ref='sport' id='sportDropdown' className='placeholder' value="" required>
                   <option value="" disabled> </option>
                   <option value='baseball'> Baseball </option>
                   <option value='basketball'> Basketball </option>
@@ -93,7 +93,7 @@ class AddEvent extends Component {
             <div className='row'>
               <div className='col s6'>
                 <label className='left'> Date </label>
-                <input type='date' className='datepicker' ref='event_date' required />
+                <input type='date' id='date_picker' className='datepicker' ref='event_date' required />
               </div>
 
               <div className='col s6'>
