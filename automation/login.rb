@@ -12,7 +12,7 @@ website = "http://localhost:3000/"
 
 # Loading pug-app
 # Doesn't maintain history
-driver.get();
+driver.get(website);
   # Another way to navigate, Maintains history
   # driver.navigate().to("https://pug-app.herokuapp.com/");
 
@@ -49,12 +49,22 @@ create_event_name = driver.find_element(:id, 'createEventName')
 create_event_name.send_keys 'Rec Basketball'
 
 # Select sport from dropdown
-choose_sport = driver.find_element(:id, 'sportDropdown')
-# choose_sport.find_element(:text, 'Basketball').click
+choose_sport = driver.find_element(:class, 'select-dropdown')
+# BROKEN
+# choose_sport.find_element(:css, span[value='baseball'])
 
 # Select date for pick event
-date_select = driver.find_element(:id, 'date_picker')
-date_select.click
-driver.find_element(:class, 'btn-flat picker__today')
-close_picker = driver.find_element(:class, 'btn-flat picker__close')
+date_picker = driver.find_element(:id, 'date_picker')
+date_picker.click
+today_date = driver.find_element(:class, 'picker__today')
+today_date.click
+close_picker = driver.find_element(:class, 'picker__close')
 close_picker.click
+
+# Select a time for the event
+event_time = driver.find_element(:css, ([type='time']))
+event_time.send_keys "11:11pm"
+
+# # Select a time
+# event_time = driver.find_element(:css, ([type='number']))
+# event_time.send_keys "10"
