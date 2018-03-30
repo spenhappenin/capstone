@@ -2,9 +2,6 @@ require 'selenium-webdriver'
 # require 'chromedriver-helper'
 # require 'watir'
 
-# ===============================
-# |          Login              |
-# ===============================
 
 #Firefox browser instantiation
 driver = Selenium::WebDriver.for :firefox
@@ -13,11 +10,34 @@ website = "http://localhost:3000/"
 eventLocation = "USANA"
 do_it = "Do it! Just do it! Don't let your dreams be dreams. Yesterday, you said tomorrow. So just do it! Make your dreams come true! Just do it! Some people dream of success, while you're gonna wake up and work hard at it! Nothing is impossible! You should get to the point where anyone else would quit, and you're not gonna stop there! No, what are you waiting for? Do it! Just do it! Yes you can! Just do it. If you're tired of starting over, stop giving up!"
 
+# ===============================
+# |         Go To Site          |
+# ===============================
 # Loading pug-app
 # Doesn't maintain history
 driver.get(website);
   # Another way to navigate, Maintains history
   # driver.navigate().to("https://pug-app.herokuapp.com/");
+sleep 2
+
+
+# ===============================
+# |        Create Account        |
+# ===============================
+# Navigate to create account page
+create_account = driver.find_element(:link_text, "Sign Up")
+create_account.click
+
+sleep 2
+
+# ===============================
+# |          Login              |
+# ===============================
+# Navigate to login page
+login_page = driver.find_element(:link_text, 'Login')
+login_page.click
+
+sleep 2
 
 # Enter username
 # Put send_keys value in untracket file
@@ -26,14 +46,14 @@ login_test.send_keys "test@test.com"
 
 # Enter password  (update password field to have ID)
 # Put
-pw_test = driver.find_element(:id, "passwordBar")
+pw_test = driver.find_element(:id, "passwordAutomation")
 pw_test.send_keys "password"
 
-# Login for privided username and password (update button to have ID)
-signin_button = driver.find_element(:id, "signinBar")
+# Login for provided username and password
+signin_button = driver.find_element(:class, "btn")
 signin_button.click
 
-sleep 4
+sleep 2
 
 # Exit browser
 # driver.quit
@@ -42,7 +62,6 @@ sleep 4
 # ===============================
 # |       Create Event           |
 # ===============================
-
 # Find and click add event button
 create_event = driver.find_element(:id, 'addEventbtn')
 create_event.click
@@ -101,3 +120,7 @@ event_zip.send_keys '84044'
 # Event Description
 event_blurb = driver.find_element(:xpath, "//textarea[@placeholder='Write Description Here...']")
 event_blurb.send_keys(do_it)
+
+# Create Event
+create_event = driver.find_element(:class, 'blue')
+create_event.click
