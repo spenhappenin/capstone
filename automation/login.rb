@@ -2,7 +2,6 @@ require 'selenium-webdriver'
 # require 'chromedriver-helper'
 # require 'watir'
 
-
 #Firefox browser instantiation
 driver = Selenium::WebDriver.for :firefox
 
@@ -18,6 +17,7 @@ do_it = "Do it! Just do it! Don't let your dreams be dreams. Yesterday, you said
 driver.get(website);
   # Another way to navigate, Maintains history
   # driver.navigate().to("https://pug-app.herokuapp.com/");
+
 sleep 2
 
 
@@ -27,8 +27,31 @@ sleep 2
 # Navigate to create account page
 create_account = driver.find_element(:link_text, "Sign Up")
 create_account.click
+# Enter First Name (new fancy xpath for me!)
+new_first_name = driver.find_element(:xpath, "//label[text()=(' First Name ')]/following-sibling::input[@class='placeholder black-text']")
+new_first_name.send_keys 'John'
+# Enter Last Name
+new_last_name = driver.find_element(:xpath, "//label[text()=(' Last Name ')]/following-sibling::input[@class='placeholder black-text']")
+new_last_name.send_keys 'Doe'
+# Enter Email Address
+new_email_adderss = driver.find_element(:xpath, "//label[text()=(' Email ')]/following-sibling::input[@class='placeholder black-text']")
+new_email_adderss.send_keys 'test1@test.com'
+# Enter Password for account
+new_password = driver.find_element(:xpath, "//label[text()=(' Password ')]/following-sibling::input[@class='placeholder black-text']")
+new_password.send_keys 'password'
+# Confirm newly entered password
+confirm_new_password = driver.find_element(:xpath, "//label[text()=(' Confirm Password ')]/following-sibling::input[@class='placeholder black-text']")
+confirm_new_password.send_keys 'password'
+# Look into Check boxes
+# Checkboxes go here
+# Create New Account
+click_signup = driver.find_element(:class, 'btn')
+click_signup.click
 
-sleep 2
+# Sign Out
+# sign_out = driver.find_element(:link_text, '')
+
+sleep 5
 
 
 # ===============================
@@ -48,7 +71,6 @@ contact_us_comment = driver.find_element(:xpath, "//textarea[@placeholder='Write
 contact_us_comment.send_keys("What the jiminy crickets did you just flaming say about me, you little bozo? I’ll have you know I graduated top of my class in the Cub Scouts, and I’ve been involved in numerous secret camping trips in Wyoming, and I have over 300 confirmed knots. I am trained in first aid and I’m the top bandager in the entire US Boy Scouts (of America). You are nothing to me but just another friendly face. I will clean your wounds for you with precision the likes of which has never been seen before on this annual trip, mark my words. You think you can get away with saying those shenanigans to me over the Internet? Think again, finkle. As we speak I am contacting my secret network of MSN friends across the USA and your IP is being traced right now so you better prepare for the seminars, man. The storm that wipes out the pathetic little thing you call your bake sale. You’re frigging done, kid. I can be anywhere, anytime, and I can tie knots in over seven hundred ways, and that’s just with my bare hands. Not only am I extensively trained in road safety, but I have access to the entire manual of the United States Boy Scouts (of America) and I will use it to its full extent to train your miserable butt on the facts of the continents, you little schmuck. If only you could have known what unholy retribution your little “clever” comment was about to bring down upon you, maybe you would have held your silly tongue. But you couldn’t, you didn’t, and now you’re paying the price, you goshdarned sillyhead. I will throw leaves all over you and you will dance in them. You’re friggin done, kiddo.")
 
 sleep 2
-
 
 
 # ===============================
