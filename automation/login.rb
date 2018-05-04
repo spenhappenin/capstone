@@ -128,8 +128,8 @@ close_picker = driver.find_element(:class, 'picker__close')
 close_picker.click
 
 # Select a time for the event (not working)
-event_time = driver.find_element(:xpath, "//input[@type='time']")
-event_time.send_keys "11:11AM"
+event_time = driver.find_element(:css, "input[type='time']")
+event_time.send_keys "1111am"
 
 # Set number of people to attend
 event_capacity = driver.find_element(:xpath, "//input[@type='number']")
@@ -160,9 +160,11 @@ select_state.click
 event_zip = driver.find_element(:xpath, "//input[@placeholder='84011']")
 event_zip.send_keys '84044'
 
-# Event Skill Level (THIS XPATH NEEDS MORE, SEEK HELP)
-# event_skill = driver.find_element(:xpath, "//input[@class='select-dropdown']")
-# event_skill
+# Event Skill Level
+event_skill = driver.find_element(:xpath, "//label[text()=' Skill Level ']/following::input[@class='select-dropdown']")
+event_skill.click
+select_skill = driver.find_element(:xpath, "//span[text()=' Beginner ']")
+select_skill.click
 
 # Event Description
 event_blurb = driver.find_element(:xpath, "//textarea[@placeholder='Write Description Here...']")
