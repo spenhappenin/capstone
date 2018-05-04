@@ -116,9 +116,8 @@ create_event_name.send_keys 'Rec Basketball'
 # Select sport from dropdown
 choose_sport_dropdown = driver.find_element(:class, 'select-dropdown')
 choose_sport_dropdown.click
-# First xpath \o/  (not working though)
-# choose_sport = driver.find_element(:xpath, "//option[@value='baseball']")
-# choose_sport.click
+select_sport = driver.find_element(:xpath, "//span[text()=(' Baseball ')]")
+select_sport.click
 
 # Select date for pick event
 date_picker = driver.find_element(:id, 'date_picker')
@@ -130,7 +129,7 @@ close_picker.click
 
 # Select a time for the event (not working)
 event_time = driver.find_element(:xpath, "//input[@type='time']")
-event_time.send_keys '11:11pm'
+event_time.send_keys "11:11AM"
 
 # Set number of people to attend
 event_capacity = driver.find_element(:xpath, "//input[@type='number']")
@@ -148,9 +147,14 @@ event_address.send_keys 'Electric Ave'
 event_city = driver.find_element(:xpath, "//input[@placeholder='Salt Lake City']")
 event_city.send_keys 'Magna'
 
-# Event State (THIS XPATH NEEDS MORE, SEEK HELP)
-# event_state = dfe(:xpath, "//input[@class='select-dropdown']")
-# even_state
+# Event State
+event_state = driver.find_element(:xpath, "//label[text()=' State ']/following::input[@class='select-dropdown']")
+event_state.click
+select_state = driver.find_element(:xpath, '//span[text()="Utah"]')
+select_state.click
+# Didn't work, but good to konw locatoin_once_scrolled_into_view
+# select_state = driver.find_element(:xpath, "//select[@class='initialized']/child::option[text()='Utah']")
+# select_state.location_once_scrolled_into_view
 
 # Event Zip code
 event_zip = driver.find_element(:xpath, "//input[@placeholder='84011']")
