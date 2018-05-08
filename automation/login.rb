@@ -128,8 +128,14 @@ close_picker = driver.find_element(:class, 'picker__close')
 close_picker.click
 
 # Select a time for the event (not working)
-event_time = driver.find_element(:css, "input[type='time']")
-event_time.send_keys "1111am"
+event_time = driver.find_element(:xpath, "//input[@type='time']")
+sleep 2
+event_time.send_keys(:arrow_up)
+sleep 2
+event_time.send_keys(:tab)
+event_time.send_keys(:arrow_up)
+event_time.send_keys(:tab)
+event_time.send_keys(:arrow_up)
 
 # Set number of people to attend
 event_capacity = driver.find_element(:xpath, "//input[@type='number']")
