@@ -1,15 +1,14 @@
 require 'selenium-webdriver'
-# require 'chromedriver-helper'
 # require 'watir'
 
 #Firefox browser instantiation
-driver = Selenium::WebDriver.for :firefox
+driver = Selenium::WebDriver.for :chrome
 
 website = "http://localhost:3000/"
 eventLocation = "Magna Rec Center"
 do_it = "Do it! Just do it! Don't let your dreams be dreams. Yesterday, you said tomorrow. So just do it! Make your dreams come true! Just do it! Some people dream of success, while you're gonna wake up and work hard at it! Nothing is impossible! You should get to the point where anyone else would quit, and you're not gonna stop there! No, what are you waiting for? Do it! Just do it! Yes you can! Just do it. If you're tired of starting over, stop giving up!"
 event_name_array = ['Fist Fight Hockey', 'Badmouth Badmiton', 'Flippin Frisbee', 'Champion Ping Pong', 'Tennis Talk Up', 'Voyager Volleyball']
-
+new_event_name = event_name_array.sample
 # ===============================
 # |         Go To Site          |
 # ===============================
@@ -52,7 +51,7 @@ click_signup.click
 # Sign Out
 # sign_out = driver.find_element(:link_text, '')
 
-sleep 5
+sleep 2
 
 
 # ===============================
@@ -112,7 +111,8 @@ create_event.click
 
 # Fill in info for creating an event
 create_event_name = driver.find_element(:id, 'createEventName')
-create_event_name.send_keys event_name_array.sample
+create_event_name.send_keys new_event_name
+puts new_event_name
 
 # Select sport from dropdown
 choose_sport_dropdown = driver.find_element(:class, 'select-dropdown')
@@ -148,12 +148,13 @@ event_address.send_keys '3270 S 8400 W'
 
 # Event City
 event_city = driver.find_element(:xpath, "//input[@placeholder='Salt Lake City']")
-event_city.send_keys 'West Valley'
+event_city.send_keys 'Magna'
 
 # Event State
 event_state = driver.find_element(:xpath, "//label[text()=' State ']/following::input[@class='select-dropdown']")
 event_state.click
 select_state = driver.find_element(:xpath, '//span[text()="Utah"]')
+sleep 1
 select_state.click
 # Didn't work, but good to konw locatoin_once_scrolled_into_view
 # select_state = driver.find_element(:xpath, "//select[@class='initialized']/child::option[text()='Utah']")
@@ -167,6 +168,7 @@ event_zip.send_keys '84044'
 event_skill = driver.find_element(:xpath, "//label[text()=' Skill Level ']/following::input[@class='select-dropdown']")
 event_skill.click
 select_skill = driver.find_element(:xpath, "//span[text()=' Beginner ']")
+sleep 1
 select_skill.click
 
 # Event Description
