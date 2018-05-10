@@ -1,8 +1,9 @@
 require 'selenium-webdriver'
+require 'faker'
 # require 'watir'
 
 #Firefox browser instantiation
-driver = Selenium::WebDriver.for :chrome
+driver = Selenium::WebDriver.for :firefox
 
 website = "http://localhost:3000/"
 eventLocation = "Magna Rec Center"
@@ -29,13 +30,18 @@ create_account = driver.find_element(:link_text, "Sign Up")
 create_account.click
 # Enter First Name (new fancy xpath for me!)
 new_first_name = driver.find_element(:xpath, "//label[text()=(' First Name ')]/following-sibling::input[@class='placeholder black-text']")
-new_first_name.send_keys 'John'
+fake_first_name = Faker::Name.first_name
+new_first_name.send_keys fake_first_name
 # Enter Last Name
 new_last_name = driver.find_element(:xpath, "//label[text()=(' Last Name ')]/following-sibling::input[@class='placeholder black-text']")
-new_last_name.send_keys 'Doe'
+fake_last_name = Faker::Name.first_name
+new_last_name.send_keys fake_last_name
+puts "Name: " + fake_first_name + " " + fake_last_name
 # Enter Email Address
 new_email_adderss = driver.find_element(:xpath, "//label[text()=(' Email ')]/following-sibling::input[@class='placeholder black-text']")
-new_email_adderss.send_keys 'test1@test.com'
+fake_email_addersss = Faker::Internet.safe_email
+new_email_adderss.send_keys fake_email_addersss
+puts "Email: " + fake_email_addersss
 # Enter Password for account
 new_password = driver.find_element(:xpath, "//label[text()=(' Password ')]/following-sibling::input[@class='placeholder black-text']")
 new_password.send_keys 'password'
@@ -77,29 +83,26 @@ sleep 2
 # |          Login              |
 # ===============================
 # Navigate to login page
-login_page = driver.find_element(:link_text, 'Login')
-login_page.click
-
-sleep 2
-
-# Enter username
-# Put send_keys value in untracket file
-login_test = driver.find_element(:id, "bar")
-login_test.send_keys "test@test.com"
-
-# Enter password  (update password field to have ID)
-# Put
-pw_test = driver.find_element(:id, "passwordAutomation")
-pw_test.send_keys "password"
-
-# Login for provided username and password
-signin_button = driver.find_element(:class, "btn")
-signin_button.click
-
-sleep 2
-
-# Exit browser
-# driver.quit
+# login_page = driver.find_element(:link_text, 'Login')
+# login_page.click
+#
+# sleep 2
+#
+# # Enter username
+# # Put send_keys value in untracket file
+# login_test = driver.find_element(:id, "bar")
+# login_test.send_keys "test@test.com"
+#
+# # Enter password  (update password field to have ID)
+# # Put
+# pw_test = driver.find_element(:id, "passwordAutomation")
+# pw_test.send_keys "password"
+#
+# # Login for provided username and password
+# signin_button = driver.find_element(:class, "btn")
+# signin_button.click
+#
+# sleep 2
 
 
 # ===============================
@@ -180,3 +183,6 @@ create_event = driver.find_element(:css, "input[class='center btn blue']")
 create_event.click
 
 sleep 2
+
+# Exit browser
+# driver.quit
