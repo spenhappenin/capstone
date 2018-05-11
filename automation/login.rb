@@ -55,8 +55,10 @@ click_signup = driver.find_element(:class, 'btn')
 click_signup.click
 
 # Sign Out
-# sign_out = driver.find_element(:link_text, '')
-
+sign_out_nav = driver.find_element(:css, "li[class='dropdown-button']")
+sign_out_nav.click
+sign_out = driver.find_element(:xpath, "//a[text()='Logout']")
+sign_out. click
 sleep 2
 
 
@@ -83,26 +85,26 @@ sleep 2
 # |          Login              |
 # ===============================
 # Navigate to login page
-# login_page = driver.find_element(:link_text, 'Login')
-# login_page.click
-#
-# sleep 2
-#
-# # Enter username
-# # Put send_keys value in untracket file
-# login_test = driver.find_element(:id, "bar")
-# login_test.send_keys "test@test.com"
-#
-# # Enter password  (update password field to have ID)
-# # Put
-# pw_test = driver.find_element(:id, "passwordAutomation")
-# pw_test.send_keys "password"
-#
-# # Login for provided username and password
-# signin_button = driver.find_element(:class, "btn")
-# signin_button.click
-#
-# sleep 2
+login_page = driver.find_element(:link_text, 'Login')
+login_page.click
+
+sleep 2
+
+# Enter username
+# Put send_keys value in untracket file
+login_test = driver.find_element(:id, "bar")
+login_test.send_keys "test2@test.com"
+
+# Enter password  (update password field to have ID)
+# Put
+pw_test = driver.find_element(:id, "passwordAutomation")
+pw_test.send_keys "password"
+
+# Login for provided username and password
+signin_button = driver.find_element(:class, "btn")
+signin_button.click
+
+sleep 2
 
 
 # ===============================
