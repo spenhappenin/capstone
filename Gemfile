@@ -23,8 +23,8 @@ group :development, :test do
   gem 'pry'
   gem 'faker'
   gem 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
-  gem 'watir', '~> 5.0'end
-  gem 'chromedriver-helper'
+  gem 'rspec', '~> 3.5'
+end
 
 group :development do
   gem 'letter_opener'
