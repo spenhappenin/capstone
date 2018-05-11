@@ -1,9 +1,14 @@
 require 'selenium-webdriver'
+require 'rspec'
 require 'faker'
-# require 'watir'
 
 #Firefox browser instantiation
-driver = Selenium::WebDriver.for :firefox
+# driver = Selenium::WebDriver.for :firefox
+
+#Chrome browser instantiation
+driver = Selenium::WebDriver.for :chrome
+
+wait = Selenium::WebDriver::Wait.new(:timeout => 10)
 
 website = "http://localhost:3000/"
 eventLocation = "Magna Rec Center"
@@ -53,12 +58,13 @@ confirm_new_password.send_keys 'password'
 # Create New Account
 click_signup = driver.find_element(:class, 'btn')
 click_signup.click
-
 # Sign Out
-sign_out_nav = driver.find_element(:css, "li[class='dropdown-button']")
+sleep 1
+sign_out_nav = driver.find_element(:xpath, "//li[@class='dropdown-button']")
 sign_out_nav.click
+sleep 1
 sign_out = driver.find_element(:xpath, "//a[text()='Logout']")
-sign_out. click
+sign_out.click
 sleep 2
 
 
