@@ -1,17 +1,15 @@
 require 'selenium-webdriver'
-require 'rspec'
-require 'faker'
+require_relative 'helper'
 
 #Firefox browser instantiation
-# driver = Selenium::WebDriver.for :firefox
-
+driver = Selenium::WebDriver.for :firefox
 #Chrome browser instantiation
-driver = Selenium::WebDriver.for :chrome
+# driver = Selenium::WebDriver.for :chrome
 
 wait = Selenium::WebDriver::Wait.new(:timeout => 10)
 
 website = "http://localhost:3000/"
-eventLocation = "Magna Rec Center"
+event_location_var = "Magna Rec Center"
 do_it = "Do it! Just do it! Don't let your dreams be dreams. Yesterday, you said tomorrow. So just do it! Make your dreams come true! Just do it! Some people dream of success, while you're gonna wake up and work hard at it! Nothing is impossible! You should get to the point where anyone else would quit, and you're not gonna stop there! No, what are you waiting for? Do it! Just do it! Yes you can! Just do it. If you're tired of starting over, stop giving up!"
 event_name_array = ['Fist Fight Hockey', 'Badmouth Badmiton', 'Flippin Frisbee', 'Champion Ping Pong', 'Tennis Talk Up', 'Voyager Volleyball']
 new_event_name = event_name_array.sample
@@ -151,7 +149,7 @@ event_capacity.send_keys :backspace, "10"
 
 # Event Venue
 event_location = driver.find_element(:xpath, "//input[@placeholder='Dimple Dell Recreation']")
-event_location.send_keys(eventLocation)
+event_location.send_keys(event_location_var)
 
 # Event Address
 event_address = driver.find_element(:xpath, "//input[@placeholder='1234 USA Drive']")
